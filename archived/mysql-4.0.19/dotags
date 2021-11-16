@@ -1,0 +1,6 @@
+#!/bin/sh
+exec etags \
+    */*.c \
+    */*.s \
+    */*.h
+

@@ -1,0 +1,173 @@
+signals.o signals.o: signals.c ../config.h \
+  /home/jflinn/prefix/include/stdio.h \
+  /home/jflinn/prefix/include/features.h \
+  /home/jflinn/prefix/include/sys/cdefs.h \
+  /home/jflinn/prefix/include/bits/wordsize.h \
+  /home/jflinn/prefix/include/gnu/stubs.h \
+  /home/jflinn/prefix/include/gnu/stubs-32.h \
+  /usr/lib/gcc/i386-redhat-linux/4.1.2/include/stddef.h \
+  /home/jflinn/prefix/include/bits/types.h \
+  /home/jflinn/prefix/include/bits/typesizes.h \
+  /home/jflinn/prefix/include/libio.h \
+  /home/jflinn/prefix/include/_G_config.h \
+  /home/jflinn/prefix/include/wchar.h \
+  /home/jflinn/prefix/include/bits/wchar.h \
+  /home/jflinn/prefix/include/gconv.h \
+  /usr/lib/gcc/i386-redhat-linux/4.1.2/include/stdarg.h \
+  /home/jflinn/prefix/include/bits/stdio_lim.h \
+  /home/jflinn/prefix/include/bits/sys_errlist.h \
+  /home/jflinn/prefix/include/bits/stdio.h \
+  /home/jflinn/prefix/include/sys/types.h \
+  /home/jflinn/prefix/include/time.h /home/jflinn/prefix/include/endian.h \
+  /home/jflinn/prefix/include/bits/endian.h \
+  /home/jflinn/prefix/include/sys/select.h \
+  /home/jflinn/prefix/include/bits/select.h \
+  /home/jflinn/prefix/include/bits/sigset.h \
+  /home/jflinn/prefix/include/bits/time.h \
+  /home/jflinn/prefix/include/sys/sysmacros.h \
+  /home/jflinn/prefix/include/bits/pthreadtypes.h \
+  /home/jflinn/prefix/include/signal.h \
+  /home/jflinn/prefix/include/bits/signum.h \
+  /home/jflinn/prefix/include/bits/siginfo.h \
+  /home/jflinn/prefix/include/bits/sigaction.h \
+  /home/jflinn/prefix/include/bits/sigcontext.h \
+  /usr/include/asm/sigcontext.h \
+  /home/jflinn/prefix/include/bits/sigstack.h \
+  /home/jflinn/prefix/include/bits/sigthread.h \
+  /home/jflinn/prefix/include/unistd.h \
+  /home/jflinn/prefix/include/bits/posix_opt.h \
+  /home/jflinn/prefix/include/bits/confname.h \
+  /home/jflinn/prefix/include/getopt.h rldefs.h \
+  /home/jflinn/prefix/include/string.h \
+  /home/jflinn/prefix/include/bits/string.h \
+  /home/jflinn/prefix/include/bits/string2.h \
+  /home/jflinn/prefix/include/stdlib.h rlconf.h \
+  /home/jflinn/prefix/include/sys/ioctl.h \
+  /home/jflinn/prefix/include/bits/ioctls.h /usr/include/asm/ioctls.h \
+  /usr/include/asm/ioctl.h /usr/include/asm-generic/ioctl.h \
+  /home/jflinn/prefix/include/bits/ioctl-types.h \
+  /home/jflinn/prefix/include/sys/ttydefaults.h readline.h rlstdc.h \
+  keymaps.h chardefs.h /home/jflinn/prefix/include/ctype.h tilde.h \
+  history.h
+
+../config.h:
+
+/home/jflinn/prefix/include/stdio.h:
+
+/home/jflinn/prefix/include/features.h:
+
+/home/jflinn/prefix/include/sys/cdefs.h:
+
+/home/jflinn/prefix/include/bits/wordsize.h:
+
+/home/jflinn/prefix/include/gnu/stubs.h:
+
+/home/jflinn/prefix/include/gnu/stubs-32.h:
+
+/usr/lib/gcc/i386-redhat-linux/4.1.2/include/stddef.h:
+
+/home/jflinn/prefix/include/bits/types.h:
+
+/home/jflinn/prefix/include/bits/typesizes.h:
+
+/home/jflinn/prefix/include/libio.h:
+
+/home/jflinn/prefix/include/_G_config.h:
+
+/home/jflinn/prefix/include/wchar.h:
+
+/home/jflinn/prefix/include/bits/wchar.h:
+
+/home/jflinn/prefix/include/gconv.h:
+
+/usr/lib/gcc/i386-redhat-linux/4.1.2/include/stdarg.h:
+
+/home/jflinn/prefix/include/bits/stdio_lim.h:
+
+/home/jflinn/prefix/include/bits/sys_errlist.h:
+
+/home/jflinn/prefix/include/bits/stdio.h:
+
+/home/jflinn/prefix/include/sys/types.h:
+
+/home/jflinn/prefix/include/time.h:
+
+/home/jflinn/prefix/include/endian.h:
+
+/home/jflinn/prefix/include/bits/endian.h:
+
+/home/jflinn/prefix/include/sys/select.h:
+
+/home/jflinn/prefix/include/bits/select.h:
+
+/home/jflinn/prefix/include/bits/sigset.h:
+
+/home/jflinn/prefix/include/bits/time.h:
+
+/home/jflinn/prefix/include/sys/sysmacros.h:
+
+/home/jflinn/prefix/include/bits/pthreadtypes.h:
+
+/home/jflinn/prefix/include/signal.h:
+
+/home/jflinn/prefix/include/bits/signum.h:
+
+/home/jflinn/prefix/include/bits/siginfo.h:
+
+/home/jflinn/prefix/include/bits/sigaction.h:
+
+/home/jflinn/prefix/include/bits/sigcontext.h:
+
+/usr/include/asm/sigcontext.h:
+
+/home/jflinn/prefix/include/bits/sigstack.h:
+
+/home/jflinn/prefix/include/bits/sigthread.h:
+
+/home/jflinn/prefix/include/unistd.h:
+
+/home/jflinn/prefix/include/bits/posix_opt.h:
+
+/home/jflinn/prefix/include/bits/confname.h:
+
+/home/jflinn/prefix/include/getopt.h:
+
+rldefs.h:
+
+/home/jflinn/prefix/include/string.h:
+
+/home/jflinn/prefix/include/bits/string.h:
+
+/home/jflinn/prefix/include/bits/string2.h:
+
+/home/jflinn/prefix/include/stdlib.h:
+
+rlconf.h:
+
+/home/jflinn/prefix/include/sys/ioctl.h:
+
+/home/jflinn/prefix/include/bits/ioctls.h:
+
+/usr/include/asm/ioctls.h:
+
+/usr/include/asm/ioctl.h:
+
+/usr/include/asm-generic/ioctl.h:
+
+/home/jflinn/prefix/include/bits/ioctl-types.h:
+
+/home/jflinn/prefix/include/sys/ttydefaults.h:
+
+readline.h:
+
+rlstdc.h:
+
+keymaps.h:
+
+chardefs.h:
+
+/home/jflinn/prefix/include/ctype.h:
+
+tilde.h:
+
+history.h:

@@ -1,0 +1,285 @@
+hp_rrnd.o: hp_rrnd.c heapdef.h ../include/my_base.h \
+  ../include/my_global.h ../include/my_config.h \
+  /home/jflinn/prefix/include/pthread.h \
+  /home/jflinn/prefix/include/features.h \
+  /home/jflinn/prefix/include/sys/cdefs.h \
+  /home/jflinn/prefix/include/bits/wordsize.h \
+  /home/jflinn/prefix/include/gnu/stubs.h \
+  /home/jflinn/prefix/include/gnu/stubs-32.h \
+  /home/jflinn/prefix/include/sched.h \
+  /home/jflinn/prefix/include/bits/types.h \
+  /usr/lib/gcc/i386-redhat-linux/4.1.2/include/stddef.h \
+  /home/jflinn/prefix/include/bits/typesizes.h \
+  /home/jflinn/prefix/include/time.h \
+  /home/jflinn/prefix/include/bits/sched.h \
+  /home/jflinn/prefix/include/bits/time.h \
+  /home/jflinn/prefix/include/xlocale.h \
+  /home/jflinn/prefix/include/signal.h \
+  /home/jflinn/prefix/include/bits/sigset.h \
+  /home/jflinn/prefix/include/bits/pthreadtypes.h \
+  /home/jflinn/prefix/include/bits/setjmp.h \
+  /usr/lib/gcc/i386-redhat-linux/4.1.2/include/stdarg.h \
+  /home/jflinn/prefix/include/stdio.h /home/jflinn/prefix/include/libio.h \
+  /home/jflinn/prefix/include/_G_config.h \
+  /home/jflinn/prefix/include/wchar.h \
+  /home/jflinn/prefix/include/bits/wchar.h \
+  /home/jflinn/prefix/include/gconv.h \
+  /home/jflinn/prefix/include/bits/stdio_lim.h \
+  /home/jflinn/prefix/include/bits/sys_errlist.h \
+  /home/jflinn/prefix/include/bits/stdio.h \
+  /home/jflinn/prefix/include/stdlib.h \
+  /home/jflinn/prefix/include/bits/waitflags.h \
+  /home/jflinn/prefix/include/bits/waitstatus.h \
+  /home/jflinn/prefix/include/endian.h \
+  /home/jflinn/prefix/include/bits/endian.h \
+  /home/jflinn/prefix/include/sys/types.h \
+  /home/jflinn/prefix/include/sys/select.h \
+  /home/jflinn/prefix/include/bits/select.h \
+  /home/jflinn/prefix/include/sys/sysmacros.h \
+  /home/jflinn/prefix/include/alloca.h /home/jflinn/prefix/include/math.h \
+  /home/jflinn/prefix/include/bits/huge_val.h \
+  /home/jflinn/prefix/include/bits/huge_valf.h \
+  /home/jflinn/prefix/include/bits/huge_vall.h \
+  /home/jflinn/prefix/include/bits/inf.h \
+  /home/jflinn/prefix/include/bits/nan.h \
+  /home/jflinn/prefix/include/bits/mathdef.h \
+  /home/jflinn/prefix/include/bits/mathcalls.h \
+  /home/jflinn/prefix/include/bits/mathinline.h \
+  /home/jflinn/prefix/include/limits.h \
+  /usr/lib/gcc/i386-redhat-linux/4.1.2/include/limits.h \
+  /home/jflinn/prefix/include/bits/posix1_lim.h \
+  /home/jflinn/prefix/include/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /home/jflinn/prefix/include/bits/posix2_lim.h \
+  /home/jflinn/prefix/include/bits/xopen_lim.h \
+  /usr/lib/gcc/i386-redhat-linux/4.1.2/include/float.h \
+  /home/jflinn/prefix/include/fcntl.h \
+  /home/jflinn/prefix/include/bits/fcntl.h \
+  /home/jflinn/prefix/include/bits/uio.h \
+  /home/jflinn/prefix/include/sys/stat.h \
+  /home/jflinn/prefix/include/bits/stat.h \
+  /home/jflinn/prefix/include/sys/timeb.h \
+  /home/jflinn/prefix/include/sys/time.h \
+  /home/jflinn/prefix/include/unistd.h \
+  /home/jflinn/prefix/include/bits/posix_opt.h \
+  /home/jflinn/prefix/include/bits/environments.h \
+  /home/jflinn/prefix/include/bits/confname.h \
+  /home/jflinn/prefix/include/getopt.h \
+  /home/jflinn/prefix/include/errno.h \
+  /home/jflinn/prefix/include/bits/errno.h /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h \
+  /home/jflinn/prefix/include/crypt.h ../include/my_dbug.h \
+  /home/jflinn/prefix/include/sys/socket.h \
+  /home/jflinn/prefix/include/sys/uio.h \
+  /home/jflinn/prefix/include/bits/socket.h \
+  /home/jflinn/prefix/include/bits/sockaddr.h /usr/include/asm/socket.h \
+  /usr/include/asm/sockios.h ../include/my_dir.h ../include/my_sys.h \
+  ../include/my_pthread.h ../include/m_ctype.h ../include/my_alloc.h \
+  ../include/raid.h ../include/m_string.h \
+  /home/jflinn/prefix/include/strings.h \
+  /home/jflinn/prefix/include/string.h \
+  /home/jflinn/prefix/include/bits/string.h \
+  /home/jflinn/prefix/include/bits/string2.h \
+  /home/jflinn/prefix/include/memory.h ../include/my_list.h \
+  ../include/heap.h ../include/thr_lock.h
+
+heapdef.h:
+
+../include/my_base.h:
+
+../include/my_global.h:
+
+../include/my_config.h:
+
+/home/jflinn/prefix/include/pthread.h:
+
+/home/jflinn/prefix/include/features.h:
+
+/home/jflinn/prefix/include/sys/cdefs.h:
+
+/home/jflinn/prefix/include/bits/wordsize.h:
+
+/home/jflinn/prefix/include/gnu/stubs.h:
+
+/home/jflinn/prefix/include/gnu/stubs-32.h:
+
+/home/jflinn/prefix/include/sched.h:
+
+/home/jflinn/prefix/include/bits/types.h:
+
+/usr/lib/gcc/i386-redhat-linux/4.1.2/include/stddef.h:
+
+/home/jflinn/prefix/include/bits/typesizes.h:
+
+/home/jflinn/prefix/include/time.h:
+
+/home/jflinn/prefix/include/bits/sched.h:
+
+/home/jflinn/prefix/include/bits/time.h:
+
+/home/jflinn/prefix/include/xlocale.h:
+
+/home/jflinn/prefix/include/signal.h:
+
+/home/jflinn/prefix/include/bits/sigset.h:
+
+/home/jflinn/prefix/include/bits/pthreadtypes.h:
+
+/home/jflinn/prefix/include/bits/setjmp.h:
+
+/usr/lib/gcc/i386-redhat-linux/4.1.2/include/stdarg.h:
+
+/home/jflinn/prefix/include/stdio.h:
+
+/home/jflinn/prefix/include/libio.h:
+
+/home/jflinn/prefix/include/_G_config.h:
+
+/home/jflinn/prefix/include/wchar.h:
+
+/home/jflinn/prefix/include/bits/wchar.h:
+
+/home/jflinn/prefix/include/gconv.h:
+
+/home/jflinn/prefix/include/bits/stdio_lim.h:
+
+/home/jflinn/prefix/include/bits/sys_errlist.h:
+
+/home/jflinn/prefix/include/bits/stdio.h:
+
+/home/jflinn/prefix/include/stdlib.h:
+
+/home/jflinn/prefix/include/bits/waitflags.h:
+
+/home/jflinn/prefix/include/bits/waitstatus.h:
+
+/home/jflinn/prefix/include/endian.h:
+
+/home/jflinn/prefix/include/bits/endian.h:
+
+/home/jflinn/prefix/include/sys/types.h:
+
+/home/jflinn/prefix/include/sys/select.h:
+
+/home/jflinn/prefix/include/bits/select.h:
+
+/home/jflinn/prefix/include/sys/sysmacros.h:
+
+/home/jflinn/prefix/include/alloca.h:
+
+/home/jflinn/prefix/include/math.h:
+
+/home/jflinn/prefix/include/bits/huge_val.h:
+
+/home/jflinn/prefix/include/bits/huge_valf.h:
+
+/home/jflinn/prefix/include/bits/huge_vall.h:
+
+/home/jflinn/prefix/include/bits/inf.h:
+
+/home/jflinn/prefix/include/bits/nan.h:
+
+/home/jflinn/prefix/include/bits/mathdef.h:
+
+/home/jflinn/prefix/include/bits/mathcalls.h:
+
+/home/jflinn/prefix/include/bits/mathinline.h:
+
+/home/jflinn/prefix/include/limits.h:
+
+/usr/lib/gcc/i386-redhat-linux/4.1.2/include/limits.h:
+
+/home/jflinn/prefix/include/bits/posix1_lim.h:
+
+/home/jflinn/prefix/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/home/jflinn/prefix/include/bits/posix2_lim.h:
+
+/home/jflinn/prefix/include/bits/xopen_lim.h:
+
+/usr/lib/gcc/i386-redhat-linux/4.1.2/include/float.h:
+
+/home/jflinn/prefix/include/fcntl.h:
+
+/home/jflinn/prefix/include/bits/fcntl.h:
+
+/home/jflinn/prefix/include/bits/uio.h:
+
+/home/jflinn/prefix/include/sys/stat.h:
+
+/home/jflinn/prefix/include/bits/stat.h:
+
+/home/jflinn/prefix/include/sys/timeb.h:
+
+/home/jflinn/prefix/include/sys/time.h:
+
+/home/jflinn/prefix/include/unistd.h:
+
+/home/jflinn/prefix/include/bits/posix_opt.h:
+
+/home/jflinn/prefix/include/bits/environments.h:
+
+/home/jflinn/prefix/include/bits/confname.h:
+
+/home/jflinn/prefix/include/getopt.h:
+
+/home/jflinn/prefix/include/errno.h:
+
+/home/jflinn/prefix/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/home/jflinn/prefix/include/crypt.h:
+
+../include/my_dbug.h:
+
+/home/jflinn/prefix/include/sys/socket.h:
+
+/home/jflinn/prefix/include/sys/uio.h:
+
+/home/jflinn/prefix/include/bits/socket.h:
+
+/home/jflinn/prefix/include/bits/sockaddr.h:
+
+/usr/include/asm/socket.h:
+
+/usr/include/asm/sockios.h:
+
+../include/my_dir.h:
+
+../include/my_sys.h:
+
+../include/my_pthread.h:
+
+../include/m_ctype.h:
+
+../include/my_alloc.h:
+
+../include/raid.h:
+
+../include/m_string.h:
+
+/home/jflinn/prefix/include/strings.h:
+
+/home/jflinn/prefix/include/string.h:
+
+/home/jflinn/prefix/include/bits/string.h:
+
+/home/jflinn/prefix/include/bits/string2.h:
+
+/home/jflinn/prefix/include/memory.h:
+
+../include/my_list.h:
+
+../include/heap.h:
+
+../include/thr_lock.h:

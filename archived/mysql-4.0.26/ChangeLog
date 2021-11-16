@@ -1,0 +1,648 @@
+ChangeSet
+  1.2144 05/09/02 11:11:29 kent@mysql.com +1 -0
+  my_global.h:
+    Back port of QNX work around for rint()
+
+  include/my_global.h
+    1.73 05/09/02 11:10:18 kent@mysql.com +5 -0
+    Back port of QNX work around for rint()
+
+ChangeSet
+  1.2143 05/09/02 10:44:20 kent@mysql.com +1 -0
+  configure.in:
+    Back port of code to find the right 'ps' settings
+
+  configure.in
+    1.330 05/09/02 10:33:10 kent@mysql.com +10 -7
+    Back port of code to find the right 'ps' settings
+
+ChangeSet
+  1.2142 05/08/29 22:35:48 paul@snake-hub.snake.net +1 -0
+  fulltext_var.result:
+    Update test result.
+
+  mysql-test/r/fulltext_var.result
+    1.9 05/08/29 22:35:34 paul@snake-hub.snake.net +1 -1
+    Update test result.
+
+ChangeSet
+  1.2141 05/08/29 12:08:04 paul@kite-hub.kitebird.com +1 -0
+  set_var.cc:
+    Reorder out-of-order system variables.
+
+  sql/set_var.cc
+    1.64 05/08/29 12:07:16 paul@kite-hub.kitebird.com +2 -2
+    Reorder out-of-order system variables.
+
+ChangeSet
+  1.2138.1.1 05/08/28 19:46:56 kent@mysql.com +1 -0
+  Makefile.am:
+    Make ports configurable from environment for test
+
+  Makefile.am
+    1.53 05/08/28 19:46:41 kent@mysql.com +10 -3
+    Make ports configurable from environment for test
+
+ChangeSet
+  1.2139 05/08/27 22:00:22 paul@frost.snake.net +1 -0
+  Merge paul@bk-internal.mysql.com:/home/bk/mysql-4.0
+  into  frost.snake.net:/Volumes/frost2/MySQL/bk/mysql-4.0
+
+  sql/mysqld.cc
+    1.527 05/08/27 22:00:19 paul@frost.snake.net +0 -0
+    Auto merged
+
+ChangeSet
+  1.2135.1.2 05/08/27 21:04:58 paul@frost.snake.net +1 -0
+  mysqld.cc:
+    Reorder out-of-order status variables.
+
+  sql/mysqld.cc
+    1.524.1.1 05/08/27 21:02:20 paul@frost.snake.net +26 -26
+    Reorder out-of-order status variables.
+
+ChangeSet
+  1.2135.1.1 05/08/27 21:02:05 paul@frost.snake.net +1 -0
+  set_var.cc:
+    Reorder out-of-order system variables.
+
+  sql/set_var.cc
+    1.63 05/08/27 21:01:33 paul@frost.snake.net +15 -15
+    Reorder out-of-order system variables.
+
+ChangeSet
+  1.2138 05/08/24 22:03:34 jani@a193-229-222-105.elisa-laajakaista.fi +30 -0
+  Several fixes for Netware.
+
+  sql/mysqld.cc
+    1.526 05/08/24 22:03:30 jani@a193-229-222-105.elisa-laajakaista.fi +13 -3
+    Abnormal end patch when shutting down and volume not ready.
+
+  netware/mysqlshow.def
+    1.4 05/08/24 22:03:30 jani@a193-229-222-105.elisa-laajakaista.fi +1 -1
+    Scrollable screen patch.
+
+  netware/mysqlimport.def
+    1.5 05/08/24 22:03:30 jani@a193-229-222-105.elisa-laajakaista.fi +1 -1
+    Scrollable screen patch.
+
+  netware/mysqldump.def
+    1.5 05/08/24 22:03:30 jani@a193-229-222-105.elisa-laajakaista.fi +1 -1
+    Scrollable screen patch.
+
+  netware/mysqld_safe.c
+    1.7 05/08/24 22:03:29 jani@a193-229-222-105.elisa-laajakaista.fi +0 -2
+    Removed debug message for Netware.
+
+  netware/mysqlcheck.def
+    1.5 05/08/24 22:03:28 jani@a193-229-222-105.elisa-laajakaista.fi +1 -1
+    Scrollable screen patch.
+
+  netware/mysqlbinlog.def
+    1.5 05/08/24 22:03:26 jani@a193-229-222-105.elisa-laajakaista.fi +1 -1
+    Scrollable screen patch.
+
+  netware/mysqladmin.def
+    1.4 05/08/24 22:03:25 jani@a193-229-222-105.elisa-laajakaista.fi +1 -1
+    Scrollable screen patch.
+
+  netware/mysql_test_run.c
+    1.8 05/08/24 22:03:24 jani@a193-229-222-105.elisa-laajakaista.fi +4 -0
+    Fixed strindex for Netware.
+
+  netware/mysql.def
+    1.4 05/08/24 22:03:22 jani@a193-229-222-105.elisa-laajakaista.fi +1 -1
+    Scrollable screen patch.
+
+  netware/myisamchk.def
+    1.5 05/08/24 22:03:21 jani@a193-229-222-105.elisa-laajakaista.fi +1 -1
+    Scrollable screen patch.
+
+  myisam/myisampack.c
+    1.36 05/08/24 22:03:19 jani@a193-229-222-105.elisa-laajakaista.fi +10 -1
+    Added auto close for Netware.
+
+  myisam/myisamlog.c
+    1.20 05/08/24 22:03:18 jani@a193-229-222-105.elisa-laajakaista.fi +2 -0
+    Added help for Netware.
+
+  myisam/myisamchk.c
+    1.116 05/08/24 22:03:17 jani@a193-229-222-105.elisa-laajakaista.fi +11 -1
+    Added auto close of window for Netware
+
+  isam/pack_isam.c
+    1.17 05/08/24 22:03:15 jani@a193-229-222-105.elisa-laajakaista.fi +4 -0
+    Added auto close of window for Netware
+
+  isam/isamchk.c
+    1.25 05/08/24 22:03:15 jani@a193-229-222-105.elisa-laajakaista.fi +10 -1
+    Added auto close of window for Netware
+
+  include/help_start.h
+    1.2 05/08/24 22:03:14 jani@a193-229-222-105.elisa-laajakaista.fi +2 -0
+    Fixed help messages for Netware.
+
+  include/help_end.h
+    1.2 05/08/24 22:03:13 jani@a193-229-222-105.elisa-laajakaista.fi +1 -0
+    Fixed help messages for Netware.
+
+  extra/resolve_stack_dump.c
+    1.16 05/08/24 22:03:13 jani@a193-229-222-105.elisa-laajakaista.fi +5 -0
+    Fixed help messages for Netware.
+
+  extra/perror.c
+    1.27 05/08/24 22:03:13 jani@a193-229-222-105.elisa-laajakaista.fi +5 -0
+    Fixed help messages for Netware.
+
+  extra/my_print_defaults.c
+    1.17 05/08/24 22:03:12 jani@a193-229-222-105.elisa-laajakaista.fi +5 -0
+    Fixed help messages for Netware.
+
+  client/mysqltest.c
+    1.124 05/08/24 22:03:12 jani@a193-229-222-105.elisa-laajakaista.fi +5 -0
+    Fixed help messages for Netware.
+
+  client/mysqlshow.c
+    1.30 05/08/24 22:03:12 jani@a193-229-222-105.elisa-laajakaista.fi +9 -0
+    Added option auto close for Netware.
+
+  client/mysqlimport.c
+    1.36 05/08/24 22:03:11 jani@a193-229-222-105.elisa-laajakaista.fi +9 -0
+    Added option auto close for Netware.
+
+  client/mysqldump.c
+    1.119 05/08/24 22:03:11 jani@a193-229-222-105.elisa-laajakaista.fi +9 -0
+    Added option auto close for Netware.
+
+  client/mysqlcheck.c
+    1.32 05/08/24 22:03:10 jani@a193-229-222-105.elisa-laajakaista.fi +9 -0
+    Added option auto close for Netware.
+
+  client/mysqlbinlog.cc
+    1.104 05/08/24 22:03:09 jani@a193-229-222-105.elisa-laajakaista.fi +11 -1
+    Added option auto close for Netware.
+
+  client/mysqladmin.c
+    1.78 05/08/24 22:03:09 jani@a193-229-222-105.elisa-laajakaista.fi +9 -0
+    Added option auto close for Netware.
+
+  client/mysql.cc
+    1.160 05/08/24 22:03:09 jani@a193-229-222-105.elisa-laajakaista.fi +9 -0
+    Added option auto close for Netware.
+
+  client/client_priv.h
+    1.19 05/08/24 22:03:08 jani@a193-229-222-105.elisa-laajakaista.fi +1 -1
+    Added option auto close for Netware.
+
+ChangeSet
+  1.2137 05/08/24 17:27:46 heikki@hundin.mysql.fi +1 -0
+  ha_innodb.cc:
+    Fix bug #12779 : never give a row count estimate of 0 to the MySQL query optimizer, as then left join optimizer may beleive it KNOWS that the table is empty; note that this fix may change query optimization of many other queries where one table is empty; note that the proper fix would be to make the query optimizer to know that the row count estimates it receives really are just estimates, it cannot assume they are certain
+
+  sql/ha_innodb.cc
+    1.235 05/08/24 17:27:34 heikki@hundin.mysql.fi +25 -1
+    Fix bug #12779 : never give a row count estimate of 0 to the MySQL query optimizer, as then left join optimizer may beleive it KNOWS that the table is empty; note that this fix may change query optimization of many other queries where one table is empty; note that the proper fix would be to make the query optimizer to know that the row count estimates it receives really are just estimates, it cannot assume they are certain
+
+ChangeSet
+  1.2136 05/08/18 21:26:25 jani@a193-229-222-105.elisa-laajakaista.fi +3 -0
+  Some minor fixes for Netware. These were required after we started building
+  against a later version of libc.
+
+  sql/mysqld.cc
+    1.525 05/08/18 21:26:19 jani@a193-229-222-105.elisa-laajakaista.fi +1 -0
+    Added an include.
+
+  netware/BUILD/nwbootstrap
+    1.8 05/08/18 21:26:19 jani@a193-229-222-105.elisa-laajakaista.fi +1 -7
+    Fix to build script.
+
+  include/config-netware.h
+    1.5 05/08/18 21:26:19 jani@a193-229-222-105.elisa-laajakaista.fi +12 -0
+    Changes for Netware. Needed to build against newer libc.
+
+ChangeSet
+  1.2126.4.3 05/08/11 21:18:45 lenz@mysql.com +1 -0
+  - another comment typo fixed
+
+  support-files/MacOSX/postflight.sh
+    1.6 05/08/11 21:18:42 lenz@mysql.com +1 -1
+    - another comment typo fixed
+
+ChangeSet
+  1.2126.4.2 05/08/11 20:23:12 lenz@mysql.com +3 -0
+  - Fix for BUG#11380 (as recommened by JimW): renamed the preinstall/postinstall scripts to
+    preflight/postflight instead, so they are run every time a PKG is installed, not only for
+    a fresh installation
+
+  support-files/MacOSX/preflight.sh
+    1.3 05/08/11 20:23:09 lenz@mysql.com +2 -2
+    - Fix for BUG#11380 (as recommened by JimW): renamed the preinstall/postinstall scripts to
+      preflight/postflight instead, so they are run every time, not only for a fresh installation
+    - fixed comment typo
+
+  support-files/MacOSX/postflight.sh
+    1.5 05/08/11 20:23:09 lenz@mysql.com +1 -1
+    - Fix for BUG#11380 (as recommened by JimW): renamed the preinstall/postinstall scripts to
+      preflight/postflight instead, so they are run every time, not only for a fresh installation
+
+  support-files/MacOSX/Makefile.am
+    1.8 05/08/11 20:23:09 lenz@mysql.com +6 -6
+    - Fix for BUG#11380 (as recommened by JimW): renamed the preinstall/postinstall scripts to
+      preflight/postflight instead, so they are run every time, not only for a fresh installation
+
+  support-files/MacOSX/postflight.sh
+    1.4 05/08/11 20:15:43 lenz@mysql.com +0 -0
+    Rename: support-files/MacOSX/postinstall.sh -> support-files/MacOSX/postflight.sh
+
+  support-files/MacOSX/preflight.sh
+    1.2 05/08/11 20:15:11 lenz@mysql.com +0 -0
+    Rename: support-files/MacOSX/preinstall.sh -> support-files/MacOSX/preflight.sh
+
+ChangeSet
+  1.2126.4.1 05/08/11 20:13:12 lenz@mysql.com +2 -0
+  - Make sure the Mac OS X support files are built, but not installed by "make install" (the previous
+    change was too drastic) (BUG#12506)
+
+  support-files/Makefile.am
+    1.23 05/08/11 20:13:10 lenz@mysql.com +3 -0
+    - make sure that the RPM spec files are built, but not installed by "make install"
+
+  support-files/MacOSX/Makefile.am
+    1.7 05/08/11 20:13:10 lenz@mysql.com +6 -0
+    - Make sure the Mac OS X support files are built, but not installed by "make install" (the previous
+      change was too drastic) (BUG#12506)
+
+ChangeSet
+  1.2134 05/08/11 09:29:50 bell@51.0.168.192.in-addr.arpa +2 -0
+  make the same filenames as in 4.1
+
+  mysql-test/r/query_cache_notembedded.result
+    1.2 05/08/11 09:28:20 bell@51.0.168.192.in-addr.arpa +0 -0
+    Rename: mysql-test/r/query_cache_noembeded.result -> mysql-test/r/query_cache_notembedded.result
+
+  mysql-test/t/query_cache_notembedded.test
+    1.2 05/08/11 09:27:52 bell@51.0.168.192.in-addr.arpa +0 -0
+    Rename: mysql-test/t/query_cache_noembeded.test -> mysql-test/t/query_cache_notembedded.test
+
+ChangeSet
+  1.2133 05/08/10 18:58:55 bell@52.0.168.192.in-addr.arpa +3 -0
+  block using QC in case of having tables locked by LOCK... (BUG#12385)
+
+  mysql-test/t/query_cache_noembeded.test
+    1.1 05/08/10 18:58:48 bell@52.0.168.192.in-addr.arpa +33 -0
+    New BitKeeper file ``mysql-test/t/query_cache_noembeded.test''
+
+  mysql-test/r/query_cache_noembeded.result
+    1.1 05/08/10 18:58:48 bell@52.0.168.192.in-addr.arpa +18 -0
+    New BitKeeper file ``mysql-test/r/query_cache_noembeded.result''
+
+  mysql-test/t/query_cache_noembeded.test
+    1.0 05/08/10 18:58:48 bell@52.0.168.192.in-addr.arpa +0 -0
+    BitKeeper file /Users/bell/mysql/bk/work-qc-4.0/mysql-test/t/query_cache_noembeded.test
+
+  mysql-test/r/query_cache_noembeded.result
+    1.0 05/08/10 18:58:48 bell@52.0.168.192.in-addr.arpa +0 -0
+    BitKeeper file /Users/bell/mysql/bk/work-qc-4.0/mysql-test/r/query_cache_noembeded.result
+
+  sql/sql_cache.cc
+    1.65 05/08/10 18:58:47 bell@52.0.168.192.in-addr.arpa +5 -2
+    block QC using if tables are locked with LOCK
+    unlock QC
+
+ChangeSet
+  1.2126.3.4 05/08/04 12:22:51 lenz@mysql.com +1 -0
+  - Fixed the creation of the mysql user group account in the postinstall section of
+    the MySQL-server RPM spec file (BUG#12348)
+
+  support-files/mysql.spec.sh
+    1.92 05/08/04 12:22:47 lenz@mysql.com +6 -1
+    - Fixed the creation of the mysql user group account in the postinstall section
+     (BUG#12348)
+
+ChangeSet
+  1.2126.3.3 05/08/03 18:47:50 heikki@hundin.mysql.fi +1 -0
+  ha_innodb.cc:
+    Fix compilation error in previous commit
+
+  sql/ha_innodb.cc
+    1.234 05/08/03 18:47:31 heikki@hundin.mysql.fi +1 -1
+    Fix compilation error in previous commit
+
+ChangeSet
+  1.2126.3.2 05/08/03 18:11:55 heikki@hundin.mysql.fi +1 -0
+  ha_innodb.cc:
+    Backport of Bug #9670 to 4.0: assertion failure in ut_a(cursor->old_stored == BTR_PCUR_OLD_STORED)
+
+  sql/ha_innodb.cc
+    1.233 05/08/03 18:11:37 heikki@hundin.mysql.fi +2 -1
+    Backport of Bug #9670 to 4.0: assertion failure in ut_a(cursor->old_stored == BTR_PCUR_OLD_STORED)
+
+ChangeSet
+  1.2126.3.1 05/08/02 11:33:26 svoj@mysql.com +3 -0
+  BUG#11684 fix.
+  Repair crashes mysql when table has fulltext index.
+
+  mysql-test/t/fulltext.test
+    1.49 05/08/02 11:33:24 svoj@mysql.com +11 -0
+    Test case for BUG#11684 - repair crashes mysql when table has fulltext index.
+
+  mysql-test/r/fulltext.result
+    1.50 05/08/02 11:33:24 svoj@mysql.com +8 -0
+    Test case for BUG#11684 - repair crashes mysql when table has fulltext index.
+
+  myisam/sort.c
+    1.29 05/08/02 11:33:24 svoj@mysql.com +8 -6
+    Use static ft_buf instead of dynamic mergebuf. Latter could be NULL if record has long words.
+
+ChangeSet
+  1.2126.2.1 05/07/31 21:28:52 patg@krsna.patg.net +3 -0
+  BUG 11104 (same as changeset 1.1891 on the 5.0 tree, but realised this 
+  needed to be fixed in earlier versions)
+  Fixed the iteration of how substrings are handled with negative indexes in 
+  SUBSTRING_INDEX
+
+  sql/item_strfunc.cc
+    1.86 05/07/31 21:28:43 patg@krsna.patg.net +14 -2
+    Fix to BUG 11104 
+        Took out the offset-=delimiter_length-1 out of the for loop. It was causing
+        basically this: 
+        select substring_index('the king of the the hill', 'the', -2) to not work.
+        The first iteration, offset would be initialised to 24, then strstr would 
+        point at 'the king of the the* hill' ('*'means right before the 
+        character following), returning a offset of 16. The for loop would then 
+        decrement offset by two (3 - 1), to 14, now pointing at 
+        "the king of th*e the hill", _skipping_ past the 'e' in the second to last
+        'the', and therefore strstr would never have a chance of matching the 
+        second to last 'the', then moving on to the 'the' at the begginning of the 
+        string!
+    
+        In a nutshell, offset was being decremented by too great a value, preventing
+        the second to last 'the' from being ever found, hence the result of 
+        'king of the the hill' from the query that is reported in the bug report
+
+  mysql-test/t/func_str.test
+    1.34 05/07/31 21:28:43 patg@krsna.patg.net +39 -0
+    Added tests for fix to substring_index, various lenth search patterns. Also included
+    are the queuries the user who reported the bug listed in the bug report
+
+  mysql-test/r/func_str.result
+    1.34 05/07/31 21:28:43 patg@krsna.patg.net +117 -0
+    New results for the fix to substring_index
+
+ChangeSet
+  1.2126.1.1 05/07/28 19:25:48 hf@deer.(none) +1 -0
+  Fix for bug #10226 (mysql_get_client_version not implemented)
+
+  libmysqld/libmysqld.c
+    1.24 05/07/28 19:25:34 hf@deer.(none) +4 -0
+    mysql_get_client_version implementation added
+
+ChangeSet
+  1.2129 05/07/28 17:18:24 hf@deer.(none) +1 -0
+  Additional fix for #12177 (stderr isn't closed)
+
+  libmysqld/lib_sql.cc
+    1.51 05/07/28 17:18:22 hf@deer.(none) +3 -3
+    my_end() needs stderr to be active
+
+ChangeSet
+  1.2128 05/07/27 19:39:59 hf@deer.(none) +1 -0
+  addition to the fix for bug #12177(error log file isn't closed)
+
+  libmysqld/lib_sql.cc
+    1.50 05/07/27 19:39:57 hf@deer.(none) +3 -0
+    we should set errorlog_file=0 to make consequent mysql_server_init work
+    properly
+
+ChangeSet
+  1.2127 05/07/27 17:34:20 hf@deer.(none) +1 -0
+  Fix for bug #12177 (error file isn't closed)
+
+  libmysqld/lib_sql.cc
+    1.49 05/07/27 17:34:05 hf@deer.(none) +5 -2
+    now errorlog is closed during mysql_server_end
+
+ChangeSet
+  1.2126 05/07/26 17:55:58 monty@mysql.com +7 -0
+  Review fixes:
+  Fixed portability problem with bool in C programs
+  Moved close_thread_tables out from LOCK_thread_count mutex (safety fix)
+  my_sleep() -> pthread_cond_timedwait()
+
+  BitKeeper/etc/ignore
+    1.159 05/07/26 17:54:44 monty@mysql.com +1 -0
+    added ac_available_languages_fragment
+
+  sql/sql_base.cc
+    1.191 05/07/26 17:53:32 monty@mysql.com +15 -11
+    Added comments
+    my_sleep() -> pthread_cond_timedwait() to get less code and potentitally faster loop
+
+  sql/slave.cc
+    1.287 05/07/26 17:53:32 monty@mysql.com +1 -1
+    Moved close_thread_tables out from LOCK_thread_count mutex (safety fix)
+
+  sql/mysql_priv.h
+    1.236 05/07/26 17:53:32 monty@mysql.com +3 -0
+    Added comment
+
+  sql/lock.cc
+    1.54 05/07/26 17:53:32 monty@mysql.com +15 -5
+    Added comment
+    Don't use | on bool variable
+
+  mysys/thr_lock.c
+    1.39 05/07/26 17:53:32 monty@mysql.com +2 -2
+    bool -> my_bool (bool is not portable in C programs)
+
+  include/thr_lock.h
+    1.14 05/07/26 17:53:32 monty@mysql.com +1 -1
+    bool -> my_bool (bool is not portable in C programs)
+
+ChangeSet
+  1.2125 05/07/25 14:14:24 lenz@mysql.com +2 -0
+  - Make sure the scripts make_binary_distribution, make_sharedlib_distribution and
+    make_win_src_distribution are created, but not installed
+  - removed make_win_binary_distribution.sh as it's obsolete and outdated
+
+  scripts/Makefile.am
+    1.34 05/07/25 14:14:20 lenz@mysql.com +4 -1
+    - Make sure the scripts make_binary_distribution, make_sharedlib_distribution and
+      make_win_src_distribution are created, but not installed. This is the proper fix
+      for what I began in the previous ChangeSet
+    - removed make_win_binary_distribution.sh from the distribution, as it's obsolete
+      and outdated
+
+  BitKeeper/deleted/.del-make_win_binary_distribution.sh~e0fbb0a75af0dcd3
+    1.3 05/07/25 13:29:45 lenz@mysql.com +0 -0
+    Delete: scripts/make_win_binary_distribution.sh
+
+ChangeSet
+  1.2121.3.1 05/07/21 17:17:46 hf@deer.(none) +1 -0
+  Fix for bug #12042 (User breakpoints calling free() in embedded library)
+
+  VC++Files/libmysqld/libmysqld.dsp
+    1.10 05/07/21 17:17:14 hf@deer.(none) +2 -2
+    we should have SAFEMALLOC here
+
+ChangeSet
+  1.2121.1.3 05/07/20 21:19:01 mronstrom@mysql.com +4 -0
+  Bug #10600 After review fixes
+
+  sql/sql_table.cc
+    1.198 05/07/20 21:18:57 mronstrom@mysql.com +6 -9
+    Use flags immediately in call
+
+  sql/sql_base.cc
+    1.190 05/07/20 21:18:57 mronstrom@mysql.com +7 -15
+    Use flags parameter immediately and use flags immediately in call
+    Change to other variant of eternal loop variant
+
+  sql/mysql_priv.h
+    1.235 05/07/20 21:18:57 mronstrom@mysql.com +4 -3
+    Added RTFC (short for remove_table_from_cache)
+    for constants and used hex syntax to clarify it is bits
+    in the flags
+
+  sql/lock.cc
+    1.53 05/07/20 21:18:57 mronstrom@mysql.com +1 -2
+    Used flags immediately in call
+
+ChangeSet
+  1.2121.2.1 05/07/20 19:15:48 lenz@mysql.com +3 -0
+  - don't install the Mac OS X support files when running "make install" -
+    they're not needed outside of the source tree (BUG#12057)
+  - Removed some more unneeded files from "make install" along the way
+
+  support-files/Makefile.am
+    1.22 05/07/20 19:15:46 lenz@mysql.com +1 -3
+    - don't install the RPM spec files with "make install" - they are not
+      needed outside of the source tree
+
+  support-files/MacOSX/Makefile.am
+    1.6 05/07/20 19:15:46 lenz@mysql.com +0 -6
+    - don't install the Mac OS X support files when running "make install" -
+      they're not needed outside of the source tree (BUG#12057)
+
+  scripts/Makefile.am
+    1.33 05/07/20 19:15:46 lenz@mysql.com +1 -5
+    - don't install the following files with "make install", as they are
+      not needed to be installed: 
+      make_win_src_distribution, make_win_binary_distribution,
+      make_binary_distribution, make_sharedlib_distribution
+
+ChangeSet
+  1.2121.1.2 05/07/19 00:29:19 mronstrom@mysql.com +6 -0
+  Bug #10600
+  remove_table_from_cache fails to signal other thread and gets
+  blocked when other thread also gets blocked
+
+  sql/sql_table.cc
+    1.197 05/07/19 00:29:11 mronstrom@mysql.com +15 -23
+    Use new interface of remove_table_from_cache
+
+  sql/sql_base.cc
+    1.189 05/07/19 00:29:11 mronstrom@mysql.com +92 -46
+    Use new interface of remove_table_cache
+    Rewrote remove_table_from_cache to fix bug
+
+  sql/mysql_priv.h
+    1.234 05/07/19 00:29:11 mronstrom@mysql.com +5 -2
+    New interface for remove_table_from_cache
+    + mysql_lock_abort_for_thread
+
+  sql/lock.cc
+    1.52 05/07/19 00:29:11 mronstrom@mysql.com +18 -6
+    Report if any threads was signalled
+    Use new interface for remove_table_from_cache
+
+  mysys/thr_lock.c
+    1.38 05/07/19 00:29:11 mronstrom@mysql.com +5 -2
+    Report if any threads was signalled
+
+  include/thr_lock.h
+    1.13 05/07/19 00:29:10 mronstrom@mysql.com +1 -1
+    Report if any threads was signalled
+
+ChangeSet
+  1.2121.1.1 05/07/15 08:54:11 lenz@mysql.com +1 -0
+  RPM spec file improvements:
+  
+  - create a "mysql" user group and assign the mysql user account to that group
+    in the server postinstall section. (BUG 10984)
+  - backported some changes from the 4.1 RPM spec file (cleanups: removed the incomplete
+    Brazilian translations, more consequent use of macros)
+
+  support-files/mysql.spec.sh
+    1.91 05/07/15 08:54:06 lenz@mysql.com +26 -39
+    - create a "mysql" user group and assign the mysql user account to that group
+      in the server postinstall section. (BUG 10984)
+    - backported some changes from the 4.1 RPM spec file (cleanups: removed the incomplete
+      Brazilian translations, more consequent use of macros)
+
+ChangeSet
+  1.2122 05/07/14 17:33:35 stewart@mysql.com +1 -0
+  BUG#11384 drop database causes mysqld to core
+  
+  Only reproducable in 5.1-wl2325, although the missing code is missing from 4.0 and up.
+
+  sql/slave.cc
+    1.286 05/07/14 17:33:25 stewart@mysql.com +1 -0
+    Clean up after slave sql thread when exiting.
+    
+    Wasn't calling close_thread_tables().
+    
+    This was causing a crashing bug in the 5.1-wl2325 tree. It is conceivable that this
+    could cause a problem in earlier versions, but we have not been able to reproduce.
+
+ChangeSet
+  1.2121 05/07/06 13:58:29 lenz@mysql.com +1 -0
+  - backported a change for make_binary_distribution.sh from 5.0 for easier building of
+    all versions: added an option "--machine" that allows to override the autodetected
+    architecture string (e.g. "i386") that becomes part of the binary package name with 
+    a different one
+  - moved the removal of the BASE directory to the end of the make_binary_distribution
+    script
+
+  scripts/make_binary_distribution.sh
+    1.61 05/07/06 13:58:27 lenz@mysql.com +11 -0
+    - backported and fixed a change from 5.0 for easier building of all versions: added an
+      option "--machine" that allows to override the autodetected architecture string 
+      (e.g. "i386") that becomes part of the binary package name with a different one
+    - moved the removal of the BASE directory to the end of the script
+
+ChangeSet
+  1.2120 05/07/05 17:09:56 lenz@mysql.com +1 -0
+  - disabled openlogging to satisfy BK when using a commercial license key
+
+  BitKeeper/etc/config
+    1.9 05/07/05 17:09:49 lenz@mysql.com +1 -1
+    - disabled openlogging to satisfy BK when using a commercial license key
+
+ChangeSet
+  1.2117.1.2 05/07/04 12:58:53 lenz@mysql.com +1 -0
+  - bumped up version number in configure.in to 4.0.26
+
+  configure.in
+    1.329 05/07/04 12:58:50 lenz@mysql.com +1 -1
+    - bumped up version number to 4.0.26
+
+ChangeSet
+  1.2117.1.1 05/07/02 02:00:56 kent@mysql.com +1 -0
+  configure.in:
+    Enable build with CXX=gcc and gcc version 4
+
+  configure.in
+    1.328 05/07/02 01:53:51 kent@mysql.com +6 -1
+    Enable build with CXX=gcc and gcc version 4
+
+ChangeSet
+  1.2118 05/06/30 17:33:23 lenz@mysql.com +1 -0
+  - backport of a compile fix from 4.1 (ChangeSet@1.2260.23.2 2005/05/19 from reggie)
+    "changed dl_name to udf->dl in mysql_create_function"
+
+  sql/sql_udf.cc
+    1.30 05/06/30 17:33:19 lenz@mysql.com +1 -1
+    - backport of a compile fix from 4.1 (ChangeSet@1.2260.23.2 2005/05/19 from reggie)
+      "changed dl_name to udf->dl in mysql_create_function"
+

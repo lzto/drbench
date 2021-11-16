@@ -1,0 +1,4 @@
+./autogen.sh
+./configure --prefix=/home/dongyoon/spec2.6/bench/sysbench-0.4.12/prefix  --with-mysql-libs=/home/dongyoon/mysql/lib/mysql --with-mysql-includes=/home/dongyoon/mysql/include/mysql
+
+#./configure --prefix=/home/dongyoon/spec2.6/bench/sysbench-0.4.12/prefix  --with-mysql-libs=/tmp/ram/lib/mysql --with-mysql-includes=/tmp/ram/include/mysql

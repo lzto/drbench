@@ -1,0 +1,34 @@
+#STATIC binary w/ SPEC_ENABLE: for DoublePlay numbers
+env CPPFLAGS='-I/home/kaushikv/glibc-2.5.1-replay/prefix/include -I/home/kaushikv/spec2.6/test -DSPEC_ENABLE' LDFLAGS='-L/home/kaushikv/glibc-2.5.1-replay/prefix/lib' LIBS='/home/kaushikv/spec2.6/test/libutil.a' ./configure --prefix=/home/kaushikv/mysql --with-client-ldflags=-all-static --with-mysqld-ldflags=-all-static
+
+#STATIC binary w/ NOREPLAY: for original MySQL numbers
+env CPPFLAGS='-DNOREPLAY_ENABLE' ./configure --prefix=/home/kaushikv/mysql --with-client-ldflags=-all-static --with-mysqld-ldflags=-all-static
+
+======================================================================================================================
+[SERVER]
+./mysqld_safe --user=root &
+./mysqladmin -u root create sbtest
+#./mysql -u root
+#mysql> create database sbtest;
+
+[CLIENT]
+./sysbench --test=oltp --oltp-table-size=100 --mysql-user=root --mysql-socket=/tmp/mysql.sock prepare
+#sysbench-0.4.12/prefix/bin/sysbench --test=oltp --oltp-table-size=100 --mysql-user=root --mysql-socket=/tmp/mysql.sock prepare
+
+[SERVER]
+./mysqladmin -u root shutdown
+
+/tmp/ram/libexec/mysqld -V --basedir=/tmp/ram --datadir=/tmp/ram/var --user=root  --log-error=/tmp/ram/var/d-110-235.eecs.umich.edu.err --pid-file=/tmp/ram/var/d-110-235.eecs.umich.edu.pid --max-connections=1
+
+[CLIENT]
+./sysbench --test=oltp --oltp-table-size=100 --mysql-user=root --mysql-socket=/tmp/mysql.sock --num-threads=1 --max-requests=1 run
+#sysbench-0.4.12/prefix/bin/sysbench --test=oltp --oltp-table-size=100 --mysql-user=root --mysql-socket=/tmp/mysql.sock --num-threads=1 --max-requests=1 run
+
+======================================================================================================================
+./mysql -u root
+[READ]
+mysql> select @@session.thread_handling;
+[WRITE]
+mysql> set GLOBAL thread_handling='one-thread';
+[GRANT]
+grant all privileges on sbtest.* to root@gestalt.eecs.umich.edu

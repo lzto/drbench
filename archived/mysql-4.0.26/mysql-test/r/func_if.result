@@ -1,0 +1,69 @@
+drop table if exists t1;
+select IF(0,"ERROR","this"),IF(1,"is","ERROR"),IF(NULL,"ERROR","a"),IF(1,2,3)|0,IF(1,2.0,3.0)+0 ;
+IF(0,"ERROR","this")	IF(1,"is","ERROR")	IF(NULL,"ERROR","a")	IF(1,2,3)|0	IF(1,2.0,3.0)+0
+this	is	a	2	2.0
+CREATE TABLE t1 (st varchar(255) NOT NULL, u int(11) NOT NULL) TYPE=MyISAM;
+INSERT INTO t1 VALUES ('a',1),('A',1),('aa',1),('AA',1),('a',1),('aaa',0),('BBB',0);
+select if(1,st,st) s from t1 order by s;
+s
+a
+A
+a
+aa
+AA
+aaa
+BBB
+select if(u=1,st,st) s from t1 order by s;
+s
+a
+A
+a
+aa
+AA
+aaa
+BBB
+select if(u=1,binary st,st) s from t1 order by s;
+s
+A
+AA
+BBB
+a
+a
+aa
+aaa
+select if(u=1,st,binary st) s from t1 where st like "%a%" order by s;
+s
+A
+AA
+a
+a
+aa
+aaa
+drop table t1;
+select NULLIF(NULL,NULL), NULLIF(NULL,1), NULLIF(NULL,1.0), NULLIF(NULL,"test");
+NULLIF(NULL,NULL)	NULLIF(NULL,1)	NULLIF(NULL,1.0)	NULLIF(NULL,"test")
+NULL	NULL	NULL	NULL
+select NULLIF(1,NULL), NULLIF(1.0, NULL), NULLIF("test", NULL);
+NULLIF(1,NULL)	NULLIF(1.0, NULL)	NULLIF("test", NULL)
+1	1.0	test
+create table t1 (num  double(12,2));
+insert into t1 values (144.54);
+select sum(if(num is null,0.00,num)) from t1;
+sum(if(num is null,0.00,num))
+144.54
+drop table t1;
+create table t1 (x int, y int);
+insert into t1 values (0,6),(10,16),(20,26),(30,10),(40,46),(50,56);
+select min(if(y -x > 5,y,NULL)), max(if(y - x > 5,y,NULL)) from t1;
+min(if(y -x > 5,y,NULL))	max(if(y - x > 5,y,NULL))
+6	56
+drop table t1;
+create table t1 (a int);
+insert t1 values (1),(2);
+select if(1>2,a,avg(a)) from t1;
+if(1>2,a,avg(a))
+1.5000
+drop table t1;
+SELECT NULLIF(5,5) IS NULL, NULLIF(5,5) IS NOT NULL;
+NULLIF(5,5) IS NULL	NULLIF(5,5) IS NOT NULL
+1	0

@@ -1,0 +1,40 @@
+if(`SELECT CONVERT(@@version_compile_os using latin1) IN ("Win32", "Win64", "Windows")`)
+{
+--skip Bug#44920 2009-05-18 pcrews MTR2 is not processing master.opt input properly on Windows
+}
+
+
+source include/master-slave.inc;
+
+#
+# Test of init_slave variable
+#
+
+set global max_connections=151;
+
+connection slave;
+source include/stop_slave.inc;
+source include/start_slave.inc;
+
+connection master;
+sync_slave_with_master;
+show variables like 'init_slave';
+show variables like 'max_connections';
+reset master;
+connection master;
+show variables like 'init_slave';
+show variables like 'max_connections';
+sync_slave_with_master;
+# Save variable value
+set @my_global_init_connect= @@global.init_connect;
+set global init_connect="set @c=1";
+show variables like 'init_connect';
+connection master;
+sync_slave_with_master;
+source include/stop_slave.inc;
+
+# Restore changed global variable
+set global init_connect= @my_global_init_connect;
+set global max_connections= default;
+
+# End of 4.1 tests

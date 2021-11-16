@@ -1,0 +1,5273 @@
+ChangeSet
+  1.1801 04/05/03 18:26:50 serg@serg.mylan +1 -0
+  compatibility fix. warning removed
+
+  sql/item_timefunc.cc
+    1.26 04/05/03 18:26:47 serg@serg.mylan +4 -4
+    compatibility fix. warning removed
+
+ChangeSet
+  1.1800 04/04/30 23:12:37 serg@serg.mylan +1 -0
+  better followup fix for my_getopt (Argh!)
+
+  mysys/my_getopt.c
+    1.42 04/04/30 23:12:34 serg@serg.mylan +7 -7
+    better followup fix for my_getopt (Argh!)
+
+ChangeSet
+  1.1799 04/04/30 22:52:08 serg@serg.mylan +1 -0
+  followup - error fixed
+
+  mysys/my_getopt.c
+    1.41 04/04/30 22:52:06 serg@serg.mylan +3 -2
+    followup - error fixed
+
+ChangeSet
+  1.1797 04/04/30 19:17:55 serg@serg.mylan +1 -0
+  --ft-stopword-file option for myisamchk
+
+  myisam/myisamchk.c
+    1.112 04/04/30 19:17:52 serg@serg.mylan +5 -1
+    --ft-stopword-file option for myisamchk
+
+ChangeSet
+  1.1794.1.1 04/04/30 00:14:56 monty@mysql.com +3 -0
+  Portability fixes
+
+  scripts/mysql_fix_privilege_tables.sh
+    1.16 04/04/30 00:14:54 monty@mysql.com +1 -1
+    Portability fix
+
+  mysql-test/t/system_mysql_db_fix-master.opt
+    1.2 04/04/30 00:14:54 monty@mysql.com +1 -1
+    Add missing newline
+
+  mysql-test/mysql-test-run.sh
+    1.194 04/04/30 00:14:54 monty@mysql.com +1 -1
+    Avoid 'too many arguments' error
+
+ChangeSet
+  1.1795 04/04/29 14:48:49 lenz@mysql.com +1 -0
+   - added AC_PROG_LIBTOOL to innobase/configure.in to be able to compile
+     MySQL with InnoDB on IBM AIX 5.2 in 64bit mode (which requires a special
+     AR flag)
+
+  innobase/configure.in
+    1.25 04/04/29 14:48:46 lenz@mysql.com +1 -0
+     - added AC_PROG_LIBTOOL to innobase/configure.in to be able to compile
+       MySQL with InnoDB on IBM AIX 5.2 in 64bit mode (which requires a special
+       AR flag)
+
+ChangeSet
+  1.1794 04/04/29 13:18:20 monty@mysql.com +1 -0
+  Portability fix (for AIX)
+
+  innobase/pars/lexyy.c
+    1.13 04/04/29 13:18:19 monty@mysql.com +3 -0
+    Add missing include file (Needed for AIX)
+
+ChangeSet
+  1.1791.1.1 04/04/28 23:43:46 guilhem@mysql.com +5 -0
+  Very small fixes for testsuite (a real_sleep instead of sleep, plus TCP port independency of the result file).
+
+  mysql-test/t/rpl_server_id2.test
+    1.2 04/04/28 23:43:44 guilhem@mysql.com +1 -0
+    be port-independent
+
+  mysql-test/t/rpl_server_id1.test
+    1.2 04/04/28 23:43:44 guilhem@mysql.com +1 -0
+    be port-independent
+
+  mysql-test/t/rpl_error_ignored_table.test
+    1.5 04/04/28 23:43:44 guilhem@mysql.com +1 -1
+    we want to sleep 2 secs, not more; if we allow ourselves to sleep >=10 seconds, then
+    the get_lock() will be aborted and we will arrive to late for the KILL to have
+    the desired effect of generating an error code in the binlog.
+
+  mysql-test/r/rpl_server_id2.result
+    1.2 04/04/28 23:43:44 guilhem@mysql.com +1 -1
+    be port-independent
+
+  mysql-test/r/rpl_server_id1.result
+    1.2 04/04/28 23:43:44 guilhem@mysql.com +1 -1
+    be port-independent
+
+ChangeSet
+  1.1792 04/04/28 11:50:32 paul@kite-hub.kitebird.com +2 -0
+  my-medium.cnf.sh:
+    Correct typo, and fix up rest of sentence as well.
+
+  BitKeeper/etc/logging_ok
+    1.311 04/04/28 11:50:32 paul@kite-hub.kitebird.com +1 -0
+    Logging to logging@openlogging.org accepted
+
+  support-files/my-medium.cnf.sh
+    1.18 04/04/28 11:49:56 paul@kite-hub.kitebird.com +2 -2
+    Correct typo, and fix up rest of sentence as well.
+
+ChangeSet
+  1.1783.3.1 04/04/28 18:24:46 guilhem@mysql.com +8 -0
+  A new option --replicate-same-server-id to force a slave to execute queries originating from itself
+  (WL#794). This can be of interest in some recovery-from-backup scenarios, and also when you have
+  two databases in one mysqld, having a certain similarity and you want one db to be updated when the other is
+  (some sort of trigger).
+  Plus small fix for BUG#3568 "MySQL server crashes when built --with-debug and CHANGE MASTER +MASTER_POS_WAIT"
+
+  mysql-test/t/rpl_server_id2.test
+    1.1 04/04/28 18:24:43 guilhem@mysql.com +20 -0
+
+  mysql-test/t/rpl_server_id2-slave.opt
+    1.1 04/04/28 18:24:43 guilhem@mysql.com +1 -0
+
+  mysql-test/t/rpl_server_id1.test
+    1.1 04/04/28 18:24:43 guilhem@mysql.com +22 -0
+
+  mysql-test/r/rpl_server_id2.result
+    1.1 04/04/28 18:24:43 guilhem@mysql.com +21 -0
+
+  mysql-test/t/rpl_server_id2.test
+    1.0 04/04/28 18:24:43 guilhem@mysql.com +0 -0
+    BitKeeper file /home/mysql_src/mysql-4.0/mysql-test/t/rpl_server_id2.test
+
+  mysql-test/t/rpl_server_id2-slave.opt
+    1.0 04/04/28 18:24:43 guilhem@mysql.com +0 -0
+    BitKeeper file /home/mysql_src/mysql-4.0/mysql-test/t/rpl_server_id2-slave.opt
+
+  mysql-test/t/rpl_server_id1.test
+    1.0 04/04/28 18:24:43 guilhem@mysql.com +0 -0
+    BitKeeper file /home/mysql_src/mysql-4.0/mysql-test/t/rpl_server_id1.test
+
+  mysql-test/r/rpl_server_id2.result
+    1.0 04/04/28 18:24:43 guilhem@mysql.com +0 -0
+    BitKeeper file /home/mysql_src/mysql-4.0/mysql-test/r/rpl_server_id2.result
+
+  mysql-test/r/rpl_server_id1.result
+    1.1 04/04/28 18:24:42 guilhem@mysql.com +23 -0
+
+  sql/slave.h
+    1.76 04/04/28 18:24:42 guilhem@mysql.com +1 -1
+    new option --replicate-same-server-id
+
+  sql/slave.cc
+    1.274 04/04/28 18:24:42 guilhem@mysql.com +27 -8
+    new option replicate_same_server_id, to force a slave to execute its own queries.
+    Small fix for BUG#3568 "MySQL server crashes when built --with-debug and CHANGE MASTER +MASTER_POS_WAIT"
+
+  sql/mysqld.cc
+    1.492 04/04/28 18:24:42 guilhem@mysql.com +17 -1
+    new option --replicate-same-server-id
+
+  mysql-test/r/rpl_server_id1.result
+    1.0 04/04/28 18:24:42 guilhem@mysql.com +0 -0
+    BitKeeper file /home/mysql_src/mysql-4.0/mysql-test/r/rpl_server_id1.result
+
+ChangeSet
+  1.1781.1.1 04/04/28 16:14:53 antony@ltantony.dsl-verizon.net +10 -0
+  Fix for Bug 3481
+    CREATE statement allowed extra unnecessary commas
+
+  BitKeeper/etc/logging_ok
+    1.310 04/04/28 16:14:52 antony@ltantony.dsl-verizon.net +1 -0
+    Logging to logging@openlogging.org accepted
+
+ChangeSet
+  1.1783.1.2 04/04/28 17:45:08 monty@mysql.com +9 -0
+  Fixed http address in some scripts (Bug #3460)
+  Output TIMESTAMP in 4.1 format for 4.1 tables (or for TIMESTAMP(19)) (portability fix)
+  Fixed that INTERVAL can handle big integers. (Bug #3498)
+  Fixed that hostname="" works identical as hostname="%" for table/column grants (Bug #3473)
+
+  sql/structs.h
+    1.27 04/04/28 17:45:07 monty@mysql.com +2 -1
+    Fix for long values to INTERVAL
+
+  sql/sql_acl.cc
+    1.123 04/04/28 17:45:07 monty@mysql.com +119 -106
+    Fixed that hostname="" works identical as hostname="%" for table/column grants (Bug #3473)
+    Moved GRANT_TABLE::GRANT_TABLE functions ou from class definition to make it possible to debug them
+
+  sql/mysql_priv.h
+    1.218 04/04/28 17:45:07 monty@mysql.com +1 -2
+    Removed not needed prototype
+
+  sql/item_timefunc.cc
+    1.25 04/04/28 17:45:07 monty@mysql.com +47 -44
+    Fixed that INTERVAL can handle big integers. (Bug #3498)
+
+  sql/field.cc
+    1.86 04/04/28 17:45:07 monty@mysql.com +1 -1
+    Output TIMESTAMP in 4.1 format for 4.1 tables (or for TIMESTAMP(19))
+
+  scripts/mysqld_safe.sh
+    1.68 04/04/28 17:45:07 monty@mysql.com +2 -0
+    Added html address to manual in case of error
+
+  mysql-test/t/func_time.test
+    1.19 04/04/28 17:45:06 monty@mysql.com +18 -1
+    Added test of INTERVAL with big integers
+
+  mysql-test/r/func_time.result
+    1.22 04/04/28 17:45:06 monty@mysql.com +30 -0
+    Results for new test cases
+
+  mysql-test/mysql-test-run.sh
+    1.193 04/04/28 17:45:06 monty@mysql.com +1 -1
+    Fixed wrong http address (Bug #3460)
+
+ChangeSet
+  1.1787.1.1 04/04/28 16:40:21 serg@serg.mylan +1 -0
+  typo fixed
+
+  extra/replace.c
+    1.15 04/04/28 16:40:19 serg@serg.mylan +1 -1
+    typo fixed
+
+  sql/sql_yacc.yy
+    1.228 04/04/28 15:29:49 antony@ltantony.dsl-verizon.net +15 -4
+    Fix for bug 3481
+      No path through the grammar which has no clauses
+
+  mysql-test/t/rpl_multi_update.test
+    1.2 04/04/28 15:29:49 antony@ltantony.dsl-verizon.net +1 -1
+    Extra comma removed in CREATE statement
+
+  mysql-test/t/func_str.test
+    1.23.1.1 04/04/28 15:29:49 antony@ltantony.dsl-verizon.net +1 -1
+    Extra comma removed in CREATE statement
+
+  mysql-test/t/create.test
+    1.21 04/04/28 15:29:49 antony@ltantony.dsl-verizon.net +12 -0
+    New test for bug 3481
+
+  mysql-test/t/alias.test
+    1.5 04/04/28 15:29:49 antony@ltantony.dsl-verizon.net +1 -2
+    Extra comma removed in CREATE statement
+
+  mysql-test/r/rpl_multi_update.result
+    1.2 04/04/28 15:29:49 antony@ltantony.dsl-verizon.net +1 -1
+    Extra comma removed in CREATE statement
+
+  mysql-test/r/func_str.result
+    1.24.1.1 04/04/28 15:29:49 antony@ltantony.dsl-verizon.net +1 -1
+    Extra comma removed in CREATE statement
+
+  mysql-test/r/create.result
+    1.24 04/04/28 15:29:48 antony@ltantony.dsl-verizon.net +6 -0
+    New test for Bug 3481
+
+  mysql-test/r/alias.result
+    1.6 04/04/28 15:29:48 antony@ltantony.dsl-verizon.net +1 -1
+    Extra comma removed in CREATE statement
+
+ChangeSet
+  1.1783.2.1 04/04/28 17:03:26 marko@hundin.mysql.fi +4 -0
+  InnoDB: make UNIV_SYNC_DEBUG useable again
+
+  innobase/sync/sync0sync.c
+    1.28 04/04/28 16:59:40 marko@hundin.mysql.fi +3 -3
+    mutex_get_debug_info(): add const qualifier
+
+  innobase/sync/sync0arr.c
+    1.16 04/04/28 16:59:02 marko@hundin.mysql.fi +0 -1
+    sync_array_detect_deadlock(): Remove extraneous declaration of "lock"
+
+  innobase/srv/srv0start.c
+    1.57 04/04/28 16:58:12 marko@hundin.mysql.fi +1 -0
+    Set srv_monitor_file_mutex at level SYNC_NO_ORDER_CHECK
+
+  innobase/include/sync0sync.h
+    1.16 04/04/28 16:56:48 marko@hundin.mysql.fi +1 -1
+    mutex_get_debug_info(): add const qualifier
+
+ChangeSet
+  1.1787 04/04/28 15:46:08 serg@serg.mylan +1 -0
+  memory overflow in replace.c fixed
+
+  extra/replace.c
+    1.14 04/04/28 15:46:05 serg@serg.mylan +2 -1
+    memory overflow in replace.c fixed
+
+ChangeSet
+  1.1786 04/04/28 15:33:03 serg@serg.mylan +1 -0
+  bug#3529 - my_getopt doesn't process short OPT_ARG options correctly
+  cleanup
+
+  mysys/my_getopt.c
+    1.40 04/04/28 15:33:00 serg@serg.mylan +20 -11
+    bug#3529 - my_getopt doesn't process short OPT_ARG options correctly
+    cleanup
+
+ChangeSet
+  1.1785 04/04/28 14:19:02 serg@serg.mylan +4 -0
+  bug#3556 - soundex
+
+  sql/item_strfunc.cc
+    1.77 04/04/28 14:18:58 serg@serg.mylan +1 -1
+    bug#3556 - soundex
+
+  mysys/mf_soundex.c
+    1.6 04/04/28 14:18:58 serg@serg.mylan +2 -2
+    bug#3556 - soundex
+
+  mysql-test/t/func_str.test
+    1.24 04/04/28 14:18:58 serg@serg.mylan +1 -1
+    bug#3556 - soundex
+
+  mysql-test/r/func_str.result
+    1.25 04/04/28 14:18:58 serg@serg.mylan +3 -3
+    bug#3556 - soundex
+
+ChangeSet
+  1.1783.1.1 04/04/28 03:37:45 monty@mysql.com +6 -0
+  Fixed stack overrun with some INSERT ... SELECT ... GROUP BY queries (Bug #3265)
+  Ensure that raid_chunks is not set to higher than 255 as this could cause problems with DROP DATABASE. (Bug #3182)
+
+  sql/table.cc
+    1.74 04/04/28 03:37:44 monty@mysql.com +5 -0
+    Ensure that raid_chunks is not set to higher than 255 as this could cause problems with DROP DATABASE.
+    Another problem with values > 255 is that in the .frm file we store the chunks value in one byte.
+    (Bug #3182)
+
+  sql/sql_insert.cc
+    1.114 04/04/28 03:37:44 monty@mysql.com +7 -5
+    More debug information
+
+  sql/item.h
+    1.44 04/04/28 03:37:44 monty@mysql.com +1 -0
+    Fixed wrong usage of str_value in Item_copy_string::save_in_field
+
+  sql/item.cc
+    1.36 04/04/28 03:37:44 monty@mysql.com +12 -0
+    Fixed wrong usage of str_value in Item::save_in_field
+    This could caused a stack overrun with some very special INSERT ... SELECT ... GROUP BY queries where the GROUP BY value was an expression that generated a NULL value. (Bug #3265)
+    The Item_copy_string::save_in_field() function is from 4.1 and helps optimized this case a bit
+    
+
+  mysql-test/t/raid.test
+    1.7 04/04/28 03:37:44 monty@mysql.com +9 -0
+    Test of raid_chunks > 255
+
+  mysql-test/r/raid.result
+    1.7 04/04/28 03:37:44 monty@mysql.com +8 -0
+    Test of raid_chunks > 255
+
+ChangeSet
+  1.1784 04/04/27 23:03:25 serg@serg.mylan +1 -0
+  don't mention max row size, it's storage-engine dependent
+
+  extra/perror.c
+    1.22 04/04/27 23:03:22 serg@serg.mylan +1 -1
+    don't mention max row size, it's storage-engine dependent
+
+ChangeSet
+  1.1780.1.1 04/04/24 04:04:44 serg@sergbook.mylan +1 -0
+  backport libtool fix from 4.1
+
+  ltmain.sh
+    1.12 04/04/24 04:04:39 serg@sergbook.mylan +3 -0
+    backport libtool fix from 4.1
+
+ChangeSet
+  1.1782 04/04/21 10:04:38 greg@mysql.com +2 -0
+  Fixed compiler error in slave.cc on some platforms.
+
+  sql/slave.cc
+    1.273 04/04/21 10:04:36 greg@mysql.com +1 -1
+    Fix to modify tmp_buf instead of buf, which is a const char *
+
+ChangeSet
+  1.1776.1.1 04/04/13 22:40:16 guilhem@mysql.com +4 -0
+  Fix for BUG#3461 "multi-table DELETE replicated despite replicate-wild-ignore-table":
+  In tables_ok(), when there is no table having "updating==TRUE" in the list,
+      return that we don't replicate this statement (the slave is supposed to
+      replicate *changes* only).
+      In practice, the case can only happen for this statement:
+      DELETE t FROM t,u WHERE ... ;
+      tables_ok(t,u) will now return 0, which (check all_tables_not_ok())
+      will give a chance to tables_ok(t) to run.
+
+  mysql-test/t/rpl_multi_delete2.test
+    1.1 04/04/13 22:40:12 guilhem@mysql.com +23 -0
+
+  mysql-test/t/rpl_multi_delete2.test
+    1.0 04/04/13 22:40:12 guilhem@mysql.com +0 -0
+    BitKeeper file /home/mysql_src/mysql-4.0/mysql-test/t/rpl_multi_delete2.test
+
+  mysql-test/t/rpl_multi_delete2-slave.opt
+    1.1 04/04/13 22:40:11 guilhem@mysql.com +1 -0
+
+  mysql-test/r/rpl_multi_delete2.result
+    1.1 04/04/13 22:40:11 guilhem@mysql.com +21 -0
+
+  sql/slave.cc
+    1.272 04/04/13 22:40:11 guilhem@mysql.com +16 -2
+    In tables_ok(), when there is no table having "updating==TRUE" in the list,
+    return that we don't replicate this statement (the slave is supposed to
+    replicate *changes* only).
+    In practice, the case can only happen for this statement:
+    DELETE t FROM t,u WHERE ... ;
+    tables_ok(t,u) will now return 0, which (check all_tables_not_ok())
+    will give a chance to tables_ok(t) to run.
+
+  mysql-test/t/rpl_multi_delete2-slave.opt
+    1.0 04/04/13 22:40:11 guilhem@mysql.com +0 -0
+    BitKeeper file /home/mysql_src/mysql-4.0/mysql-test/t/rpl_multi_delete2-slave.opt
+
+  mysql-test/r/rpl_multi_delete2.result
+    1.0 04/04/13 22:40:11 guilhem@mysql.com +0 -0
+    BitKeeper file /home/mysql_src/mysql-4.0/mysql-test/r/rpl_multi_delete2.result
+
+ChangeSet
+  1.1780 04/04/12 08:05:15 tim@sand.box +3 -0
+  Fix typos that resulted in adding names to the global namespace that
+  were never defined.  This potentially caused problems when trying to link
+  libmysqld with shared libraries.
+
+  BitKeeper/etc/logging_ok
+    1.309 04/04/12 08:05:15 tim@sand.box +1 -0
+    Logging to logging@openlogging.org accepted
+
+  strings/strings-x86.s
+    1.6 04/04/12 08:03:50 tim@sand.box +1 -1
+    typo: strxmov_end-strxmov -> .strxmov_end-strxmov
+
+  strings/longlong2str-x86.s
+    1.8 04/04/12 08:03:50 tim@sand.box +1 -1
+    typo: longlong10_str -> longlong10_to_str
+
+ChangeSet
+  1.1779 04/04/09 22:18:18 heikki@hundin.mysql.fi +3 -0
+  ha_innodb.cc, sync0sync.h, sync0sync.c:
+    Use only noninlined InnoDB functions in ha_innodb.cc
+
+  sql/ha_innodb.cc
+    1.199 04/04/09 22:18:02 heikki@hundin.mysql.fi +6 -3
+    Use only noninlined InnoDB functions in ha_innodb.cc
+
+  innobase/include/sync0sync.h
+    1.15 04/04/09 22:17:27 heikki@hundin.mysql.fi +4 -4
+    Use only noninlined InnoDB functions in ha_innodb.cc
+
+  innobase/sync/sync0sync.c
+    1.27 04/04/09 22:17:14 heikki@hundin.mysql.fi +4 -4
+    Use only noninlined InnoDB functions in ha_innodb.cc
+
+  innobase/include/sync0sync.h
+    1.14 04/04/09 22:05:49 heikki@hundin.mysql.fi +16 -0
+    Use only noninlined InnoDB functions in ha_innodb.cc
+
+  innobase/sync/sync0sync.c
+    1.26 04/04/09 22:05:43 heikki@hundin.mysql.fi +24 -0
+    Use only noninlined InnoDB functions in ha_innodb.cc
+
+ChangeSet
+  1.1775.1.1 04/04/09 19:07:39 ram@gw.mysql.r18.ru +3 -0
+  A fix. (Bug #3376: AVG(constant) returns constant if no rows in result set)
+
+  sql/item_sum.h
+    1.25 04/04/09 19:07:21 ram@gw.mysql.r18.ru +1 -0
+    A fix. (Bug #3376: AVG(constant) returns constant if no rows in result set)
+
+  mysql-test/t/func_group.test
+    1.9 04/04/09 19:07:21 ram@gw.mysql.r18.ru +8 -0
+    A fix. (Bug #3376: AVG(constant) returns constant if no rows in result set)
+
+  mysql-test/r/func_group.result
+    1.13 04/04/09 19:07:21 ram@gw.mysql.r18.ru +5 -0
+    A fix. (Bug #3376: AVG(constant) returns constant if no rows in result set)
+
+ChangeSet
+  1.1777 04/04/09 09:59:11 jani@rhols221.adsl.netsonic.fi +1 -0
+  - Merged in changes from mysqld_multi 2.6
+  - Changed reading of config file so that one can use a separate config
+    file for [mysqld_multi] also. In other words --config-file=file will
+    read group [mysqld_multi] from this file, earlier it wouldn't have.
+  
+
+  scripts/mysqld_multi.sh
+    1.13 04/04/09 09:59:01 jani@rhols221.adsl.netsonic.fi +76 -12
+    - Merged in changes from mysqld_multi 2.6
+    - Changed reading of config file so that one can use a separate config
+      file for [mysqld_multi] also. In other words --config-file=file will
+      read group [mysqld_multi] from this file, earlier it wouldn't have.
+    
+
+ChangeSet
+  1.1776 04/04/08 22:12:22 guilhem@mysql.com +1 -0
+  Fix for BUG#3422 "In 3.23 -> 4.0 replication, slave segfault when replicating LOAD DATA INFILE":
+  as we transform the 3.23 Load_log_event into a 4.0 Create_file_log_event which is one
+  byte longer, we need to increment event_len. The bug was that we did not increment it,
+  so later in code the end 0 was not seen so there was for example a segfault in
+  strlen(fname) because fname was not 0-terminated.
+  Other problems remain in 3.23->4.0 replication of LOAD DATA INFILE but they are less serious:
+  Exec_master_log_pos and Relay_log_space are incorrect. I'll document them.
+  They are not fixable without significant code changes (if you fix those problems in 4.0,
+  you get assertion failures somewhere else etc), * which are already done in 5.0.0 *.
+
+  sql/slave.cc
+    1.271 04/04/08 22:12:19 guilhem@mysql.com +14 -2
+    In 3.23->4.0 replication of LOAD DATA INFILE:
+    as we transform the 3.23 Load_log_event into a 4.0 Create_file_log_event which is one
+    byte longer, we need to increment event_len.
+    So we need to modify the event_len stored in the event.
+    And we need to decrement event_len when we compute the offset in the master's binlog.
+
+ChangeSet
+  1.1772.1.1 04/04/08 10:47:38 marko@hundin.mysql.fi +1 -0
+  InnoDB: Fix a preprocessor error introduced in ChangeSet 1.1772
+
+  innobase/sync/sync0sync.c
+    1.25 04/04/08 10:47:36 marko@hundin.mysql.fi +4 -3
+    Fix a preprocessor error introduced in ChangeSet 1.1772
+
+ChangeSet
+  1.1774 04/04/08 09:25:48 heikki@hundin.mysql.fi +1 -0
+  sql_select.cc:
+    Fix a glitch reported by Philippe Lewicki on the general mailing list: do not print a warning to the .err log if read_key fails with a lock wait timeout error 146
+
+  sql/sql_select.cc
+    1.279 04/04/08 09:25:28 heikki@hundin.mysql.fi +2 -1
+    Fix a glitch reported by Philippe Lewicki on the general mailing list: do not print a warning to the .err log if read_key fails with a lock wait timeout error 146
+
+ChangeSet
+  1.1771.1.1 04/04/07 18:34:31 guilhem@mysql.com +1 -0
+  Fix for BUG#3415 "mysqlbinlog loses a USE command when LOAD DATA INFILE is involved":
+  if you are printing LOAD DATA INFILE and its USE as comments, don't update 'last_db' (because you
+  have not actually changed the db in the server).
+
+  sql/log_event.cc
+    1.153 04/04/07 18:34:28 guilhem@mysql.com +13 -6
+    if you are printing LOAD DATA INFILE and its USE as comments, don't update 'last_db' (because you
+    have not actually changed the db in the server).
+
+ChangeSet
+  1.1772 04/04/07 14:19:26 marko@hundin.mysql.fi +38 -0
+  InnoDB: Remove debug functions unless #ifdef UNIV_DEBUG
+
+  innobase/trx/trx0sys.c
+    1.24 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_HOTBACKUP around InnoDB Hot Backup specific code
+
+  innobase/trx/trx0roll.c
+    1.16 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/sync/sync0sync.c
+    1.24 04/04/07 14:19:22 marko@hundin.mysql.fi +7 -2
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/sync/sync0rw.c
+    1.11 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/srv/srv0start.c
+    1.56 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/pars/pars0opt.c
+    1.9 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_SQL_DEBUG around debug code
+
+  innobase/mtr/mtr0mtr.c
+    1.7 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/mem/mem0pool.c
+    1.14 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/mem/mem0dbg.c
+    1.12 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/lock/lock0lock.c
+    1.32 04/04/07 14:19:22 marko@hundin.mysql.fi +14 -2
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/trx0sys.h
+    1.11 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_HOTBACKUP around InnoDB Hot Backup specific code
+
+  innobase/include/sync0sync.h
+    1.13 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/sync0rw.h
+    1.6 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/pars0opt.h
+    1.2 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_SQL_DEBUG around debug code
+
+  innobase/include/mtr0mtr.h
+    1.7 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/mem0pool.h
+    1.5 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -1
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/mem0dbg.ic
+    1.3 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -1
+    Add #ifdef UNIV_MEM_DEBUG around debug code
+
+  innobase/include/mem0dbg.h
+    1.4 04/04/07 14:19:22 marko@hundin.mysql.fi +4 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/lock0lock.h
+    1.11 04/04/07 14:19:22 marko@hundin.mysql.fi +6 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/fut0lst.h
+    1.2 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -1
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/fsp0fsp.h
+    1.5 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/dict0dict.h
+    1.25 04/04/07 14:19:22 marko@hundin.mysql.fi +8 -6
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/data0type.h
+    1.5 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/buf0lru.h
+    1.3 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/buf0flu.h
+    1.4 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/buf0buf.ic
+    1.12 04/04/07 14:19:22 marko@hundin.mysql.fi +0 -4
+    Remove global declaration of buf_dbg_counter
+
+  innobase/include/buf0buf.h
+    1.17 04/04/07 14:19:22 marko@hundin.mysql.fi +7 -3
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/include/btr0btr.h
+    1.11 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/ibuf/ibuf0ibuf.c
+    1.24 04/04/07 14:19:22 marko@hundin.mysql.fi +6 -2
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/fut/fut0lst.c
+    1.4 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/fsp/fsp0fsp.c
+    1.22 04/04/07 14:19:22 marko@hundin.mysql.fi +5 -1
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/dict/dict0dict.c
+    1.50 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/data/data0type.c
+    1.7 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/buf/buf0rea.c
+    1.7 04/04/07 14:19:22 marko@hundin.mysql.fi +10 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/buf/buf0lru.c
+    1.19 04/04/07 14:19:22 marko@hundin.mysql.fi +4 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/buf/buf0flu.c
+    1.23 04/04/07 14:19:22 marko@hundin.mysql.fi +10 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/buf/buf0buf.c
+    1.31 04/04/07 14:19:22 marko@hundin.mysql.fi +13 -1
+    Add #ifdef UNIV_DEBUG around debug code
+
+  innobase/btr/btr0btr.c
+    1.27 04/04/07 14:19:22 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around debug code
+
+ChangeSet
+  1.1771 04/04/07 01:14:11 guilhem@mysql.com +1 -0
+  Fix for BUG#3401 "Rare replication bug which leads to "Binlog has bad magic number" from slave":
+  Backport of a part of this changeset of 4.1:
+  ChangeSet@1.1753.1.1, 2004-04-05 13:56:05+03:00, monty@mysql.com
+  which fixes the bug.
+
+  sql/slave.cc
+    1.270 04/04/07 01:14:08 guilhem@mysql.com +11 -0
+    even if mi is already inited (replication already run once before),
+    we need to seek back to the beginning of the relay log to be able
+    to later check the binlog's magic number.
+
+ChangeSet
+  1.1739.6.1 04/04/07 00:57:14 guilhem@mysql.com +3 -0
+  This is a fix for a bug in 3.23 -> 4.0 replication: Exec_master_log_pos is always
+  too big by 6 bytes. So I add code to substract 6 bytes if the master is 3.23.
+  This is not perfect (because it won't work if the slave I/O thread has not
+  noticed yet that the master is 3.23), but as long as the slave I/O thread
+  starts Exec_master_log_pos will be ok.
+  It must be merged to 4.1 but not to 5.0 (or it can be, because of #if MYSQL_VERSION_ID),
+  because 5.0 already works if the master is 3.23 (and in a more natural way:
+  in 5.0 we store the end_log_pos in the binlog and relay log).
+  I had to move functions from slave.h to slave.cc to satisfy gcc.
+
+  sql/slave.h
+    1.75 04/04/07 00:57:11 guilhem@mysql.com +3 -28
+    moving several methods out of the declaration of st_relay_log_info.
+    Removing 'inline', let's have the compiler decide.
+
+  sql/slave.cc
+    1.269 04/04/07 00:57:11 guilhem@mysql.com +46 -0
+    Moving several st_relay_log_info methods out of the declaration of the struct,
+    because gcc complained that 'mi' was not declared.
+    Substracting 6 bytes from the event's length in inc_pos() if the master is 3.23.
+
+  sql/log_event.cc
+    1.152 04/04/07 00:57:11 guilhem@mysql.com +26 -6
+    make the event's length 6 bytes shorter if the master is 3.23
+
+ChangeSet
+  1.1769 04/04/06 16:14:43 marko@hundin.mysql.fi +73 -0
+  InnoDB: send diagnostic output to stderr or files
+  instead of stdout or fixed-size memory buffers
+
+  sql/ha_innodb.cc
+    1.198 04/04/06 16:14:39 marko@hundin.mysql.fi +161 -135
+    innobase_mysql_print_thd(): output to stream, not to memory buffer
+    Add mysql_get_identifier_quote_char()
+    Remove unused function innobase_print_error()
+    Display pointers with %p
+    Buffer InnoDB output via files, not via statically allocated memory
+
+  innobase/ut/ut0ut.c
+    1.16 04/04/06 16:14:39 marko@hundin.mysql.fi +85 -63
+    Declare mysql_get_identifier_quote_char()
+    Remove ut_sprintf_buf()
+    Add ut_print_name() and ut_print_namel()
+    Add ut_copy_file()
+
+  innobase/trx/trx0undo.c
+    1.13 04/04/06 16:14:39 marko@hundin.mysql.fi +4 -7
+    Output to stderr instead of stdout
+
+  innobase/trx/trx0trx.c
+    1.36 04/04/06 16:14:39 marko@hundin.mysql.fi +51 -46
+    Output to stream instead of memory buffer
+
+  innobase/trx/trx0sys.c
+    1.23 04/04/06 16:14:39 marko@hundin.mysql.fi +2 -2
+    Output to stderr instead of stdout
+
+  innobase/trx/trx0roll.c
+    1.15 04/04/06 16:14:39 marko@hundin.mysql.fi +8 -7
+    Quote identifier names
+    Output to stderr instead of stdout
+
+  innobase/trx/trx0rec.c
+    1.10 04/04/06 16:14:39 marko@hundin.mysql.fi +54 -61
+    Quote index and table names
+    Avoid sprintf()
+
+  innobase/trx/trx0purge.c
+    1.14 04/04/06 16:14:39 marko@hundin.mysql.fi +5 -5
+    Output to stderr instead of stdout
+
+  innobase/sync/sync0sync.c
+    1.23 04/04/06 16:14:39 marko@hundin.mysql.fi +27 -41
+    Output to stderr instead of stdout
+    Output to stream instead of memory buffer
+
+  innobase/sync/sync0rw.c
+    1.10 04/04/06 16:14:39 marko@hundin.mysql.fi +32 -31
+    Output to stderr instead of stdout
+
+  innobase/sync/sync0arr.c
+    1.15 04/04/06 16:14:39 marko@hundin.mysql.fi +46 -75
+    Output to stderr instead of stdout
+    Output to stream instead of memory buffer
+
+  innobase/srv/srv0start.c
+    1.55 04/04/06 16:14:39 marko@hundin.mysql.fi +45 -11
+    Handle srv_monitor_file
+    Make some global variables static
+
+  innobase/srv/srv0srv.c
+    1.67 04/04/06 16:14:39 marko@hundin.mysql.fi +108 -135
+    Output to stderr instead of stdout
+
+  innobase/row/row0upd.c
+    1.23 04/04/06 16:14:39 marko@hundin.mysql.fi +16 -16
+    Avoid sprintf()
+
+  innobase/row/row0undo.c
+    1.9 04/04/06 16:14:39 marko@hundin.mysql.fi +2 -2
+    Output to stderr instead of stdout
+
+  innobase/row/row0umod.c
+    1.14 04/04/06 16:14:39 marko@hundin.mysql.fi +15 -18
+    Avoid sprintf()
+    Quote table and index names
+
+  innobase/row/row0sel.c
+    1.47 04/04/06 16:14:39 marko@hundin.mysql.fi +77 -67
+    Output to stderr instead of stdout
+    Quote table and index names
+
+  innobase/row/row0row.c
+    1.8 04/04/06 16:14:39 marko@hundin.mysql.fi +10 -11
+    Quote table and index names
+
+  innobase/row/row0purge.c
+    1.15 04/04/06 16:14:39 marko@hundin.mysql.fi +3 -3
+    Output to stderr instead of stdout
+
+  innobase/row/row0mysql.c
+    1.62 04/04/06 16:14:39 marko@hundin.mysql.fi +160 -132
+    Output to stderr instead of stdout
+    Quote table and index names
+
+  innobase/row/row0ins.c
+    1.34 04/04/06 16:14:39 marko@hundin.mysql.fi +74 -92
+    Output diagnostics to stream instead of memory buffer
+
+  innobase/rem/rem0rec.c
+    1.7 04/04/06 16:14:39 marko@hundin.mysql.fi +13 -75
+    Remove rec_sprintf()
+    Output to stderr instead of stdout
+
+  innobase/pars/pars0opt.c
+    1.8 04/04/06 16:14:39 marko@hundin.mysql.fi +9 -13
+    Output to stderr instead of stdout
+
+  innobase/page/page0page.c
+    1.16 04/04/06 16:14:39 marko@hundin.mysql.fi +84 -112
+    Avoid sprintf()
+    Output to stderr instead of stdout
+
+  innobase/page/page0cur.c
+    1.15 04/04/06 16:14:39 marko@hundin.mysql.fi +5 -3
+    Output to stderr
+
+  innobase/os/os0thread.c
+    1.24 04/04/06 16:14:39 marko@hundin.mysql.fi +1 -1
+    Output to stderr
+
+  innobase/os/os0proc.c
+    1.4 04/04/06 16:14:39 marko@hundin.mysql.fi +2 -3
+    Output to stderr
+
+  innobase/os/os0file.c
+    1.65 04/04/06 16:14:39 marko@hundin.mysql.fi +38 -46
+    Output to stream, not to memory buffer
+
+  innobase/mtr/mtr0mtr.c
+    1.6 04/04/06 16:14:39 marko@hundin.mysql.fi +3 -2
+    Output to stderr
+
+  innobase/mtr/mtr0log.c
+    1.8 04/04/06 16:14:39 marko@hundin.mysql.fi +6 -9
+    Display pointers with %p
+
+  innobase/mem/mem0dbg.c
+    1.11 04/04/06 16:14:39 marko@hundin.mysql.fi +23 -25
+    Output to stderr
+
+  innobase/log/log0recv.c
+    1.28 04/04/06 16:14:39 marko@hundin.mysql.fi +53 -47
+    Output to stderr
+
+  innobase/log/log0log.c
+    1.34 04/04/06 16:14:39 marko@hundin.mysql.fi +39 -41
+    Output to stderr
+
+  innobase/lock/lock0lock.c
+    1.31 04/04/06 16:14:38 marko@hundin.mysql.fi +99 -203
+    Output to stream, not to memory buffer
+
+  innobase/include/ut0ut.h
+    1.12 04/04/06 16:14:38 marko@hundin.mysql.fi +30 -12
+    Remove ut_sprintf_buf()
+    Add ut_print_name(), ut_print_namel() and ut_copy_file()
+
+  innobase/include/trx0trx.h
+    1.28 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -2
+    Output to stream, not to memory buffer
+
+  innobase/include/trx0sys.h
+    1.10 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -1
+    Output to stderr
+
+  innobase/include/sync0sync.h
+    1.12 04/04/06 16:14:38 marko@hundin.mysql.fi +2 -4
+    Output to stream, not to memory buffer
+
+  innobase/include/sync0arr.h
+    1.4 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -2
+    Output to stream, not to memory buffer
+
+  innobase/include/srv0srv.h
+    1.31 04/04/06 16:14:38 marko@hundin.mysql.fi +9 -5
+    Remove srv_sprintf_innodb_monitor()
+
+  innobase/include/row0upd.ic
+    1.5 04/04/06 16:14:38 marko@hundin.mysql.fi +5 -3
+    Quote table and index names
+
+  innobase/include/row0sel.ic
+    1.2 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -4
+    Output to stderr
+
+  innobase/include/rem0rec.ic
+    1.6 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -1
+    Output to stderr
+
+  innobase/include/rem0rec.h
+    1.4 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -10
+    Remove rec_sprintf()
+
+  innobase/include/os0file.h
+    1.21 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -2
+    Output to stream, not to memory buffer
+
+  innobase/include/mtr0log.ic
+    1.4 04/04/06 16:14:38 marko@hundin.mysql.fi +4 -3
+    Output to stderr
+    Display pointers with %p
+
+  innobase/include/log0log.h
+    1.13 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -2
+    Output to stream, not to memory buffer
+
+  innobase/include/lock0lock.h
+    1.10 04/04/06 16:14:38 marko@hundin.mysql.fi +5 -6
+    Output to stream, not to memory buffer
+
+  innobase/include/ibuf0ibuf.h
+    1.6 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -2
+    Output to stream, not to memory buffer
+
+  innobase/include/ha0ha.h
+    1.4 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -2
+    Output to stream, not to memory buffer
+
+  innobase/include/dict0dict.h
+    1.24 04/04/06 16:14:38 marko@hundin.mysql.fi +14 -14
+    Output to stream, not to memory buffer
+
+  innobase/include/data0data.h
+    1.11 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -10
+    Remove dtuple_sprintf()
+
+  innobase/include/buf0buf.ic
+    1.11 04/04/06 16:14:38 marko@hundin.mysql.fi +9 -9
+    Use %p for displaying pointers
+
+  innobase/include/buf0buf.h
+    1.16 04/04/06 16:14:38 marko@hundin.mysql.fi +1 -2
+    Output to stream, not to memory buffer
+
+  innobase/ibuf/ibuf0ibuf.c
+    1.23 04/04/06 16:14:38 marko@hundin.mysql.fi +51 -61
+    Output to stderr
+    Avoid sprintf()
+
+  innobase/ha/ha0ha.c
+    1.9 04/04/06 16:14:38 marko@hundin.mysql.fi +5 -9
+    Output to stream, not to memory buffer
+
+  innobase/fut/fut0lst.c
+    1.3 04/04/06 16:14:38 marko@hundin.mysql.fi +3 -2
+    Output to stderr
+
+  innobase/fsp/fsp0fsp.c
+    1.21 04/04/06 16:14:38 marko@hundin.mysql.fi +41 -50
+    Output to stderr
+    Avoid sprintf()
+
+  innobase/fil/fil0fil.c
+    1.21 04/04/06 16:14:38 marko@hundin.mysql.fi +3 -2
+    Output to stderr
+
+  innobase/eval/eval0eval.c
+    1.4 04/04/06 16:14:38 marko@hundin.mysql.fi +3 -2
+    Output to stderr
+
+  innobase/dict/dict0load.c
+    1.13 04/04/06 16:14:38 marko@hundin.mysql.fi +48 -23
+    Output to stderr; quote table and index names
+
+  innobase/dict/dict0dict.c
+    1.49 04/04/06 16:14:38 marko@hundin.mysql.fi +255 -323
+    Output diagnostics to a file, not to a memory buffer
+
+  innobase/dict/dict0crea.c
+    1.21 04/04/06 16:14:38 marko@hundin.mysql.fi +18 -20
+    Output diagnostic information to stream, not to memory
+
+  innobase/dict/dict0boot.c
+    1.8 04/04/06 16:14:38 marko@hundin.mysql.fi +2 -1
+    Remove dummy call to printf()
+
+  innobase/data/data0type.c
+    1.6 04/04/06 16:14:38 marko@hundin.mysql.fi +15 -15
+    Output to stderr
+
+  innobase/data/data0data.c
+    1.15 04/04/06 16:14:38 marko@hundin.mysql.fi +33 -95
+    Remove dtuple_validate() unless #ifdef UNIV_DEBUG
+    Remove unnecessary sprintf() calls
+    Output to stderr
+
+  innobase/buf/buf0rea.c
+    1.6 04/04/06 16:14:38 marko@hundin.mysql.fi +11 -7
+    Output to stderr
+
+  innobase/buf/buf0lru.c
+    1.18 04/04/06 16:14:38 marko@hundin.mysql.fi +24 -30
+    Output to stderr
+
+  innobase/buf/buf0flu.c
+    1.22 04/04/06 16:14:38 marko@hundin.mysql.fi +15 -17
+    Output to stderr
+
+  innobase/buf/buf0buf.c
+    1.30 04/04/06 16:14:38 marko@hundin.mysql.fi +73 -106
+    Output to stderr; quote table and index names
+
+  innobase/btr/btr0sea.c
+    1.18 04/04/06 16:14:38 marko@hundin.mysql.fi +13 -17
+    Output to stderr
+
+  innobase/btr/btr0cur.c
+    1.35 04/04/06 16:14:38 marko@hundin.mysql.fi +41 -47
+    Output to stderr; quote table and index names
+
+  innobase/btr/btr0btr.c
+    1.26 04/04/06 16:14:38 marko@hundin.mysql.fi +141 -117
+    Output to stderr; quote table and index names
+
+ChangeSet
+  1.1764.2.1 04/04/05 23:18:16 vva@eagle.mysql.r18.ru +3 -0
+  fixed Bug #3361 "mysqldump quotes DECIMAL values"
+
+  mysql-test/t/mysqldump.test
+    1.6 04/04/05 23:18:06 vva@eagle.mysql.r18.ru +28 -0
+    added test for Bug #3361 "mysqldump quotes DECIMAL values"
+
+  mysql-test/r/mysqldump.result
+    1.6 04/04/05 23:18:06 vva@eagle.mysql.r18.ru +16 -2
+    added test for Bug #3361 "mysqldump quotes DECIMAL values"
+
+  client/mysqldump.c
+    1.108 04/04/05 23:18:06 vva@eagle.mysql.r18.ru +4 -4
+    changed quotation mark around DECIMAL field values from " to '
+    as fix of BUG #3361 "mysqldump quotes DECIMAL values"
+
+ChangeSet
+  1.1764.1.1 04/04/05 15:40:56 marko@hundin.mysql.fi +3 -0
+  InnoDB: Backport fil_path_to_mysql_datadir from MySQL 4.1.x
+
+  sql/ha_innodb.cc
+    1.197 04/04/05 15:40:53 marko@hundin.mysql.fi +1 -0
+    Backport fil_path_to_mysql_datadir from 4.1
+
+  innobase/include/fil0fil.h
+    1.8 04/04/05 15:40:53 marko@hundin.mysql.fi +5 -0
+    Backport fil_path_to_mysql_datadir from 4.1
+
+  innobase/fil/fil0fil.c
+    1.20 04/04/05 15:40:53 marko@hundin.mysql.fi +5 -0
+    Backport fil_path_to_mysql_datadir from 4.1
+
+ChangeSet
+  1.1766 04/04/05 14:38:17 lenz@mysql.com +1 -0
+   - added ncurses-devel to the build prerequisites (BUG#3377)
+
+  support-files/mysql.spec.sh
+    1.81 04/04/05 14:38:13 lenz@mysql.com +5 -0
+     - added ncurses-devel to the build prerequisites (BUG#3377)
+
+ChangeSet
+  1.1762.1.1 04/04/05 11:36:30 serg@serg.mylan +2 -0
+  made fulltext search aware of concurrent inserts
+
+  myisam/ft_nlq_search.c
+    1.20 04/04/05 11:36:27 serg@serg.mylan +12 -2
+    made fulltext search aware of concurrent inserts
+
+  myisam/ft_boolean_search.c
+    1.61 04/04/05 11:36:27 serg@serg.mylan +15 -4
+    made fulltext search aware of concurrent inserts
+
+ChangeSet
+  1.1764 04/04/02 16:25:48 marko@hundin.mysql.fi +7 -0
+  InnoDB: ignore intra-database foreign key references between tables
+  when dropping database (Bug #3058)
+
+  sql/ha_innodb.cc
+    1.196 04/04/02 16:25:45 marko@hundin.mysql.fi +5 -2
+    Add a parameter "drop_db" to row_drop_table_for_mysql()
+    innobase_drop_database(): allocate namebuf dynamically
+
+  innobase/trx/trx0roll.c
+    1.14 04/04/02 16:25:45 marko@hundin.mysql.fi +1 -1
+    Add a parameter to row_drop_table_for_mysql()
+
+  innobase/row/row0mysql.c
+    1.61 04/04/02 16:25:45 marko@hundin.mysql.fi +12 -10
+    Add a parameter "drop_db" to row_drop_table_for_mysql()
+    to skip foreign constraint checks on tables in same database
+
+  innobase/include/row0mysql.h
+    1.17 04/04/02 16:25:45 marko@hundin.mysql.fi +2 -1
+    Add a parameter to row_drop_table_for_mysql()
+
+  innobase/include/dict0dict.h
+    1.23 04/04/02 16:25:45 marko@hundin.mysql.fi +11 -0
+    Make dict_tables_have_same_db() a global function
+
+  innobase/dict/dict0dict.c
+    1.48 04/04/02 16:25:45 marko@hundin.mysql.fi +1 -1
+    Make dict_tables_have_same_db() a global function
+
+  innobase/dict/dict0crea.c
+    1.20 04/04/02 16:25:45 marko@hundin.mysql.fi +4 -4
+    Add a parameter to row_drop_table_for_mysql()
+
+ChangeSet
+  1.1761.1.1 04/04/02 11:58:54 marko@hundin.mysql.fi +5 -0
+  InnoDB: Handle quotes properly in the InnoDB SQL parser
+
+  innobase/pars/pars0sym.c
+    1.2 04/04/02 11:58:51 marko@hundin.mysql.fi +6 -21
+    Remove quote handling from sym_tab_add_str_lit()
+
+  innobase/pars/pars0pars.c
+    1.8 04/04/02 11:58:51 marko@hundin.mysql.fi +0 -11
+    Remove dummy yywrap() function (use %noyywrap in pars0lex.l)
+
+  innobase/pars/pars0lex.l
+    1.5 04/04/02 11:58:51 marko@hundin.mysql.fi +62 -15
+    Add %option statements
+    Add string_append()
+    Allow quotes within quotes
+    Simplify the patterns for matching comments
+
+  innobase/pars/lexyy.c
+    1.12 04/04/02 11:58:51 marko@hundin.mysql.fi +495 -449
+    New version corresponding to pars0lex.l
+
+  innobase/include/pars0pars.h
+    1.4 04/04/02 11:58:51 marko@hundin.mysql.fi +0 -7
+    Remove dummy yywrap() function (use %noyywrap in pars0lex.l)
+
+ChangeSet
+  1.1760 04/04/01 16:51:34 marko@hundin.mysql.fi +43 -0
+  InnoDB cleanup: fixing buffer overflows and quoting of quotes
+
+  sql/ha_innodb.cc
+    1.195 04/04/01 16:51:31 marko@hundin.mysql.fi +2 -5
+    Remove parameter "len" of ut_cmp_in_lower_case()
+
+  innobase/ut/ut0mem.c
+    1.16 04/04/01 16:51:31 marko@hundin.mysql.fi +45 -4
+    Add ut_strlenq() and ut_memcpyq()
+
+  innobase/ut/ut0byte.c
+    1.3 04/04/01 16:51:31 marko@hundin.mysql.fi +24 -20
+    Add const qualifier to ut_cpy_in_lower_case()
+    Remove parameter "len" of ut_cmp_in_lower_case()
+
+  innobase/trx/trx0sys.c
+    1.22 04/04/01 16:51:31 marko@hundin.mysql.fi +1 -2
+    Remove unnecessary strlen() call
+
+  innobase/trx/trx0roll.c
+    1.13 04/04/01 16:51:31 marko@hundin.mysql.fi +1 -2
+    Replace mem_alloc()+strlen()+memcpy() with mem_strdup()
+
+  innobase/srv/srv0start.c
+    1.54 04/04/01 16:51:31 marko@hundin.mysql.fi +14 -35
+    Remove unnecessary strlen() calls
+    Remove unused parameter "create_new_db" of open_or_create_log_file()
+
+  innobase/srv/srv0srv.c
+    1.64.1.1 04/04/01 16:51:31 marko@hundin.mysql.fi +8 -9
+    Replace UT_NOT_USED() with __attribute__((unused))
+
+  innobase/row/row0undo.c
+    1.8 04/04/01 16:51:31 marko@hundin.mysql.fi +2 -5
+    Remove unused parameters "thr"
+
+  innobase/row/row0umod.c
+    1.13 04/04/01 16:51:31 marko@hundin.mysql.fi +6 -22
+    Remove unused variable "index"
+    row_undo_mod_del_unmark_sec_and_undo_update():
+     Remove parameter "node" and variable "rec"
+    Remove unused parameters "thr"
+
+  innobase/row/row0uins.c
+    1.8 04/04/01 16:51:31 marko@hundin.mysql.fi +14 -32
+    Remove unused parameters "thr"
+
+  innobase/row/row0row.c
+    1.7 04/04/01 16:51:31 marko@hundin.mysql.fi +1 -6
+    Simplify row_get_clust_rec()
+
+  innobase/row/row0purge.c
+    1.14 04/04/01 16:51:31 marko@hundin.mysql.fi +15 -27
+    Remove unused parameters "thr"
+
+  innobase/row/row0mysql.c
+    1.60 04/04/01 16:51:31 marko@hundin.mysql.fi +320 -340
+    Add row_mysql_is_recovered_tmp_table()
+    Add row_mysql_is_system_table()
+    Compare reserved table names with exact match
+    Use strstr() and strchr() and mem_strdupl()
+    Compute space needed for generated SQL, and allocate it dynamically
+
+  innobase/row/row0ins.c
+    1.33 04/04/01 16:51:31 marko@hundin.mysql.fi +9 -27
+    Replace parameter "thr" with "trx" in row_ins_foreign_report_add_err()
+    Remove unnecessary strlen() call
+    Use strchr()
+
+  innobase/pars/pars0pars.c
+    1.7 04/04/01 16:51:31 marko@hundin.mysql.fi +2 -8
+    Replace mem_heap_alloc()+strlen()+memcpy() with mem_heap_strdup()
+
+  innobase/pars/pars0opt.c
+    1.7 04/04/01 16:51:31 marko@hundin.mysql.fi +2 -2
+    Correct a potential buffer overflow
+
+  innobase/page/page0page.c
+    1.15 04/04/01 16:51:31 marko@hundin.mysql.fi +3 -6
+    Remove unneeded variable rec
+
+  innobase/page/page0cur.c
+    1.14 04/04/01 16:51:31 marko@hundin.mysql.fi +5 -4
+    Add debug assertion to page_cur_insert_rec_write_log()
+    Remove hard-coded buffer size in page_cur_parse_insert_rec() 
+
+  innobase/mtr/mtr0log.c
+    1.7 04/04/01 16:51:31 marko@hundin.mysql.fi +5 -4
+    Add a debug assertion to mlog_parse_initial_log_record()
+
+  innobase/mem/mem0mem.c
+    1.7 04/04/01 16:51:31 marko@hundin.mysql.fi +1 -6
+    Simplify the initialization of block->init_block
+
+  innobase/log/log0recv.c
+    1.27 04/04/01 16:51:31 marko@hundin.mysql.fi +3 -5
+    Remove parameter "type" from log_group_write_buf()
+
+  innobase/log/log0log.c
+    1.33 04/04/01 16:51:31 marko@hundin.mysql.fi +6 -11
+    Remove unused parameters
+
+  innobase/lock/lock0lock.c
+    1.30 04/04/01 16:51:31 marko@hundin.mysql.fi +0 -3
+    lock_clust_rec_modify_check_and_lock(): Remove unused variable "trx"
+
+  innobase/include/ut0ut.h
+    1.11 04/04/01 16:51:31 marko@hundin.mysql.fi +3 -1
+    Declare ut_sprintf() as a printf-style function
+
+  innobase/include/ut0mem.ic
+    1.4 04/04/01 16:51:31 marko@hundin.mysql.fi +20 -0
+    Add ut_strlenq()
+
+  innobase/include/ut0mem.h
+    1.9 04/04/01 16:51:31 marko@hundin.mysql.fi +33 -0
+    Add ut_strlenq(), ut_strcpyq() and ut_memcpyq()
+
+  innobase/include/ut0byte.h
+    1.4 04/04/01 16:51:30 marko@hundin.mysql.fi +7 -9
+    Add const qualifier to ut_cpy_in_lower_case()
+    Remove parameter "len" of ut_cmp_in_lower_case()
+
+  innobase/include/row0undo.h
+    1.2 04/04/01 16:51:30 marko@hundin.mysql.fi +1 -2
+    Remvoe unused parameter "thr" of row_undo_search_clust_to_pcur()
+
+  innobase/include/row0uins.h
+    1.2 04/04/01 16:51:30 marko@hundin.mysql.fi +1 -2
+    Remove unused parameter "thr" of row_undo_ins()
+
+  innobase/include/mem0mem.ic
+    1.7 04/04/01 16:51:30 marko@hundin.mysql.fi +96 -0
+    Add mem_strdup(), mem_strdupl(), mem_strdupq(), mem_heap_strdup(),
+    and mem_heap_strdupl()
+
+  innobase/include/mem0mem.h
+    1.7 04/04/01 16:51:30 marko@hundin.mysql.fi +53 -0
+    Add mem_strdup(), mem_strdupl(), mem_strdupq(), mem_heap_strdup(),
+    and mem_heap_strdupl()
+
+  innobase/include/log0log.h
+    1.12 04/04/01 16:51:30 marko@hundin.mysql.fi +1 -2
+    Remove unused parameter "type" of log_group_write_buf()
+
+  innobase/include/lock0lock.h
+    1.9 04/04/01 16:51:30 marko@hundin.mysql.fi +2 -2
+    Add UL suffixes to unsigned long masks
+
+  innobase/include/dict0dict.h
+    1.22 04/04/01 16:51:30 marko@hundin.mysql.fi +12 -11
+    Add const qualifiers
+
+  innobase/include/data0data.ic
+    1.7 04/04/01 16:51:30 marko@hundin.mysql.fi +2 -2
+    Replace = with == in ut_ad(tuple->magic_n == DATA_TUPLE_MAGIC_N)
+
+  innobase/include/data0data.h
+    1.10 04/04/01 16:51:30 marko@hundin.mysql.fi +2 -0
+    Add #ifdef UNIV_DEBUG around dtuple_validate()
+
+  innobase/ibuf/ibuf0ibuf.c
+    1.22 04/04/01 16:51:30 marko@hundin.mysql.fi +22 -21
+    Make some global variables static
+    Add #ifdef UNIV_IBUF_DEBUG around debug statements
+
+  innobase/fil/fil0fil.c
+    1.16.1.1 04/04/01 16:51:30 marko@hundin.mysql.fi +2 -12
+    Replace mem_alloc()+strlen()+strcpy() with mem_strdup()
+
+  innobase/eval/eval0eval.c
+    1.3 04/04/01 16:51:30 marko@hundin.mysql.fi +49 -8
+    Make TO_CHAR() work with any machine word width
+
+  innobase/dict/dict0mem.c
+    1.12 04/04/01 16:51:30 marko@hundin.mysql.fi +4 -16
+    Replace mem_heap_alloc()+strlen()+memcpy() with mem_heap_strdup()
+
+  innobase/dict/dict0load.c
+    1.12 04/04/01 16:51:30 marko@hundin.mysql.fi +24 -70
+    Remove unnecessary strlen() calls
+    Replace mem_heap_alloc()+strlen()+memcpy() with mem_heap_strdup()
+
+  innobase/dict/dict0dict.c
+    1.47 04/04/01 16:51:30 marko@hundin.mysql.fi +244 -288
+    Remove unnecessary prototypes for static functions
+    dict_tables_have_same_db(): Remove length limitation
+    dict_remove_db_name(): Use strchr()
+    dict_get_db_name_len(): Use strchr()
+    Replace mem_heap_alloc()+strlen()+memcpy() with mem_heap_strdup()
+    Remove unnecessary strlen() calls
+    Allocate space dynamically for generated strings
+    dict_scan_id(): allow quotes within quoted strings
+
+  innobase/dict/dict0crea.c
+    1.19 04/04/01 16:51:30 marko@hundin.mysql.fi +78 -112
+    Remove unneeded prototypes for static functions
+    Remove unused parameters from some functions
+    Replace some assertions with compile-time checks
+    dict_create_add_foreigns_to_dictionary():
+    allocate space dynamically for the SQL, and quote quotes
+
+ChangeSet
+  1.1758.1.2 04/04/01 09:18:32 heikki@hundin.mysql.fi +4 -0
+  fil0fil.c, os0file.c, srv0srv.h, srv0srv.c:
+    Add an accessor function to set srv_io_thread_op_info, change the type to const char*, also change the type of srv_io_thread_function to const char*
+
+  innobase/fil/fil0fil.c
+    1.18 04/04/01 09:18:02 heikki@hundin.mysql.fi +5 -11
+    Add an accessor function to set srv_io_thread_op_info, change the type to const char*, also change the type of srv_io_thread_function to const char*
+
+  innobase/os/os0file.c
+    1.64 04/04/01 09:17:54 heikki@hundin.mysql.fi +11 -19
+    Add an accessor function to set srv_io_thread_op_info, change the type to const char*, also change the type of srv_io_thread_function to const char*
+
+  innobase/include/srv0srv.h
+    1.30 04/04/01 09:17:45 heikki@hundin.mysql.fi +11 -2
+    Add an accessor function to set srv_io_thread_op_info, change the type to const char*, also change the type of srv_io_thread_function to const char*
+
+  innobase/srv/srv0srv.c
+    1.65 04/04/01 09:17:37 heikki@hundin.mysql.fi +16 -2
+    Add an accessor function to set srv_io_thread_op_info, change the type to const char*, also change the type of srv_io_thread_function to const char*
+
+ChangeSet
+  1.1758.1.1 04/03/31 18:06:13 heikki@hundin.mysql.fi +2 -0
+  fil0fil.c:
+    Add assertions to check that we do not go out of bounds of io thread status array
+  os0file.c:
+    Fix memory corruption (assertion failure on line 244 of sync0sync.c) reported by Miguel in a Windows build of MySQL-4.1.2. The bug is present in all InnoDB versions in Windows, but it depends on how the linker places a static array in srv0srv.c, whether the bug shows itself. 4 bytes were overwritten with a pointer to a statically allocated string: 'get windows aio return value'.
+
+  innobase/fil/fil0fil.c
+    1.17 04/03/31 18:05:39 heikki@hundin.mysql.fi +5 -0
+    Add assertions to check that we do not go out of bounds of io thread status array
+
+  innobase/os/os0file.c
+    1.63 04/03/31 18:04:43 heikki@hundin.mysql.fi +14 -4
+    Fix memory corruption (assertion failure on line 244 of sync0sync.c) reported by Miguel in a Windows build of MySQL-4.1.2. The bug is present in all InnoDB versions in Windows, but it depends on how the linker places a static array in srv0srv.c, whether the bug shows itself. 4 bytes were overwritten with a pointer to a statically allocated string: 'get windows aio return value'.
+
+ChangeSet
+  1.1757.1.1 04/03/31 11:40:07 marko@hundin.mysql.fi +1 -0
+  InnoDB: cleanup of B-tree cursor operations
+
+  innobase/btr/btr0cur.c
+    1.34 04/03/31 11:40:04 marko@hundin.mysql.fi +18 -14
+    Remove unused parameter of btr_cur_latch_leaves()
+    Simplify logic and add debug assertion in btr_cur_search_to_nth_level()
+
+ChangeSet
+  1.1757 04/03/31 11:26:56 marko@hundin.mysql.fi +4 -0
+  InnoDB: Remove ut_str_contains() and replace it with strchr()
+
+  innobase/ut/ut0mem.c
+    1.15 04/03/31 11:26:53 marko@hundin.mysql.fi +0 -24
+    Remove ut_str_contains(), a reinvented strchr()
+
+  innobase/row/row0mysql.c
+    1.59 04/03/31 11:26:53 marko@hundin.mysql.fi +1 -1
+    Replace ut_str_contains() with strchr()
+
+  innobase/include/ut0mem.h
+    1.8 04/03/31 11:26:53 marko@hundin.mysql.fi +0 -8
+    Remove ut_str_contains(), a reinvented strchr()
+
+  innobase/dict/dict0dict.c
+    1.46 04/03/31 11:26:52 marko@hundin.mysql.fi +3 -3
+    Replace ut_str_contains() with strchr()
+
+ChangeSet
+  1.1756 04/03/31 10:58:50 marko@hundin.mysql.fi +2 -0
+  InnoDB: Remove unused hash table code and parameters
+
+  innobase/include/ha0ha.ic
+    1.5 04/03/31 10:58:47 marko@hundin.mysql.fi +3 -40
+    Remove unused first parameter of ha_chain_get_next()
+    Remove unused function ha_next()
+
+  innobase/ha/ha0ha.c
+    1.8 04/03/31 10:58:47 marko@hundin.mysql.fi +2 -29
+    Remove unused first parameter of ha_chain_get_next()
+
+ChangeSet
+  1.1755 04/03/31 10:30:14 marko@hundin.mysql.fi +10 -0
+  InnoDB: Remove unnecessary code, mostly related to stored procedures
+
+  innobase/include/pars0types.h
+    1.2 04/03/31 10:30:11 marko@hundin.mysql.fi +0 -1
+    Remove call_node_t, as procedures are not called by name
+
+  innobase/include/pars0sym.h
+    1.2 04/03/31 10:30:11 marko@hundin.mysql.fi +0 -3
+    Remove procedure_def, as procedures are not stored into database
+
+  innobase/include/pars0pars.h
+    1.3 04/03/31 10:30:11 marko@hundin.mysql.fi +0 -12
+    Remove call_node_struct and references to dict_proc_t,
+    as procedures are not stored into database or called by name
+
+  innobase/include/dict0types.h
+    1.3 04/03/31 10:30:11 marko@hundin.mysql.fi +0 -1
+    Remove dict_proc_t, as procedures are not stored into database
+
+  innobase/include/dict0mem.h
+    1.16 04/03/31 10:30:11 marko@hundin.mysql.fi +0 -30
+    Remove unnecessary code related to stored procedures
+
+  innobase/include/dict0dict.ic
+    1.7 04/03/31 10:30:11 marko@hundin.mysql.fi +0 -31
+    Remove unnecessary function dict_procedure_get()
+
+  innobase/include/dict0dict.h
+    1.21 04/03/31 10:30:11 marko@hundin.mysql.fi +0 -37
+    Remove unused code related to stored procedures
+
+  innobase/dict/dict0mem.c
+    1.11 04/03/31 10:30:11 marko@hundin.mysql.fi +0 -53
+    Remove unnecessary function dict_mem_procedure_create()
+
+  innobase/dict/dict0dict.c
+    1.45 04/03/31 10:30:11 marko@hundin.mysql.fi +0 -143
+    Remove unused code
+
+  innobase/data/data0data.c
+    1.14 04/03/31 10:30:11 marko@hundin.mysql.fi +0 -4
+    Remove unused global variables
+
+ChangeSet
+  1.1754 04/03/30 17:26:20 marko@hundin.mysql.fi +1 -0
+  InnoDB: parse CONSTRAINT FOREIGN KEY correctly (Bug #3332)
+
+  innobase/dict/dict0dict.c
+    1.44 04/03/30 17:21:27 marko@hundin.mysql.fi +9 -2
+    dict_create_foreign_constraints_low(): parse CONSTRAINT FOREIGN KEY correctly
+
+ChangeSet
+  1.1748.4.1 04/03/30 13:50:00 Sinisa@sinisa.nasamreza.org +1 -0
+  A fix for the error message when database can not be dropped due to
+  the extra files being present.
+
+  sql/sql_db.cc
+    1.69 04/03/30 13:49:56 Sinisa@sinisa.nasamreza.org +6 -1
+    A fix for the error message when database can not be dropped due to
+    the extra files being present.
+
+ChangeSet
+  1.1752 04/03/30 01:01:31 monty@mysql.com +1 -0
+  Fix test results when you are in daylight saving time
+
+  mysql-test/t/timezone.test
+    1.5 04/03/30 01:01:30 monty@mysql.com +2 -0
+    Fix results when you are in daylight saving time
+
+ChangeSet
+  1.1751 04/03/29 18:59:51 monty@mysql.com +1 -0
+  Fixed wrong assert (Got failure in ctype_tis620)
+
+  include/m_string.h
+    1.20 04/03/29 18:59:51 monty@mysql.com +1 -1
+    Fixed wrong assert (Got failure in ctype_tis620)
+
+ChangeSet
+  1.1748.1.5 04/03/29 18:10:59 gluh@gluh.mysql.r18.ru +1 -0
+  Fix bug #3181: insert_test client test missing mysql_init
+
+  client/insert_test.c
+    1.6 04/03/29 18:10:42 gluh@gluh.mysql.r18.ru +1 -0
+    Fix bug #3181: insert_test client test missing mysql_init
+
+ChangeSet
+  1.1748.1.4 04/03/27 02:37:05 vva@eagle.mysql.r18.ru +2 -0
+  some cleanup of last patch for BUG #2342
+
+  sql/ha_berkeley.cc
+    1.115 04/03/27 02:37:03 vva@eagle.mysql.r18.ru +9 -0
+    added a commet
+
+  mysql-test/t/bdb-crash.test
+    1.9 04/03/27 02:37:03 vva@eagle.mysql.r18.ru +1 -1
+    added newline
+
+ChangeSet
+  1.1748.3.1 04/03/27 00:35:45 vva@eagle.mysql.r18.ru +5 -0
+  fixed bug #2342 
+  "Running ANALYZE TABLE on bdb table inside a transaction hangs server thread"
+  
+  1. added new status HA_ADMIN_REJECT and processing of it in mysql_admin_table
+  2. got ha_berkley::analyze to return HA_ADMIN_REJECT if there are any 
+   transactions with the table.. 
+
+  sql/sql_table.cc
+    1.177 04/03/27 00:34:49 vva@eagle.mysql.r18.ru +6 -0
+    added processing of the new status HA_ADMIN_REJECT in mysql_admin_table
+    (reason to add this status is explained in comment 
+    for commit on sql/handler.h)
+
+  sql/handler.h
+    1.93 04/03/27 00:34:49 vva@eagle.mysql.r18.ru +1 -0
+    added new status of table info "HA_ADMIN_REJECT"
+    
+    We have to return this status for bdb tables which 
+    have any active transactions so as bdb-documentation says:
+    "The DB->stat method cannot be transaction-protected"
+
+  sql/ha_berkeley.cc
+    1.114 04/03/27 00:34:49 vva@eagle.mysql.r18.ru +38 -0
+    fixed bug #2342 
+    "Running ANALYZE TABLE on bdb table inside a transaction hangs server thread"
+    
+    we have to return new status "HA_ADMIN_REJECT" for ha_berkley::analyze 
+    if there are any transaction for this table 
+    so as bdb documentation says:
+    "The DB->stat method cannot be transaction protected"
+
+  mysql-test/t/bdb-crash.test
+    1.8 04/03/27 00:34:49 vva@eagle.mysql.r18.ru +12 -0
+    added test for bug #2342 
+    "Running ANALYZE TABLE on bdb table inside a transaction hangs server thread"
+
+  mysql-test/r/bdb-crash.result
+    1.6 04/03/27 00:34:49 vva@eagle.mysql.r18.ru +7 -0
+    added test for bug #2342 
+    "Running ANALYZE TABLE on bdb table inside a transaction hangs server thread"
+
+  BitKeeper/deleted/.del-libmysqld.def~8edf7b8780ce943c
+    1.2 04/03/26 18:08:26 greg@mysql.com +0 -0
+    Delete: VC++Files/libmysqld/libmysqld.def
+
+ChangeSet
+  1.1739.5.1 04/03/26 17:49:02 heikki@hundin.mysql.fi +1 -0
+  mem0dbg.c:
+    Backport from 4.1: make mem_current_allocated_memory global variable
+
+  innobase/mem/mem0dbg.c
+    1.10 04/03/26 17:48:50 heikki@hundin.mysql.fi +1 -1
+    Backport from 4.1: make mem_current_allocated_memory global variable
+
+ChangeSet
+  1.1743.1.1 04/03/26 17:01:13 Sinisa@sinisa.nasamreza.org +3 -0
+  order_by.result:
+    result of the test case for FORCE INDEX on ORDER BY
+  order_by.test:
+    test case for FORCE INDEX on ORDER BY
+  sql_select.cc:
+    Changing behaviour that MySQL server takes FORCE INDEX clause into account when optimising ORDER BY clause
+
+  mysql-test/r/order_by.result
+    1.23 04/03/26 17:00:40 Sinisa@sinisa.nasamreza.org +8 -0
+    result of the test case for FORCE INDEX on ORDER BY
+
+  mysql-test/t/order_by.test
+    1.15 04/03/26 17:00:28 Sinisa@sinisa.nasamreza.org +12 -1
+    test case for FORCE INDEX on ORDER BY
+
+  sql/sql_select.cc
+    1.278 04/03/26 16:59:33 Sinisa@sinisa.nasamreza.org +12 -2
+    Changing behaviour that MySQL server takes FORCE INDEX clause into account when optimising ORDER BY clause
+
+ChangeSet
+  1.1747.1.1 04/03/26 14:44:52 monty@mysql.com +3 -0
+  Allow keys with 0 segements in MyISAM
+  This fixed a bug in SELECT DISTINCT when all selected parts where constants. (Bug #3203)
+
+  mysql-test/t/myisam.test
+    1.25 04/03/26 14:44:51 monty@mysql.com +14 -0
+    Test for problem with SELECT DISTINCT
+
+  mysql-test/r/myisam.result
+    1.29 04/03/26 14:44:51 monty@mysql.com +22 -0
+    Test for problem with SELECT DISTINCT
+
+  myisam/mi_create.c
+    1.32 04/03/26 14:44:51 monty@mysql.com +7 -1
+    Allow keys with 0 segements.
+
+ChangeSet
+  1.1747 04/03/25 23:08:42 monty@mysql.com +2 -0
+  Updated tests after merge
+
+  mysql-test/t/alter_table.test
+    1.19 04/03/25 23:08:41 monty@mysql.com +2 -2
+    Updated tests
+
+  mysql-test/r/alter_table.result
+    1.17 04/03/25 23:08:41 monty@mysql.com +40 -31
+    Updated tests
+
+ChangeSet
+  1.676.1.761 04/03/25 21:52:25 monty@mysql.com +3 -0
+  Improved test case
+  service backport from 4.0
+
+  BitKeeper/etc/logging_ok
+    1.153.1.101 04/03/25 21:52:25 monty@mysql.com +1 -0
+    Logging to logging@openlogging.org accepted
+
+  sql/nt_servc.cc
+    1.7.1.3 04/03/25 21:52:23 monty@mysql.com +1 -1
+    service backport from 4.0
+
+  mysql-test/t/alter_table.test
+    1.5.1.4 04/03/25 21:52:23 monty@mysql.com +2 -0
+    Improved test case
+
+ChangeSet
+  1.1745 04/03/25 13:29:12 serg@serg.mylan +1 -0
+  bugs-aware post-commit trigger
+  cleanup (VERSION variable)
+
+  BitKeeper/triggers/post-commit
+    1.29 04/03/25 13:29:09 serg@serg.mylan +16 -9
+    bugs-aware post-commit trigger
+    cleanup (VERSION variable)
+
+ChangeSet
+  1.1739.3.6 04/03/25 11:22:01 serg@serg.mylan +3 -0
+  shared IO_CACHE: protection against remove_io_share in a wrong time
+  bug#3134
+
+  mysys/mf_iocache.c
+    1.39 04/03/25 11:21:58 serg@serg.mylan +2 -1
+    shared IO_CACHE: protection against remove_io_share in a wrong time
+    bug#3134
+
+  BitKeeper/deleted/.del-post-outgoing~1dd3d8f0f6e8f3cd
+    1.2 04/03/24 21:40:48 serg@serg.mylan +0 -0
+    Delete: BitKeeper/triggers/post-outgoing
+
+  BitKeeper/deleted/.del-post-incoming~9f2168f531f09f3b
+    1.3 04/03/24 21:40:48 serg@serg.mylan +0 -0
+    Delete: BitKeeper/triggers/post-incoming
+
+ChangeSet
+  1.676.319.1 04/03/24 20:27:07 serg@serg.mylan +1 -0
+  protection against "ln -s /etc/passwd /tmp/failed-mysql-bugreport"
+
+  scripts/mysqlbug.sh
+    1.4.1.1 04/03/24 20:27:05 serg@serg.mylan +2 -2
+    protection against "ln -s /etc/passwd /tmp/failed-mysql-bugreport"
+
+ChangeSet
+  1.1742 04/03/24 19:04:57 hf@deer.(none) +1 -0
+  Fix for #3067
+  Shouldn't be moved to 4.1
+
+  myisam/mi_check.c
+    1.132 04/03/24 19:04:46 hf@deer.(none) +3 -2
+    only set key_map if necessary
+
+ChangeSet
+  1.1735.1.1 04/03/23 19:25:30 serg@serg.mylan +1 -0
+  comment
+
+  mysys/default.c
+    1.32.1.1 04/03/23 19:25:28 serg@serg.mylan +1 -1
+    comment
+
+ChangeSet
+  1.676.1.759 04/03/23 17:15:20 bell@sanja.is.com.ua +2 -0
+  used right table for grants check (BUG#3270)
+
+  sql/sql_parse.cc
+    1.120.2.41 04/03/23 17:15:18 bell@sanja.is.com.ua +1 -1
+    used right table for grants check (BUG#3270)
+
+  mysql-test/t/alter_table.test
+    1.5.1.3 04/03/23 17:15:18 bell@sanja.is.com.ua +19 -0
+    test for BUG#3270 added
+
+ChangeSet
+  1.1739.3.4 04/03/22 14:30:30 Greg@greg-laptop. +4 -0
+  Changes to project files precipitated from 4.1 test builds.
+
+  VC++Files/strings/strings.dsp
+    1.4 04/03/22 14:30:27 Greg@greg-laptop. +4 -0
+    Add strnlen
+
+  VC++Files/strings/MASM6x/strings.dsp
+    1.3 04/03/22 14:30:27 Greg@greg-laptop. +4 -0
+    Add strnlen
+
+  VC++Files/innobase/innobase.dsp
+    1.11 04/03/22 14:30:27 Greg@greg-laptop. +0 -8
+    'com' module no longer exists.
+
+ChangeSet
+  1.1739.3.3 04/03/22 18:11:13 heikki@hundin.mysql.fi +1 -0
+  sync0sync.c:
+    Actually, assembler is used onnly on 32-bit x86 Win, and no need to exclude Netware specifically
+
+  innobase/sync/sync0sync.c
+    1.22 04/03/22 18:11:01 heikki@hundin.mysql.fi +1 -1
+    Actually, assembler is used onnly on 32-bit x86 Win, and no need to exclude Netware specifically
+
+ChangeSet
+  1.1739.4.1 04/03/22 18:06:26 heikki@hundin.mysql.fi +1 -0
+  sync0sync.c:
+    Fix typo __NETWARE --> __NETWARE__ in mutex creation
+
+  innobase/sync/sync0sync.c
+    1.21 04/03/22 18:05:04 heikki@hundin.mysql.fi +1 -1
+    Fix typo __NETWARE --> __NETWARE__ in mutex creation
+
+ChangeSet
+  1.1739.3.1 04/03/22 09:38:57 paul@teton.kitebird.com +1 -0
+  "automagically" is not a word.
+
+  client/mysqldump.c
+    1.107 04/03/22 09:38:53 paul@teton.kitebird.com +2 -2
+    "automagically" is not a word.
+
+ChangeSet
+  1.1730.1.31 04/03/22 16:35:15 Sinisa@sinisa.nasamreza.org +3 -0
+  union.result:
+     A test case for the bug  that allowed table names to be used in ORDER BY columns (But #3064)
+  union.test:
+    A test case for the bug  that allowed table names to be used in ORDER BY columns (But #3064)
+  sql_union.cc:
+    A fix for a bug that allowed table names to be used in ORDER BY columns (But #3064)
+
+  mysql-test/r/union.result
+    1.29 04/03/22 16:34:49 Sinisa@sinisa.nasamreza.org +2 -0
+     A test case for the bug  that allowed table names to be used in ORDER BY columns (But #3064)
+
+  mysql-test/t/union.test
+    1.33 04/03/22 16:34:20 Sinisa@sinisa.nasamreza.org +2 -0
+    A test case for the bug  that allowed table names to be used in ORDER BY columns (But #3064)
+
+  sql/sql_union.cc
+    1.48 04/03/22 16:33:05 Sinisa@sinisa.nasamreza.org +10 -0
+    A fix for a bug that allowed table names to be used in ORDER BY columns (But #3064)
+
+ChangeSet
+  1.1739.2.1 04/03/22 11:18:29 monty@mysql.com +2 -0
+  Fixed wrong 'mysql.func' definition
+
+  mysql-test/r/system_mysql_db.result
+    1.2 04/03/22 11:18:28 monty@mysql.com +1 -1
+    Fixed wrong 'mysql.func' definition
+
+  mysql-test/install_test_db.sh
+    1.27 04/03/22 11:18:28 monty@mysql.com +1 -1
+    Fixed wrong 'mysql.func' definition
+
+  BitKeeper/deleted/.del-libmysql.def~f5dffcb3ed925d28
+    1.2 04/03/21 17:39:01 Greg@greg-laptop. +0 -0
+    Delete: VC++Files/libmysql/libmysql.def
+
+ChangeSet
+  1.1739.1.1 04/03/21 11:48:51 bell@sanja.is.com.ua +3 -0
+  fixed BUG in query cahe statistic counting
+
+  sql/sql_cache.cc
+    1.60 04/03/21 11:48:43 bell@sanja.is.com.ua +14 -3
+    fixed statistic calculating in query cahe
+
+  mysql-test/t/grant_cache.test
+    1.5 04/03/21 11:48:43 bell@sanja.is.com.ua +12 -0
+    proving new results
+
+  mysql-test/r/grant_cache.result
+    1.4 04/03/21 11:48:43 bell@sanja.is.com.ua +39 -3
+    right results in query cache
+
+ChangeSet
+  1.1740 04/03/20 23:50:04 bell@sanja.is.com.ua +1 -0
+  fixed config parser to recognize correctly strings like following:
+  test="\"#no comment here"#real comment
+
+  mysys/default.c
+    1.33 04/03/20 23:49:57 bell@sanja.is.com.ua +4 -2
+    fixed config parser to recognize correctly strings like following:
+    test="\"#no comment here"#real comment
+
+ChangeSet
+  1.1730.26.1 04/03/20 15:49:17 guilhem@mysql.com +2 -0
+  The automatic DROP TEMPORARY TABLE is now DROP TEMPORARY TABLE IF EXISTS,
+  this is better in this case:
+  - imagine user1 has created a temp table
+  - imagine user2 does FLUSH TABLES WITH READ LOCK, then takes a backup,
+  then RESET MASTER then UNLOCK TABLES, like mysqldump --first-slave
+  - then in the binlog you will finally have the DROP TEMPORARY TABLE,
+  but not the CREATE TEMPORARY TABLE, so when you later restore with
+  mysqlbinlog|mysql, mysql will complain that table does not exist.
+  Replication was already protected of this (it processes DROP TEMPORARY
+  TABLE as if there was a IF EXISTS), now I add it directly to the query
+  for mysqlbinlog|mysql to work.
+
+  sql/sql_base.cc
+    1.177 04/03/20 15:49:14 guilhem@mysql.com +3 -2
+    The automatic DROP TEMPORARY TABLE is now DROP TEMPORARY TABLE IF EXISTS,
+    this is better in this case:
+    - imagine user1 has created a temp table
+    - imagine user2 does FLUSH TABLES WITH READ LOCK, then takes a backup,
+    then RESET MASTER then UNLOCK TABLES, like mysqldump --first-slave
+    - then in the binlog you will finally have the DROP TEMPORARY TABLE,
+    but not the CREATE TEMPORARY TABLE, so when you later restore with
+    mysqlbinlog|mysql, mysql will complain that table does not exist.
+    Replication was already protected of this (it processes DROP TEMPORARY
+    TABLE as if there was a IF EXISTS), now I add it directly to the query
+    for mysqlbinlog|mysql to work.
+
+  mysql-test/r/drop_temp_table.result
+    1.4 04/03/20 15:49:13 guilhem@mysql.com +2 -2
+    result update (query changed)
+
+ChangeSet
+  1.1738 04/03/20 06:09:18 heikki@hundin.mysql.fi +1 -0
+  btr0btr.c:
+    Correct previous bk commit comment about page splits: actually, in versions < 4.0.19 space utilization is very poor if 1500 - 8000 byte rows are inserted in the order of the primary key
+
+  innobase/btr/btr0btr.c
+    1.25 04/03/20 06:09:03 heikki@hundin.mysql.fi +1 -1
+    Correct previous bk commit comment about page splits: actually, in versions < 4.0.19 space utilization is very poor if 1500 - 8000 byte rows are inserted in the order of the primary key
+
+ChangeSet
+  1.1737 04/03/19 22:51:25 heikki@hundin.mysql.fi +2 -0
+  btr0btr.c:
+    Improve space utilization if we have 3 kB - 8 kB rows to insert in the order of the primary key
+  btr0cur.c:
+    Fix bug: The row count and key cardinality estimate was grossly too small if each clustered index page only contained one record
+
+  innobase/btr/btr0btr.c
+    1.24 04/03/19 22:50:41 heikki@hundin.mysql.fi +29 -32
+    Improve space utilization if we have 3 kB - 8 kB rows to insert in the order of the primary key
+
+  innobase/btr/btr0cur.c
+    1.33 04/03/19 22:49:08 heikki@hundin.mysql.fi +20 -4
+    Fix bug: The row count and key cardinality estimate was grossly too small if each clustered index page only contained one record
+
+ChangeSet
+  1.1730.24.1 04/03/19 18:49:14 lenz@mysql.com +1 -0
+   - Do-pkg: PGK and DMG names now include the full arch name (e.g. 
+     "-apple-darwin7.3.0-powerpc") - this is needed as we now will provide
+     Mac OS X 10.2.x and Mac OS X 10.3.x PGKs (and it's more in line of
+     how we name all other packages)
+
+  Build-tools/Do-pkg
+    1.6 04/03/19 18:49:10 lenz@mysql.com +11 -2
+     - PGK and DMG names now include the full arch name (e.g. 
+       "-apple-darwin7.3.0-powerpc") - this is needed as we now will provide
+       Mac OS X 10.2.x and Mac OS X 10.3.x PGKs (and it's more in line of
+       how we name all other packages)
+
+ChangeSet
+  1.1730.17.11 04/03/19 18:26:02 monty@mysql.com +7 -0
+  Portability fixes
+  Fixed some wrong column specifications in mysql_fix_privilege_tables
+
+  scripts/mysql_fix_privilege_tables.sql
+    1.5 04/03/19 18:26:01 monty@mysql.com +6 -6
+    Fixed some wrong column specifications
+
+  scripts/mysql_fix_privilege_tables.sh
+    1.15 04/03/19 18:26:01 monty@mysql.com +1 -1
+    func.name was not generated correctly
+
+  mysql-test/t/rpl_error_ignored_table.test
+    1.4 04/03/19 18:26:01 monty@mysql.com +1 -1
+    portability fix
+
+  mysql-test/t/func_math.test
+    1.10 04/03/19 18:26:01 monty@mysql.com +4 -3
+    portability fix
+
+  mysql-test/r/rpl_error_ignored_table.result
+    1.4 04/03/19 18:26:01 monty@mysql.com +1 -1
+    portability fix
+
+  mysql-test/r/func_math.result
+    1.16 04/03/19 18:26:01 monty@mysql.com +0 -9
+    portability fix
+
+  mysql-test/mysql-test-run.sh
+    1.192 04/03/19 18:26:01 monty@mysql.com +1 -1
+    Portability fix
+
+ChangeSet
+  1.1733 04/03/19 17:19:33 serg@serg.mylan +1 -0
+  typo in mysql_install_db fixed
+
+  scripts/mysql_install_db.sh
+    1.46 04/03/19 17:18:50 serg@serg.mylan +1 -1
+    typo fixed
+    (thanks Alex Dupre <ale@FreeBSD.org> for noticing this!)
+
+ChangeSet
+  1.1730.20.7 04/03/19 18:38:25 vva@eagle.mysql.r18.ru +3 -0
+  fixed bug #3200 "cannot compile with pstack"
+  as downgrade of patch for 
+  bug #1661 "Compiling --with-pstack fails with binutils 2.13.90"
+
+  pstack/pstack.c
+    1.3 04/03/19 18:38:18 vva@eagle.mysql.r18.ru +2 -1
+    fixed bug #3200 "cannot compile with pstack"
+    as downgrade of patch for 
+    bug #1661 "Compiling --with-pstack fails with binutils 2.13.90"
+
+  pstack/budbg.h
+    1.2 04/03/19 18:38:18 vva@eagle.mysql.r18.ru +6 -0
+    fixed bug #3200 "cannot compile with pstack"
+    as downgrade of patch for 
+    bug #1661 "Compiling --with-pstack fails with binutils 2.13.90"
+
+  pstack/bucomm.h
+    1.2 04/03/19 18:38:18 vva@eagle.mysql.r18.ru +6 -0
+    fixed bug #3200 "cannot compile with pstack"
+    as downgrade of patch for 
+    bug #1661 "Compiling --with-pstack fails with binutils 2.13.90"
+
+ChangeSet
+  1.1730.17.10 04/03/19 15:03:12 monty@mysql.com +1 -0
+  Removed \r
+
+  mysql-test/r/system_mysql_db_refs.result
+    1.2 04/03/19 15:03:11 monty@mysql.com +2 -2
+    Removed \r
+
+ChangeSet
+  1.1730.17.9 04/03/19 14:52:48 monty@mysql.com +6 -0
+  Portability fixes
+  Removed \r from new tests
+  Fixes to get new sustem_mysql_db... tests to work
+
+  scripts/mysql_fix_privilege_tables.sh
+    1.14 04/03/19 14:52:46 monty@mysql.com +13 -2
+    Don't set root password from first option
+    Added --bindir option
+
+  mysql-test/t/system_mysql_db_refs.test
+    1.2 04/03/19 14:52:46 monty@mysql.com +5 -6
+    Removed \r
+
+  mysql-test/t/system_mysql_db_fix.test
+    1.2 04/03/19 14:52:46 monty@mysql.com +4 -4
+    Removed \r
+
+  mysql-test/mysql-test-run.sh
+    1.191 04/03/19 14:52:46 monty@mysql.com +24 -25
+    Portability fix; Added CLIENT_BINDIR
+
+  innobase/que/que0que.c
+    1.15 04/03/19 14:52:46 monty@mysql.com +4 -4
+    Fixed wrong usage of __attribute
+
+  client/mysqltest.c
+    1.114 04/03/19 14:52:46 monty@mysql.com +20 -13
+    More debug information
+
+ChangeSet
+  1.1730.20.6 04/03/17 18:40:35 konstantin@mysql.com +5 -0
+  WL #1510 "Implement support for "commercial" binaries on handshake",
+  client library:
+  - implemented 'check_license' function
+
+ChangeSet
+  1.1730.23.1 04/03/17 21:01:07 vva@eagle.mysql.r18.ru +8 -0
+  fixed structure error from last merge for bug #2874
+
+  mysql-test/t/system_mysql_db_refs.test
+    1.1 04/03/17 21:01:06 vva@eagle.mysql.r18.ru +90 -0
+
+  mysql-test/t/system_mysql_db_fix.test
+    1.1 04/03/17 21:01:06 vva@eagle.mysql.r18.ru +78 -0
+
+  mysql-test/t/system_mysql_db_fix-master.opt
+    1.1 04/03/17 21:01:06 vva@eagle.mysql.r18.ru +1 -0
+
+  mysql-test/t/system_mysql_db.test
+    1.1 04/03/17 21:01:06 vva@eagle.mysql.r18.ru +8 -0
+
+  mysql-test/t/system_mysql_db_refs.test
+    1.0 04/03/17 21:01:06 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/t/system_mysql_db_refs.test
+
+  mysql-test/t/system_mysql_db_fix.test
+    1.0 04/03/17 21:01:06 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/t/system_mysql_db_fix.test
+
+  mysql-test/t/system_mysql_db_fix-master.opt
+    1.0 04/03/17 21:01:06 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/t/system_mysql_db_fix-master.opt
+
+  mysql-test/t/system_mysql_db.test
+    1.0 04/03/17 21:01:06 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/t/system_mysql_db.test
+
+  BitKeeper/deleted/.del-system_mysql_db_refs.test~e5bffdb55190a23c
+    1.2 04/03/17 20:57:29 vva@eagle.mysql.r18.ru +0 -0
+    Delete: mysql-test/t/reserv/system_mysql_db_refs.test
+
+  BitKeeper/deleted/.del-system_mysql_db_fix-master.opt~2897a9ebb17f930e
+    1.2 04/03/17 20:57:25 vva@eagle.mysql.r18.ru +0 -0
+    Delete: mysql-test/t/reserv/system_mysql_db_fix-master.opt
+
+  BitKeeper/deleted/.del-system_mysql_db_fix.test~180b2fd4873a9c49
+    1.2 04/03/17 20:57:20 vva@eagle.mysql.r18.ru +0 -0
+    Delete: mysql-test/t/reserv/system_mysql_db_fix.test
+
+  BitKeeper/deleted/.del-system_mysql_db.test~f5a7ec0e9440c043
+    1.2 04/03/17 20:57:06 vva@eagle.mysql.r18.ru +0 -0
+    Delete: mysql-test/t/reserv/system_mysql_db.test
+
+  sql/set_var.cc
+    1.52 04/03/17 18:40:34 konstantin@mysql.com +1 -3
+    removed unused variable 'license'
+
+  libmysql/libmysql.c
+    1.144 04/03/17 18:40:34 konstantin@mysql.com +54 -0
+    WL#1510: implementation of 'check_license' function
+
+  libmysql/errmsg.c
+    1.17 04/03/17 18:40:34 konstantin@mysql.com +6 -3
+    WL #1510: error message to print in case when client and server license 
+    mismatch.
+
+  include/mysql_version.h.in
+    1.16 04/03/17 18:40:34 konstantin@mysql.com +5 -0
+    WL #1510: fallback define for LICENSE
+
+  include/errmsg.h
+    1.13 04/03/17 18:40:34 konstantin@mysql.com +1 -0
+    WL #1510: new error code
+
+ChangeSet
+  1.1730.22.1 04/03/17 10:35:03 guilhem@mysql.com +3 -0
+  Fix for BUG#2922 "Crash (signal11) after "load data from master""
+  with a testcase.
+  We needed to init_master_info before we flush_master_info
+  in LOAD DATA FROM MASTER.
+
+  sql/repl_failsafe.cc
+    1.41 04/03/17 10:35:00 guilhem@mysql.com +10 -2
+    LOAD DATA FROM MASTER udpates the master info in the slave,
+    so needs to ensure that it is properly inited first
+    (otherwise, after RESET SLAVE, we are flush_io_cache()ing
+    an uninitialized IO_CACHE master.info).
+    Note that it master info is already inited (active_mi->inited==1),
+    init_master_info() will do nothing, which is what we want.
+
+  mysql-test/t/rpl000009.test
+    1.18 04/03/17 10:34:59 guilhem@mysql.com +15 -0
+    adding a test for RESET SLAVE + LOAD DATA FROM MASTER
+
+  mysql-test/r/rpl000009.result
+    1.13 04/03/17 10:34:59 guilhem@mysql.com +12 -0
+    result update
+
+ChangeSet
+  1.1730.21.1 04/03/16 11:42:35 paul@teton.kitebird.com +1 -0
+  Fix usage line.
+
+  myisam/myisam_ftdump.c
+    1.20 04/03/16 11:42:32 paul@teton.kitebird.com +1 -1
+    Fix usage line.
+
+ChangeSet
+  1.1730.20.2 04/03/16 18:55:44 marko@hundin.mysql.fi +4 -0
+  InnoDB: Remove some debug variables unless UNIV_SEARCH_PERF_STAT is defined
+
+  innobase/include/page0cur.h
+    1.3 04/03/16 18:53:34 marko@hundin.mysql.fi +4 -1
+    Remove variable page_cur_short_succ unless #ifdef UNIV_SEARCH_PERF_STAT
+
+  innobase/page/page0cur.c
+    1.13 04/03/16 18:48:54 marko@hundin.mysql.fi +4 -3
+    Make page_rnd a static variable
+    Remove variable page_cur_short_succ unless #ifdef UNIV_SEARCH_PERF_STAT
+
+  innobase/include/btr0sea.h
+    1.6 04/03/16 18:48:43 marko@hundin.mysql.fi +2 -0
+    Remove variable btr_search_n_succ unless #ifdef UNIV_SEARCH_PERF_STAT
+
+  innobase/btr/btr0sea.c
+    1.17 04/03/16 18:48:07 marko@hundin.mysql.fi +2 -0
+    Remove variable btr_search_n_succ unless #ifdef UNIV_SEARCH_PERF_STAT
+
+ChangeSet
+  1.1730.20.1 04/03/16 15:26:33 marko@hundin.mysql.fi +2 -0
+  InnoDB: Make btr_cur_unmark_extern_fields() a static function
+
+  innobase/include/btr0cur.h
+    1.13 04/03/16 15:23:33 marko@hundin.mysql.fi +0 -10
+    Remove btr_cur_unmark_extern_fields()
+
+  innobase/btr/btr0cur.c
+    1.32 04/03/16 15:23:18 marko@hundin.mysql.fi +11 -1
+    Make btr_cur_unmark_extern_fields() a static function
+
+ChangeSet
+  1.1730.19.1 04/03/16 13:51:35 monty@mysql.com +1 -0
+  Increase max size of number of elements in key. This fixed a bug when using count(DISTINCT) with lot of distinct values and big 'max_heap_table_size'
+
+  include/my_tree.h
+    1.11 04/03/16 13:51:33 monty@mysql.com +3 -1
+    Increase max size of number of elements in key. This fixed a bug when using count(DISTINCT) with lot of distinct values and big 'max_heap_table_size'
+
+ChangeSet
+  1.1730.17.5 04/03/16 12:48:17 marko@hundin.mysql.fi +1 -0
+  InnoDB: Remove unused directory "cry"
+
+  BitKeeper/deleted/.del-makefilewin~f993e50b7f057fde
+    1.2 04/03/16 12:27:58 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/cry/makefilewin
+
+ChangeSet
+  1.1730.17.4 04/03/16 12:18:02 marko@hundin.mysql.fi +3 -0
+  InnoDB: remove debug code from non-debug version
+
+  innobase/que/que0que.c
+    1.14 04/03/16 12:13:29 marko@hundin.mysql.fi +3 -1
+    Remove que_node_print_info() unless #ifdef UNIV_DEBUG
+
+  innobase/include/que0que.ic
+    1.3 04/03/16 12:13:15 marko@hundin.mysql.fi +0 -18
+    Remove que_graph_is_select()
+
+  innobase/include/que0que.h
+    1.6 04/03/16 12:12:51 marko@hundin.mysql.fi +0 -16
+    Remove que_graph_is_select()
+    Make que_node_print_info() a static function
+
+ChangeSet
+  1.1730.18.1 04/03/16 11:48:20 marko@hundin.mysql.fi +4 -0
+  InnoDB: Remove log debug code when UNIV_LOG_DEBUG is not defined
+
+  innobase/log/log0recv.c
+    1.26 04/03/16 11:45:14 marko@hundin.mysql.fi +18 -2
+    Test log_debug_writes only #ifdef UNIV_LOG_DEBUG
+
+  innobase/log/log0log.c
+    1.32 04/03/16 11:43:25 marko@hundin.mysql.fi +43 -12
+    Remove log_debug_writes unless #ifdef UNIV_LOG_DEBUG
+    log_io_complete_checkpoint(): Remove parameter; move debug output to log_io_complete(), the only caller
+    Test log_debug_writes only #ifdef UNIV_LOG_DEBUG
+
+  innobase/include/log0log.ic
+    1.6 04/03/16 11:42:59 marko@hundin.mysql.fi +2 -0
+    Remove log_check_log_recs() unless #ifdef UNIV_LOG_DEBUG
+
+  innobase/include/log0log.h
+    1.11 04/03/16 11:42:08 marko@hundin.mysql.fi +4 -0
+    Remove debug variables unless #ifdef UNIV_LOG_DEBUG
+
+ChangeSet
+  1.1730.7.5 04/03/16 11:33:03 gluh@gluh.mysql.r18.ru +3 -0
+  Fix for bug #2629 NULLIF() doesn't behave as described in manual
+
+  sql/item_cmpfunc.cc
+    1.61 04/03/16 11:32:44 gluh@gluh.mysql.r18.ru +3 -3
+    Fix for bug #2629 NULLIF() doesn't behave as described in manual
+
+  mysql-test/t/func_if.test
+    1.3 04/03/16 11:32:44 gluh@gluh.mysql.r18.ru +6 -0
+    Fix for bug #2629 NULLIF() doesn't behave as described in manual
+
+  mysql-test/r/func_if.result
+    1.6 04/03/16 11:32:44 gluh@gluh.mysql.r18.ru +6 -0
+    Fix for bug #2629 NULLIF() doesn't behave as described in manual
+
+ChangeSet
+  1.1730.17.1 04/03/16 02:59:39 monty@mysql.com +2 -0
+  Remove not needed patch
+
+  mysql-test/t/multi_update.test
+    1.35 04/03/16 02:59:38 monty@mysql.com +5 -5
+    Remove not needed patch
+
+  mysql-test/r/multi_update.result
+    1.33 04/03/16 02:59:38 monty@mysql.com +10 -10
+    Remove not needed patch
+
+ChangeSet
+  1.1730.16.1 04/03/15 19:17:18 Sinisa@sinisa.nasamreza.org +1 -0
+  update.test:
+    a fix for a test with latest change
+
+  mysql-test/t/update.test
+    1.11 04/03/15 19:16:28 Sinisa@sinisa.nasamreza.org +0 -1
+    a fix for a test with latest change
+
+ChangeSet
+  1.1730.15.1 04/03/13 22:48:00 marko@hundin.mysql.fi +37 -0
+  InnoDB: Replace ut_a(0) with ut_error
+
+  innobase/trx/trx0undo.c
+    1.12 04/03/13 22:43:06 marko@hundin.mysql.fi +6 -6
+    Replace ut_a(0) with ut_error
+
+  innobase/trx/trx0trx.c
+    1.35 04/03/13 22:43:06 marko@hundin.mysql.fi +4 -4
+    Replace ut_a(0) with ut_error
+
+  innobase/trx/trx0purge.c
+    1.13 04/03/13 22:43:06 marko@hundin.mysql.fi +2 -2
+    Replace ut_a(0) with ut_error
+
+  innobase/sync/sync0arr.c
+    1.14 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/srv/srv0srv.c
+    1.64 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/row/row0undo.c
+    1.7 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/row/row0sel.c
+    1.46 04/03/13 22:43:06 marko@hundin.mysql.fi +3 -3
+    Replace ut_a(0) with ut_error
+
+  innobase/row/row0row.c
+    1.6 04/03/13 22:43:06 marko@hundin.mysql.fi +2 -2
+    Replace ut_a(0) with ut_error
+
+  innobase/row/row0purge.c
+    1.13 04/03/13 22:43:06 marko@hundin.mysql.fi +2 -2
+    Replace ut_a(0) with ut_error
+
+  innobase/row/row0mysql.c
+    1.58 04/03/13 22:43:06 marko@hundin.mysql.fi +8 -8
+    Replace ut_a(0) with ut_error
+
+  innobase/row/row0ins.c
+    1.32 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/rem/rem0rec.c
+    1.6 04/03/13 22:43:06 marko@hundin.mysql.fi +2 -2
+    Replace ut_a(0) with ut_error
+
+  innobase/rem/rem0cmp.c
+    1.15 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/que/que0que.c
+    1.13 04/03/13 22:43:06 marko@hundin.mysql.fi +4 -4
+    Replace ut_a(0) with ut_error
+
+  innobase/pars/lexyy.c
+    1.11 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/page/page0page.c
+    1.14 04/03/13 22:43:06 marko@hundin.mysql.fi +2 -2
+    Replace ut_a(0) with ut_error
+
+  innobase/page/page0cur.c
+    1.12 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/os/os0file.c
+    1.62 04/03/13 22:43:06 marko@hundin.mysql.fi +8 -8
+    Replace ut_a(0) with ut_error
+
+  innobase/mtr/mtr0log.c
+    1.6 04/03/13 22:43:06 marko@hundin.mysql.fi +4 -4
+    Replace ut_a(0) with ut_error
+
+  innobase/mem/mem0pool.c
+    1.13 04/03/13 22:43:06 marko@hundin.mysql.fi +6 -6
+    Replace ut_a(0) with ut_error
+
+  innobase/log/log0recv.c
+    1.25 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/log/log0log.c
+    1.31 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/lock/lock0lock.c
+    1.29 04/03/13 22:43:06 marko@hundin.mysql.fi +2 -2
+    Replace ut_a(0) with ut_error
+
+  innobase/include/trx0rseg.ic
+    1.4 04/03/13 22:43:06 marko@hundin.mysql.fi +2 -2
+    Replace ut_a(0) with ut_error
+
+  innobase/include/mtr0log.ic
+    1.3 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/include/data0type.ic
+    1.6 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/include/buf0buf.ic
+    1.10 04/03/13 22:43:06 marko@hundin.mysql.fi +3 -3
+    Replace ut_a(0) with ut_error
+
+  innobase/ibuf/ibuf0ibuf.c
+    1.21 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/fsp/fsp0fsp.c
+    1.20 04/03/13 22:43:06 marko@hundin.mysql.fi +5 -5
+    Replace ut_a(0) with ut_error
+
+  innobase/fil/fil0fil.c
+    1.16 04/03/13 22:43:06 marko@hundin.mysql.fi +3 -3
+    Replace ut_a(0) with ut_error
+
+  innobase/dict/dict0load.c
+    1.11 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/dict/dict0dict.c
+    1.43 04/03/13 22:43:06 marko@hundin.mysql.fi +4 -4
+    Replace ut_a(0) with ut_error
+
+  innobase/dict/dict0crea.c
+    1.18 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/data/data0data.c
+    1.13 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/buf/buf0lru.c
+    1.17 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/buf/buf0flu.c
+    1.21 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+  innobase/btr/btr0btr.c
+    1.23 04/03/13 22:43:06 marko@hundin.mysql.fi +1 -1
+    Replace ut_a(0) with ut_error
+
+ChangeSet
+  1.1730.14.1 04/03/13 21:06:36 Sinisa@sinisa.nasamreza.org +2 -0
+  multi_update.result:
+    Fix for a bug in the result
+  multi_update.test:
+    Fix for a bug in the test
+
+  mysql-test/r/multi_update.result
+    1.30.1.1 04/03/13 21:06:05 Sinisa@sinisa.nasamreza.org +6 -6
+    Fix for a bug in the result
+
+  mysql-test/t/multi_update.test
+    1.32.1.1 04/03/13 21:05:45 Sinisa@sinisa.nasamreza.org +3 -3
+    Fix for a bug in the test
+
+ChangeSet
+  1.1730.13.1 04/03/12 23:26:13 marko@hundin.mysql.fi +2 -0
+  InnoDB: disable unreachable debug functions unless #ifdef UNIV_MEM_DEBUG
+
+  innobase/mem/mem0dbg.c
+    1.9 04/03/12 23:23:00 marko@hundin.mysql.fi +19 -13
+    Disable debug functions unless #ifdef UNIV_MEM_DEBUG
+    Make some global variables static
+
+  innobase/include/mem0dbg.ic
+    1.2 04/03/12 23:22:29 marko@hundin.mysql.fi +2 -0
+    Disable debug functions unless #ifdef UNIV_MEM_DEBUG
+
+ChangeSet
+  1.1730.12.1 04/03/12 22:01:29 guilhem@mysql.com +1 -0
+  Force mysqlbinlog to require an argument if --local-load is used
+  (--local-load alone means "I want files to be prepared for LOAD 
+  DATA INFILE, in the default temp directory", and mysqlbinlog already
+  does this without --local-load).
+
+  client/mysqlbinlog.cc
+    1.97.1.1 04/03/12 22:01:22 guilhem@mysql.com +3 -3
+    --local-load always needs an argument; --local-load alone is of no use.
+
+ChangeSet
+  1.1730.1.25 04/03/12 22:55:46 marko@hundin.mysql.fi +3 -0
+  InnoDB: remove redundant functions mach_write() and mach_read()
+
+  innobase/mem/mem0dbg.c
+    1.8 04/03/12 22:55:43 marko@hundin.mysql.fi +6 -6
+    Replace mach_write() with mach_write_to_4()
+    Replace mach_read() with mach_read_from_4()
+
+  innobase/include/mach0data.ic
+    1.4 04/03/12 22:55:43 marko@hundin.mysql.fi +0 -38
+    Remove mach_write() and mach_read()
+
+  innobase/include/mach0data.h
+    1.2 04/03/12 22:55:43 marko@hundin.mysql.fi +0 -19
+    Remove mach_write() and mach_read()
+
+ChangeSet
+  1.1730.1.24 04/03/12 17:44:25 marko@hundin.mysql.fi +11 -0
+  Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/trx/trx0undo.c
+    1.11 04/03/12 17:41:40 marko@hundin.mysql.fi +3 -5
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/trx/trx0sys.c
+    1.21 04/03/12 17:41:40 marko@hundin.mysql.fi +3 -4
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/trx/trx0rseg.c
+    1.3 04/03/12 17:41:40 marko@hundin.mysql.fi +1 -2
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/trx/trx0purge.c
+    1.12 04/03/12 17:41:40 marko@hundin.mysql.fi +1 -2
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/mtr/mtr0mtr.c
+    1.5 04/03/12 17:41:40 marko@hundin.mysql.fi +0 -2
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/mtr/mtr0log.c
+    1.5 04/03/12 17:41:40 marko@hundin.mysql.fi +2 -3
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/include/mtr0mtr.h
+    1.6 04/03/12 17:41:40 marko@hundin.mysql.fi +0 -1
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/include/mtr0log.h
+    1.3 04/03/12 17:41:40 marko@hundin.mysql.fi +0 -1
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/include/btr0btr.ic
+    1.3 04/03/12 17:41:40 marko@hundin.mysql.fi +1 -2
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/fsp/fsp0fsp.c
+    1.19 04/03/12 17:41:40 marko@hundin.mysql.fi +34 -42
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+  innobase/dict/dict0boot.c
+    1.7 04/03/12 17:41:40 marko@hundin.mysql.fi +8 -12
+    Remove constant parameter MLOG_8BYTES from mtr_read_dulint() and mlog_write_dulint()
+
+ChangeSet
+  1.1730.1.23 04/03/12 17:14:51 marko@hundin.mysql.fi +56 -0
+  Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/trx/trx0undo.c
+    1.10 04/03/12 17:13:11 marko@hundin.mysql.fi +34 -6
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/trx/trx0trx.c
+    1.34 04/03/12 17:13:11 marko@hundin.mysql.fi +34 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/trx/trx0sys.c
+    1.20 04/03/12 17:13:11 marko@hundin.mysql.fi +16 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/trx/trx0rseg.c
+    1.2 04/03/12 17:13:11 marko@hundin.mysql.fi +7 -1
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/trx/trx0roll.c
+    1.12 04/03/12 17:13:11 marko@hundin.mysql.fi +14 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/trx/trx0rec.c
+    1.9 04/03/12 17:13:11 marko@hundin.mysql.fi +6 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/trx/trx0purge.c
+    1.11 04/03/12 17:13:11 marko@hundin.mysql.fi +20 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/thr/thr0loc.c
+    1.6 04/03/12 17:13:10 marko@hundin.mysql.fi +2 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/sync/sync0sync.c
+    1.20 04/03/12 17:13:10 marko@hundin.mysql.fi +34 -41
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/sync/sync0rw.c
+    1.9 04/03/12 17:13:10 marko@hundin.mysql.fi +13 -21
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/sync/sync0arr.c
+    1.13 04/03/12 17:13:10 marko@hundin.mysql.fi +15 -7
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/srv/srv0srv.c
+    1.63 04/03/12 17:13:10 marko@hundin.mysql.fi +10 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/srv/srv0que.c
+    1.2 04/03/12 17:13:10 marko@hundin.mysql.fi +2 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/row/row0vers.c
+    1.12 04/03/12 17:13:10 marko@hundin.mysql.fi +8 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/row/row0sel.c
+    1.45 04/03/12 17:13:10 marko@hundin.mysql.fi +2 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/row/row0purge.c
+    1.12 04/03/12 17:13:10 marko@hundin.mysql.fi +2 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/row/row0mysql.c
+    1.57 04/03/12 17:13:10 marko@hundin.mysql.fi +11 -1
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/row/row0ins.c
+    1.31 04/03/12 17:13:10 marko@hundin.mysql.fi +3 -1
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/read/read0read.c
+    1.4 04/03/12 17:13:10 marko@hundin.mysql.fi +7 -5
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/mem/mem0pool.c
+    1.12 04/03/12 17:13:10 marko@hundin.mysql.fi +2 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/log/log0recv.c
+    1.24 04/03/12 17:13:10 marko@hundin.mysql.fi +22 -6
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/log/log0log.c
+    1.30 04/03/12 17:13:10 marko@hundin.mysql.fi +53 -1
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/lock/lock0lock.c
+    1.28 04/03/12 17:13:10 marko@hundin.mysql.fi +92 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/trx0undo.ic
+    1.2 04/03/12 17:13:10 marko@hundin.mysql.fi +4 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/trx0sys.ic
+    1.4 04/03/12 17:13:10 marko@hundin.mysql.fi +22 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/trx0rseg.ic
+    1.3 04/03/12 17:13:10 marko@hundin.mysql.fi +4 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/sync0sync.ic
+    1.13 04/03/12 17:13:10 marko@hundin.mysql.fi +3 -6
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/sync0sync.h
+    1.11 04/03/12 17:13:10 marko@hundin.mysql.fi +9 -5
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/sync0rw.ic
+    1.7 04/03/12 17:13:10 marko@hundin.mysql.fi +6 -3
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/sync0rw.h
+    1.5 04/03/12 17:13:10 marko@hundin.mysql.fi +13 -1
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/row0upd.ic
+    1.4 04/03/12 17:13:10 marko@hundin.mysql.fi +2 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/log0log.ic
+    1.5 04/03/12 17:13:10 marko@hundin.mysql.fi +8 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/lock0lock.ic
+    1.2 04/03/12 17:13:10 marko@hundin.mysql.fi +2 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/hash0hash.h
+    1.3 04/03/12 17:13:10 marko@hundin.mysql.fi +19 -36
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/ha0ha.ic
+    1.4 04/03/12 17:13:10 marko@hundin.mysql.fi +12 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/fut0fut.ic
+    1.2 04/03/12 17:13:10 marko@hundin.mysql.fi +2 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/dict0dict.ic
+    1.6 04/03/12 17:13:10 marko@hundin.mysql.fi +8 -2
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/buf0flu.ic
+    1.2 04/03/12 17:13:10 marko@hundin.mysql.fi +4 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/buf0buf.ic
+    1.9 04/03/12 17:13:10 marko@hundin.mysql.fi +10 -2
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/buf0buf.h
+    1.15 04/03/12 17:13:10 marko@hundin.mysql.fi +6 -4
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/include/btr0sea.ic
+    1.2 04/03/12 17:13:10 marko@hundin.mysql.fi +4 -2
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/ibuf/ibuf0ibuf.c
+    1.20 04/03/12 17:13:10 marko@hundin.mysql.fi +29 -3
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/ha/ha0ha.c
+    1.7 04/03/12 17:13:10 marko@hundin.mysql.fi +6 -3
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/fsp/fsp0fsp.c
+    1.18 04/03/12 17:13:10 marko@hundin.mysql.fi +42 -9
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/fil/fil0fil.c
+    1.15 04/03/12 17:13:10 marko@hundin.mysql.fi +8 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/dict/dict0load.c
+    1.10 04/03/12 17:13:10 marko@hundin.mysql.fi +20 -0
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/dict/dict0dict.c
+    1.42 04/03/12 17:13:10 marko@hundin.mysql.fi +51 -1
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/dict/dict0crea.c
+    1.17 04/03/12 17:13:10 marko@hundin.mysql.fi +21 -7
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/dict/dict0boot.c
+    1.6 04/03/12 17:13:10 marko@hundin.mysql.fi +4 -1
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/buf/buf0lru.c
+    1.16 04/03/12 17:13:10 marko@hundin.mysql.fi +15 -1
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/buf/buf0flu.c
+    1.20 04/03/12 17:13:10 marko@hundin.mysql.fi +10 -1
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/buf/buf0buf.c
+    1.29 04/03/12 17:13:10 marko@hundin.mysql.fi +6 -3
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/btr/btr0sea.c
+    1.16 04/03/12 17:13:10 marko@hundin.mysql.fi +47 -17
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/btr/btr0pcur.c
+    1.8 04/03/12 17:13:10 marko@hundin.mysql.fi +2 -2
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/btr/btr0cur.c
+    1.31 04/03/12 17:13:10 marko@hundin.mysql.fi +10 -8
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+  innobase/btr/btr0btr.c
+    1.22 04/03/12 17:13:10 marko@hundin.mysql.fi +12 -1
+    Allow UNIV_SYNC_DEBUG to be disabled while UNIV_DEBUG is enabled
+
+ChangeSet
+  1.1730.1.21 04/03/12 12:53:01 monty@mysql.com +2 -0
+  Fixes to newly pushed code
+
+  sql/table.cc
+    1.73 04/03/12 12:53:00 monty@mysql.com +2 -1
+    Fixes to newly pushed code
+
+  sql/sql_db.cc
+    1.68 04/03/12 12:53:00 monty@mysql.com +2 -2
+    Fixes to newly pushed code
+
+ChangeSet
+  1.1722.1.2 04/03/12 17:55:33 vva@eagle.mysql.r18.ru +1 -0
+  extra correction of check_db_name, check_table_name and check_column_name
+
+  sql/table.cc
+    1.71 04/03/12 17:55:31 vva@eagle.mysql.r18.ru +14 -18
+    extra correction of check_db_name, check_table_name and check_column_name
+
+ChangeSet
+  1.1730.11.1 04/03/12 13:46:26 marko@hundin.mysql.fi +6 -0
+  Replace ut_anp with ut_a
+
+  innobase/fsp/fsp0fsp.c
+    1.17 04/03/12 13:41:22 marko@hundin.mysql.fi +1 -1
+    Replace ut_anp with ut_a
+
+  innobase/mem/mem0pool.c
+    1.11 04/03/12 13:40:29 marko@hundin.mysql.fi +1 -1
+    Replace ut_anp with ut_a
+
+  innobase/log/log0log.c
+    1.29 04/03/12 13:40:29 marko@hundin.mysql.fi +7 -8
+    Replace ut_anp with ut_a
+
+  innobase/fil/fil0fil.c
+    1.14 04/03/12 13:40:29 marko@hundin.mysql.fi +3 -3
+    Replace ut_anp with ut_a
+
+  innobase/ut/ut0dbg.c
+    1.3 04/03/12 13:38:12 marko@hundin.mysql.fi +13 -0
+    Move string constants to .c file
+
+  innobase/include/ut0dbg.h
+    1.12 04/03/12 13:37:50 marko@hundin.mysql.fi +24 -89
+    Remove ut_anp
+    Replace fprintf with fputs
+    Move string constants to .c file
+
+ChangeSet
+  1.1730.1.19 04/03/12 09:15:08 monty@mysql.com +5 -0
+  Portability fixes & fixing of test suite
+
+  sql/sql_parse.cc
+    1.364 04/03/12 09:15:07 monty@mysql.com +10 -7
+    Don't use static inline, as this is not portable
+
+  mysql-test/t/multi_update.test
+    1.33 04/03/12 09:15:07 monty@mysql.com +5 -5
+    Fixed not portable test
+
+  mysql-test/r/mysqlbinlog.result
+    1.5 04/03/12 09:15:07 monty@mysql.com +8 -0
+    Fixed test after push without doing 'make test'
+
+  mysql-test/r/multi_update.result
+    1.31 04/03/12 09:15:07 monty@mysql.com +10 -10
+    Fixed not portable test
+
+  mysql-test/r/func_math.result
+    1.15 04/03/12 09:15:07 monty@mysql.com +3 -0
+    Updated tests after merge with 3.23
+
+ChangeSet
+  1.1730.10.1 04/03/12 01:10:22 monty@mysql.com +8 -0
+  Ensure that install_test_db.sh script works with both 'make install' and 'make_binary_distribution' layouts
+  Abort if we can't allocate memory for table cache
+  Fix bug with multi-update-tables and BDB tables.
+
+  sql/sql_update.cc
+    1.100 04/03/12 01:10:21 monty@mysql.com +6 -3
+    Fix bug with multi-update-tables and BDB tables. Bug #3098
+    Problem was that we didn't initialize BDB for calls to rnd_pos()
+
+  sql/sql_base.cc
+    1.176 04/03/12 01:10:21 monty@mysql.com +3 -3
+    Change table_cache_init to return error
+
+  sql/mysqld.cc
+    1.491 04/03/12 01:10:21 monty@mysql.com +8 -6
+    Abort if we can't allocate memory for table cache. (Bug #3085)
+    Enable warnings by default
+
+  sql/mysql_priv.h
+    1.215.1.1 04/03/12 01:10:21 monty@mysql.com +1 -1
+    Change table_cache_init to return error
+
+  sql/ha_berkeley.cc
+    1.113 04/03/12 01:10:20 monty@mysql.com +1 -1
+    More debug
+
+  mysql-test/mysql-test-run.sh
+    1.188.1.1 04/03/12 01:10:20 monty@mysql.com +1 -1
+    Change internal option from -bin to --bin
+
+  mysql-test/install_test_db.sh
+    1.24.1.1 04/03/12 01:10:20 monty@mysql.com +9 -2
+    Change internal option from -bin to --bin
+    Ensure that script works with both 'make install' and 'make_binary_distribution' layouts (Bug #3031)
+
+  extra/replace.c
+    1.13 04/03/12 01:10:20 monty@mysql.com +9 -9
+    Fix comments
+
+ChangeSet
+  1.1730.9.1 04/03/11 23:12:02 marko@hundin.mysql.fi +13 -0
+  More consistent handling of magic numbers
+
+ChangeSet
+  1.1730.1.15 04/03/11 22:26:03 Sinisa@sinisa.nasamreza.org +3 -0
+  multi_update.result:
+    Test case for a #2996 bug fix
+  multi_update.test:
+    test case for a #2996 bug fix
+  sql_select.cc:
+    Fix for a bug #2996 involving multi-table updates over the const tables
+
+  mysql-test/r/multi_update.result
+    1.30 04/03/11 22:25:35 Sinisa@sinisa.nasamreza.org +14 -0
+    Test case for a #2996 bug fix
+
+  mysql-test/t/multi_update.test
+    1.32 04/03/11 22:25:11 Sinisa@sinisa.nasamreza.org +14 -0
+    test case for a #2996 bug fix
+
+  sql/sql_select.cc
+    1.277 04/03/11 22:24:31 Sinisa@sinisa.nasamreza.org +2 -2
+    Fix for a bug #2996 involving multi-table updates over the const tables
+
+ChangeSet
+  1.1730.7.4 04/03/11 20:12:16 jani@ua72d24.elisa.omakaista.fi +1 -0
+  Fixed error in version.
+
+  client/mysqlbinlog.cc
+    1.98 04/03/11 20:12:14 jani@ua72d24.elisa.omakaista.fi +1 -1
+    Fixed error in version.
+
+ChangeSet
+  1.1730.7.3 04/03/11 17:38:19 guilhem@mysql.com +7 -0
+  Fix for BUG#2983 "If statement was killed on master, slave errors despite replicate-wild-ignore-t"
+  We introduce a new function mysql_test_parse_for_slave().
+  If the slave sees that the query got a really bad error on master
+  (killed e.g.), then it calls this function to know if this query
+  can be ignored because of replicate-*-table rules (do not worry
+  about replicate-*-db rules: they are checked so early that they have
+  no bug). If the answer is yes, it skips the query and continues. If
+  it's no, then it stops and say "fix your slave data manually" (like it
+  did before this change).
+
+  sql/sql_parse.cc
+    1.363 04/03/11 17:38:15 guilhem@mysql.com +38 -5
+    we add a function mysql_test_parse_for_slave(), to be used only
+    by the slave if it wants to know if the query should be ignored or not;
+    so this function only parses the query, does not execute it.
+
+  sql/slave.cc
+    1.268 04/03/11 17:38:15 guilhem@mysql.com +0 -7
+    don't print error immediately as we need to do one more test to
+    be sure.
+
+  sql/mysql_priv.h
+    1.216 04/03/11 17:38:14 guilhem@mysql.com +1 -0
+    new function
+
+  sql/log_event.cc
+    1.151 04/03/11 17:38:14 guilhem@mysql.com +87 -72
+    If the query got a really bad error on the master (thread killed etc),
+    parse it to test the table names: if the replicate-*-do|ignore-table
+    rules say "this query must be ignored" then we exit gracefully;
+    otherwise we warn about the bad error and tell DBA to check/fix it.
+    Before this change, we always warned and stopped.
+
+  mysql-test/t/rpl_error_ignored_table.test
+    1.3 04/03/11 17:38:14 guilhem@mysql.com +30 -0
+    we test if a killed query on the master, is ignored on the slave
+    if the tables it involves should be excluded because of replicate-*-table
+    rules.
+
+  mysql-test/t/rpl_error_ignored_table-slave.opt
+    1.3 04/03/11 17:38:14 guilhem@mysql.com +1 -1
+    ignore more tables
+
+  mysql-test/r/rpl_error_ignored_table.result
+    1.3 04/03/11 17:38:14 guilhem@mysql.com +25 -0
+    result update
+
+  innobase/thr/thr0loc.c
+    1.5 04/03/11 17:30:47 marko@hundin.mysql.fi +6 -4
+    Use magic_n only #ifdef UNIV_DEBUG
+
+  innobase/row/row0upd.c
+    1.22 04/03/11 17:30:17 marko@hundin.mysql.fi +5 -1
+    Use magic_n only #ifdef UNIV_DEBUG
+    Add ut_ad(node->magic_n == UPD_NODE_MAGIC_N)
+
+  innobase/row/row0ins.c
+    1.30 04/03/11 17:29:51 marko@hundin.mysql.fi +6 -4
+    Use magic_n only #ifdef UNIV_DEBUG
+    Add ut_ad(node->magic_n == INS_NODE_MAGIC_N)
+
+  innobase/include/row0upd.h
+    1.10 04/03/11 17:29:33 marko@hundin.mysql.fi +3 -2
+    Use magic_n only #ifdef UNIV_DEBUG
+
+  innobase/include/row0ins.h
+    1.5 04/03/11 17:29:15 marko@hundin.mysql.fi +3 -2
+    Use magic_n only #ifdef UNIV_DEBUG
+
+  innobase/include/mtr0mtr.h
+    1.5 04/03/11 17:28:52 marko@hundin.mysql.fi +8 -6
+    Use state, magic_n only #ifdef UNIV_DEBUG
+
+  innobase/include/hash0hash.ic
+    1.3 04/03/11 17:28:07 marko@hundin.mysql.fi +8 -0
+    Add ut_ad(table->magic_n == HASH_TABLE_MAGIC_N)
+
+  innobase/include/hash0hash.h
+    1.2 04/03/11 17:27:42 marko@hundin.mysql.fi +3 -17
+    Remove unused functions hash_mutex_enter_all and hash_mutex_exit_all
+    Use magic_n only #ifdef UNIV_DEBUG
+
+  innobase/include/dict0mem.h
+    1.15 04/03/11 17:27:19 marko@hundin.mysql.fi +10 -7
+    Use magic_n only #ifdef UNIV_DEBUG
+
+  innobase/ha/hash0hash.c
+    1.2 04/03/11 17:25:34 marko@hundin.mysql.fi +6 -32
+    Remove unused functions hash_mutex_enter_all and hash_mutex_exit_all
+    Use magic_n only #ifdef UNIV_DEBUG
+    Add ut_ad(table->magic_n == HASH_TABLE_MAGIC_N)
+
+  innobase/dict/dict0mem.c
+    1.10 04/03/11 17:25:15 marko@hundin.mysql.fi +4 -2
+    Use magic_n only #ifdef UNIV_DEBUG
+
+  innobase/dict/dict0dict.c
+    1.41 04/03/11 17:24:44 marko@hundin.mysql.fi +2 -2
+    Use magic_n only #ifdef UNIV_DEBUG
+
+ChangeSet
+  1.1730.8.1 04/03/11 16:23:35 guilhem@mysql.com +7 -0
+  Fix for BUG#2921 "Replication problem on mutex lock in mySQL-4.0.18":
+  re-using unused LOCK_active_mi to serialize all administrative
+  commands related to replication:
+  START SLAVE, STOP SLAVE, RESET SLAVE, CHANGE MASTER, init_slave()
+  (replication autostart at server startup), end_slave() (replication
+  autostop at server shutdown), LOAD DATA FROM MASTER.
+  This protects us against a handful of deadlocks (like BUG#2921
+  when two START SLAVE, but when two STOP SLAVE too).
+  Removing unused variables.
+
+  sql/sql_show.cc
+    1.121 04/03/11 16:23:31 guilhem@mysql.com +2 -2
+    replacing macros
+
+  sql/sql_parse.cc
+    1.362 04/03/11 16:23:31 guilhem@mysql.com +14 -14
+    found unused variable.
+    Replacing macros.
+
+  sql/slave.h
+    1.74 04/03/11 16:23:31 guilhem@mysql.com +16 -20
+    Re-using LOCK_active_mi to serialize administrative replication commands.
+    Macros unneeded. Removing unneeded variables.
+
+  sql/slave.cc
+    1.267 04/03/11 16:23:31 guilhem@mysql.com +17 -4
+    Re-using unused LOCK_active_mi to serialize all administrative
+    commands related to replication:
+    START SLAVE, STOP SLAVE, RESET SLAVE, CHANGE MASTER, init_slave()
+    (replication autostart at server startup), end_slave() (replication
+    autostop at server shutdown), LOAD DATA FROM MASTER.
+    This protects us against a handful of deadlocks.
+    Removing unused variables.
+
+  sql/set_var.cc
+    1.49.1.1 04/03/11 16:23:30 guilhem@mysql.com +4 -4
+    no need for macro
+
+  sql/repl_failsafe.cc
+    1.40 04/03/11 16:23:30 guilhem@mysql.com +4 -4
+    no need for macro
+
+  sql/item_func.cc
+    1.107 04/03/11 16:23:30 guilhem@mysql.com +0 -2
+    We don't need LOCK_active_mi just to MASTER_POS_WAIT().
+
+  innobase/include/data0data.h
+    1.9 04/03/11 16:41:22 marko@hundin.mysql.fi +4 -2
+    dtuple_struct:magic_n: Enclose in #ifdef UNIV_DEBUG
+
+ChangeSet
+  1.1730.6.2 04/03/11 16:36:19 marko@hundin.mysql.fi +6 -0
+  Remove remaining references to the built-in ODBC driver of InnoDB
+
+ChangeSet
+  1.1730.6.1 04/03/11 16:29:16 marko@hundin.mysql.fi +1 -0
+  Remove libcom.a from acinclude.m4 (should have been done in ChangeSet 1.1741)
+
+  acinclude.m4
+    1.97 04/03/11 16:24:41 marko@hundin.mysql.fi +0 -1
+    innodb_libs: Remove libcom.a
+
+  innobase/pars/pars0pars.c
+    1.6 04/03/11 16:08:15 marko@hundin.mysql.fi +21 -237
+    Remove unused functions related to ODBC and stored procedures
+    Made pars_print_lexed conditional [UNIV_SQL_DEBUG]
+    Output to stderr instead of stdout
+
+  innobase/include/pars0pars.h
+    1.2 04/03/11 16:06:31 marko@hundin.mysql.fi +5 -26
+    Remove unused functions related to ODBC and stored procedures
+    Made pars_print_lexed conditional [UNIV_SQL_DEBUG]
+
+ChangeSet
+  1.1730.5.2 04/03/11 14:55:36 jani@ua72d24.elisa.omakaista.fi +2 -0
+  Small fixes.
+
+ChangeSet
+  1.1727.1.5 04/03/11 15:35:08 Sinisa@sinisa.nasamreza.org +1 -0
+  mysqldump.c:
+    reverting fix
+
+  client/mysqldump.c
+    1.106 04/03/11 15:34:48 Sinisa@sinisa.nasamreza.org +1 -4
+    reverting fix
+
+  sql/set_var.cc
+    1.50 04/03/11 14:55:34 jani@ua72d24.elisa.omakaista.fi +2 -0
+    Added max_insert_delayed_threads into 'SHOW VARIABLES'.
+
+  client/mysqlbinlog.cc
+    1.97 04/03/11 14:55:34 jani@ua72d24.elisa.omakaista.fi +3 -2
+    Patched patch for Bug#2491.
+
+  innobase/srv/srv0srv.c
+    1.62 04/03/11 14:00:39 marko@hundin.mysql.fi +0 -1
+    Remove reference to odbc0odbc.h
+
+  innobase/include/Makefile.am
+    1.6 04/03/11 14:00:12 marko@hundin.mysql.fi +2 -2
+    Remove odbc0odbc.h and ib_odbc.h
+
+  BitKeeper/deleted/.del-odbc0odbc.h~6cdf5ecedbf3b3f0
+    1.2 04/03/11 13:59:04 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/include/odbc0odbc.h
+
+  BitKeeper/deleted/.del-ib_odbc.h~6882a6fe66f9b3e
+    1.2 04/03/11 13:59:04 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/include/ib_odbc.h
+
+ChangeSet
+  1.1730.1.11 04/03/11 12:55:28 marko@hundin.mysql.fi +26 -0
+  Remove unneeded module "com"
+
+  innobase/trx/trx0roll.c
+    1.11 04/03/11 12:30:49 marko@hundin.mysql.fi +8 -10
+    Remove params of sess_open()
+    Remove unneeded params of que_fork_start_command()
+    Remove unneeded params of trx_sig_send() and trx_sig_reply()
+
+  innobase/trx/trx0purge.c
+    1.10 04/03/11 12:29:53 marko@hundin.mysql.fi +3 -7
+    Remove references to the com module
+    Remove params of sess_open()
+    Remove unneeded params of que_fork_start_command()
+
+  innobase/srv/srv0start.c
+    1.53 04/03/11 12:29:27 marko@hundin.mysql.fi +0 -3
+    Remove reference to com0com.h
+    Remove call to sess_sys_init_at_db_start()
+
+  innobase/trx/trx0trx.c
+    1.33 04/03/11 12:27:45 marko@hundin.mysql.fi +9 -31
+    Remove unneeded params of trx_sig_send() and trx_sig_reply()
+    Remove params of sess_open()
+
+  innobase/include/trx0trx.h
+    1.27 04/03/11 12:27:18 marko@hundin.mysql.fi +4 -15
+    Remove unneeded params of trx_sig_send() and trx_sig_reply()
+
+  innobase/que/que0que.c
+    1.12 04/03/11 12:23:26 marko@hundin.mysql.fi +51 -127
+    Remove references to odbc
+    Add #ifdef UNIV_SYNC_DEBUG around some ut_ad()
+    Remove unneeded params of que_fork_start_command()
+    Remove unreachable code
+    Output diagnostics to stderr, not stdout
+
+  innobase/srv/srv0srv.c
+    1.61 04/03/11 12:22:02 marko@hundin.mysql.fi +8 -13
+    Remove references to the com module
+    Remove unused vars srv_n_{com,worker}_threads
+    Make some global vars static
+
+  innobase/include/srv0srv.h
+    1.29 04/03/11 12:21:39 marko@hundin.mysql.fi +0 -4
+    Remove references to the com module
+
+  innobase/row/row0mysql.c
+    1.56 04/03/11 12:20:31 marko@hundin.mysql.fi +4 -6
+    Remove unneeded params of que_fork_start_command()
+
+  innobase/include/que0que.h
+    1.5 04/03/11 12:20:31 marko@hundin.mysql.fi +1 -8
+    Remove unneeded params of que_fork_start_command()
+
+  innobase/dict/dict0crea.c
+    1.16 04/03/11 12:20:31 marko@hundin.mysql.fi +2 -2
+    Remove unneeded params of que_fork_start_command()
+
+  innobase/usr/usr0sess.c
+    1.3 04/03/11 12:18:18 marko@hundin.mysql.fi +9 -509
+    Remove unused functions
+
+  innobase/include/usr0types.h
+    1.2 04/03/11 12:17:57 marko@hundin.mysql.fi +0 -2
+    Remove sess_sys_t and sess_sig_t
+
+  innobase/include/usr0sess.ic
+    1.2 04/03/11 12:17:38 marko@hundin.mysql.fi +0 -24
+    Remove unused communication functions
+
+  innobase/include/usr0sess.h
+    1.3 04/03/11 12:16:33 marko@hundin.mysql.fi +2 -216
+    Remove unused communication functions
+
+  innobase/include/Makefile.am
+    1.5 04/03/11 11:46:56 marko@hundin.mysql.fi +1 -2
+    Remove com*.h
+
+  innobase/configure.in
+    1.24 04/03/11 11:41:59 marko@hundin.mysql.fi +1 -1
+    Remove com/Makefile
+
+  innobase/Makefile.am
+    1.6 04/03/11 11:23:07 marko@hundin.mysql.fi +1 -1
+    Remove unneeded module "com"
+
+  BitKeeper/deleted/.del-com0shm.ic~f827cfca1603fa6b
+    1.2 04/03/11 11:22:34 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/include/com0shm.ic
+
+  BitKeeper/deleted/.del-com0shm.h~5f3df7c04221b0fe
+    1.2 04/03/11 11:22:33 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/include/com0shm.h
+
+  BitKeeper/deleted/.del-com0com.ic~671e309916e285b
+    1.2 04/03/11 11:22:33 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/include/com0com.ic
+
+  BitKeeper/deleted/.del-com0com.h~533a7eaa16ec585a
+    1.2 04/03/11 11:22:33 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/include/com0com.h
+
+  BitKeeper/deleted/.del-makefilewin~3e26f0df100887f2
+    1.2 04/03/11 11:22:17 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/com/makefilewin
+
+  BitKeeper/deleted/.del-com0shm.c~6a16f0c3d81de1f
+    1.5 04/03/11 11:22:17 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/com/com0shm.c
+
+  BitKeeper/deleted/.del-com0com.c~473a1f0f440ce91b
+    1.2 04/03/11 11:22:16 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/com/com0com.c
+
+  BitKeeper/deleted/.del-Makefile.am~2b013aa835a140c4
+    1.3 04/03/11 11:22:16 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/com/Makefile.am
+
+ChangeSet
+  1.1730.1.10 04/03/11 10:38:37 heikki@hundin.mysql.fi +2 -0
+  sync0arr.c, os0file.h:
+    Print always the count of pending pread() and pwrite() calls if there is a long semaphore wait
+
+  innobase/sync/sync0arr.c
+    1.12 04/03/11 10:38:26 heikki@hundin.mysql.fi +11 -0
+    Print always the count of pending pread() and pwrite() calls if there is a long semaphore wait
+
+  innobase/include/os0file.h
+    1.20 04/03/11 10:38:15 heikki@hundin.mysql.fi +3 -0
+    Print always the count of pending pread() and pwrite() calls if there is a long semaphore wait
+
+ChangeSet
+  1.1730.1.9 04/03/11 10:26:08 heikki@hundin.mysql.fi +1 -0
+  data0data.c:
+    Do not test a magic number with =, use == instead :)
+
+  innobase/data/data0data.c
+    1.12 04/03/11 10:25:58 heikki@hundin.mysql.fi +3 -3
+    Do not test a magic number with =, use == instead :)
+
+ChangeSet
+  1.1727.4.1 04/03/10 22:54:07 vva@eagle.mysql.r18.ru +13 -0
+  fixed BUG #2874 "Grant table bug" and
+  added tests for testing structure of mysql db
+
+  mysql-test/t/reserv/system_mysql_db_refs.test
+    1.1 04/03/10 22:54:05 vva@eagle.mysql.r18.ru +89 -0
+
+  mysql-test/t/reserv/system_mysql_db_refs.test
+    1.0 04/03/10 22:54:05 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/t/reserv/system_mysql_db_refs.test
+
+  mysql-test/t/reserv/system_mysql_db_fix.test
+    1.1 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +14 -0
+
+  mysql-test/t/reserv/system_mysql_db_fix-master.opt
+    1.1 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +1 -0
+
+  mysql-test/t/reserv/system_mysql_db.test
+    1.1 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +8 -0
+
+  mysql-test/r/system_mysql_db_refs.result
+    1.1 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +67 -0
+
+  mysql-test/r/system_mysql_db.result
+    1.1 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +119 -0
+
+  mysql-test/include/system_db_struct.inc
+    1.1 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +12 -0
+
+  scripts/mysql_install_db.sh
+    1.45 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +1 -1
+    corrected definition of tables_priv.Table_name
+
+  scripts/mysql_fix_privilege_tables.sql
+    1.4 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +13 -0
+    added new alters (as a result of new tests)
+
+  scripts/mysql_fix_privilege_tables.sh
+    1.13 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +90 -12
+    added new options to using in tests + 
+    added new alters (as a result of new tests)
+
+  mysql-test/t/reserv/system_mysql_db_fix.test
+    1.0 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/t/reserv/system_mysql_db_fix.test
+
+  mysql-test/t/reserv/system_mysql_db_fix-master.opt
+    1.0 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/t/reserv/system_mysql_db_fix-master.opt
+
+  mysql-test/t/reserv/system_mysql_db.test
+    1.0 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/t/reserv/system_mysql_db.test
+
+  mysql-test/r/system_mysql_db_refs.result
+    1.0 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/r/system_mysql_db_refs.result
+
+  mysql-test/r/system_mysql_db.result
+    1.0 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/r/system_mysql_db.result
+
+  mysql-test/mysql-test-run.sh
+    1.186.1.1 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +14 -2
+    export MYSQL and MYSQL_FIX_SYSTEM_TABLES + 
+    added option --result-file for *.opt files
+
+  mysql-test/install_test_db.sh
+    1.23.1.1 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +14 -14
+    corrected wrong column definitions (as a result of tests)
+
+  mysql-test/include/system_db_struct.inc
+    1.0 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +0 -0
+    BitKeeper file /home/vva/work/BUG_2874/mysql-4.0/mysql-test/include/system_db_struct.inc
+
+  client/mysqltest.c
+    1.113 04/03/10 22:54:04 vva@eagle.mysql.r18.ru +34 -24
+    extend "replace" to column names
+    extend "disable_result_log" to output of --exec commad
+
+ChangeSet
+  1.1730.1.8 04/03/10 16:56:28 guilhem@mysql.com +4 -0
+  Backporting parts of
+  ChangeSet 1.1620.12.1 and ChangeSet 1.1625.2.1
+  from 4.1. This makes the slave I/O thread flush the relay log 
+  after every event, which provides additional safety in case
+  of brutal crash (reduces chances to lose a part of the relay log).
+
+  sql/sql_repl.cc
+    1.115 04/03/10 16:56:25 guilhem@mysql.com +1 -1
+    update for new prototype
+
+  sql/slave.h
+    1.73 04/03/10 16:56:24 guilhem@mysql.com +1 -1
+    new prototype
+
+  sql/slave.cc
+    1.266 04/03/10 16:56:24 guilhem@mysql.com +5 -3
+    The slave I/O thread now flushes the relay log after writing
+    every event to it, like we already do in 4.1.
+
+  sql/repl_failsafe.cc
+    1.39 04/03/10 16:56:24 guilhem@mysql.com +1 -1
+    update for new prototype
+
+ChangeSet
+  1.1730.1.7 04/03/10 16:30:47 guilhem@mysql.com +6 -0
+  Undoing 2 parts of changeset 1.1730.1.1 :
+  - the one about BUG#2921
+  - the one about relay log flushing
+  Both will be rewritten in a next changeset
+  (this one will not be pushed before the next changeset).
+
+  sql/sql_repl.cc
+    1.114 04/03/10 16:30:43 guilhem@mysql.com +3 -3
+    undo
+
+  sql/slave.h
+    1.72 04/03/10 16:30:43 guilhem@mysql.com +1 -1
+    undo
+
+  sql/slave.cc
+    1.265 04/03/10 16:30:42 guilhem@mysql.com +13 -39
+    undo
+
+  sql/repl_failsafe.cc
+    1.38 04/03/10 16:30:42 guilhem@mysql.com +1 -1
+    undo
+
+  sql/log_event.cc
+    1.150 04/03/10 16:30:42 guilhem@mysql.com +3 -3
+    undo
+
+  sql/log.cc
+    1.146 04/03/10 16:30:42 guilhem@mysql.com +1 -1
+    undo
+
+ChangeSet
+  1.1730.2.1 04/03/10 13:46:11 monty@mysql.com +32 -0
+  Fixed memory leak in DROP DATABASE when using RAID tables (Bug #2882)
+
+  sql/table.cc
+    1.69.1.1 04/03/10 13:46:10 monty@mysql.com +2 -1
+    Fixed usage of unpack_filename
+
+  sql/sql_db.cc
+    1.65.1.1 04/03/10 13:46:10 monty@mysql.com +35 -30
+    Fixed memory leak with raid tables
+
+  mysys/test_fn.c
+    1.5 04/03/10 13:46:10 monty@mysql.com +2 -1
+    Fixed usage of unpack_filename
+
+  mysys/mf_pack.c
+    1.16 04/03/10 13:46:10 monty@mysql.com +22 -8
+    Changed unpack_filename() to return length of result string.
+
+  include/my_sys.h
+    1.107 04/03/10 13:46:10 monty@mysql.com +1 -1
+    Fixed usage of unpack_filename
+
+  sql/sql_yacc.yy
+    1.227 04/03/10 11:50:15 monty@mysql.com +1 -1
+    Removed compiler warning
+
+  sql/sql_table.cc
+    1.176 04/03/10 11:50:15 monty@mysql.com +4 -3
+    Fixed comment
+
+  sql/sql_select.cc
+    1.276 04/03/10 11:50:15 monty@mysql.com +13 -4
+    Fixed problem with deleting temporary tables when using lower_case_table_names=2. (Bug #2858)
+
+  sql/sql_repl.cc
+    1.113 04/03/10 11:50:15 monty@mysql.com +7 -7
+    New parameter to flush_relay_log_info
+
+  sql/sql_handler.cc
+    1.39 04/03/10 11:50:15 monty@mysql.com +1 -1
+    Indentation fix
+
+  sql/sql_base.cc
+    1.175 04/03/10 11:50:15 monty@mysql.com +4 -0
+    Added warning
+
+  sql/slave.h
+    1.71 04/03/10 11:50:15 monty@mysql.com +1 -1
+    New parameter to flush_relay_log_info
+
+  sql/slave.cc
+    1.264 04/03/10 11:50:15 monty@mysql.com +40 -15
+    First start SQL thread, then start IO thread. This fixed a raze condition in SLAVE START (Bug #2921)
+    Ensure that we have a lock on the IO thread before flushing a relay log file that. The original code could core dump when a relay log rotated.
+    
+
+  sql/repl_failsafe.cc
+    1.37 04/03/10 11:50:14 monty@mysql.com +1 -1
+    New parameter to flush_relay_log_info
+
+  sql/opt_range.cc
+    1.98 04/03/10 11:50:14 monty@mysql.com +3 -3
+    More debug information
+
+  sql/mysqld.cc
+    1.488.1.1 04/03/10 11:50:14 monty@mysql.com +28 -17
+    More debugging info
+    Less warnings when run with --skip-warnings
+
+  sql/mf_iocache.cc
+    1.25 04/03/10 11:50:14 monty@mysql.com +0 -7
+    Removed not used header files
+
+  sql/log_event.cc
+    1.147.1.1 04/03/10 11:50:14 monty@mysql.com +3 -3
+    New parameter to flush_relay_log_info
+
+  sql/log.cc
+    1.145 04/03/10 11:50:14 monty@mysql.com +1 -1
+    New parameter to flush_relay_log_info
+
+  sql/lock.cc
+    1.45 04/03/10 11:50:14 monty@mysql.com +5 -0
+    Extra debugging
+
+  sql/ha_myisam.cc
+    1.130 04/03/10 11:50:14 monty@mysql.com +1 -0
+    Added comment
+
+  mysys/mf_iocache.c
+    1.38 04/03/10 11:50:14 monty@mysql.com +3 -3
+    Renamed _flush_io_cache to my_b_flush_io_cache
+
+  mysql-test/t/multi_update.test
+    1.31 04/03/10 11:50:14 monty@mysql.com +23 -0
+    Test of behaviour of multi-table-delete and alias (Bug #2940)
+
+  mysql-test/t/lowercase_table3.test
+    1.2 04/03/10 11:50:14 monty@mysql.com +1 -1
+    Fixed error
+
+  mysql-test/t/lowercase_table2.test
+    1.2 04/03/10 11:50:14 monty@mysql.com +11 -0
+    Test for lower_case_table_names=2 and temporary tables
+
+  mysql-test/r/multi_update.result
+    1.29 04/03/10 11:50:14 monty@mysql.com +26 -0
+    Test of behaviour of multi-table-delete and alias
+
+  mysql-test/r/lowercase_table3.result
+    1.2 04/03/10 11:50:14 monty@mysql.com +1 -1
+    Fixed error message
+
+  mysql-test/r/lowercase_table2.result
+    1.2 04/03/10 11:50:14 monty@mysql.com +15 -0
+    Test for lower_case_table_names=2 and temporary tables
+
+  mysql-test/mysql-test-run.sh
+    1.188 04/03/10 11:50:14 monty@mysql.com +3 -1
+    Fixes to get --gdb and --ddd to work
+
+  mysql-test/install_test_db.sh
+    1.24 04/03/10 11:50:14 monty@mysql.com +1 -1
+    Added --skip-warnings
+
+  include/my_sys.h
+    1.106 04/03/10 11:50:14 monty@mysql.com +2 -2
+    Renamed _flush_io_cache to my_b_flush_io_cache
+
+  configure.in
+    1.299 04/03/10 11:50:14 monty@mysql.com +3 -3
+    Removed -DFN_NO_CASE_SENCE for Mac OS X as this is not always true
+
+  BUILD/compile-pentium-debug-max
+    1.11 04/03/10 11:50:14 monty@mysql.com +1 -1
+    Added --with-raid
+
+ChangeSet
+  1.1730.1.5 04/03/10 11:05:02 heikki@hundin.mysql.fi +1 -0
+  buf0lru.c:
+    Add typecasts to ulong because ulint is __int64 in Win 64-bits
+    Better error message to the .err log if we have to crash the server because the buffer pool is exhausted by the lock table or the adaptive hash index
+
+  innobase/buf/buf0lru.c
+    1.15 04/03/10 11:04:50 heikki@hundin.mysql.fi +3 -2
+    Add typecasts to ulong because ulint is __int64 in Win 64-bits
+
+  innobase/buf/buf0lru.c
+    1.14 04/03/10 11:01:34 heikki@hundin.mysql.fi +5 -2
+    Better error message to the .err log if we have to crash the server because the buffer pool is exhausted by the lock table or the adaptive hash index
+
+ChangeSet
+  1.1695.26.1 04/03/09 11:48:32 paul@teton.kitebird.com +1 -0
+  Reword comment/help message.
+  Fix comment typos. (Skipp -> Skip)
+
+  extra/replace.c
+    1.12 04/03/09 11:48:28 paul@teton.kitebird.com +15 -8
+    Reword comment/help message.
+    Fix comment typos. (Skipp -> Skip)
+
+ChangeSet
+  1.1727.1.4 04/03/09 17:00:00 Sinisa@sinisa.nasamreza.org +1 -0
+  mysqldump.c:
+    This is to fix mysqldump problem when local-infile option is present under [client] options header.  It will not start. This must be fixed as other programs use that option under [client] options header.
+
+  client/mysqldump.c
+    1.105 04/03/09 16:58:20 Sinisa@sinisa.nasamreza.org +10 -7
+    This is to fix mysqldump problem when local-infile option is present under [client] options header.  It will not start. This must be fixed as other programs use that option under [client] options header.
+
+ChangeSet
+  1.1730.1.3 04/03/08 15:58:45 paul@ice.snake.net +1 -0
+  Touch up error message.
+
+  sql/mysqld.cc
+    1.489 04/03/08 15:58:37 paul@ice.snake.net +4 -4
+    Touch up error message.
+
+ChangeSet
+  1.1730.1.2 04/03/08 15:52:06 paul@ice.snake.net +1 -0
+  Patch for #3068: [Prompt without seconds when set from INI file].
+  (Fix hours/seconds always to display with two digits.)
+
+  client/mysql.cc
+    1.149 04/03/08 15:51:59 paul@ice.snake.net +6 -0
+    Patch for #3068: [Prompt without seconds when set from INI file].
+    (Fix hours/seconds always to display with two digits.)
+
+ChangeSet
+  1.1727.3.1 04/03/08 14:47:13 guilhem@mysql.com +1 -0
+  Fix for BUG#3081 "if an INSERT DELAYED is killed, it is binlogged as killed but it's not needed".
+  INSERT DELAYED works only for one-row inserts (in latest 4.0 versions
+  at least). So killing a delayed_insert thread does not spoil replication:
+  the rows which actually went into the table are exactly those listed
+  in the binlog. So when the delayed_insert thread is killed, don't log
+  it as 'killed', because it causes superfluous stops on the slave.
+
+  sql/log_event.cc
+    1.148 04/03/08 14:47:09 guilhem@mysql.com +3 -1
+    INSERT DELAYED works only for one-row inserts (in latest 4.0 versions
+    at least). So killing a delayed_insert thread does not spoil replication:
+    the rows which actually went into the table are exactly those listed
+    in the binlog. So when the delayed_insert thread is killed, don't log
+    it as 'killed', because it causes superfluous stops on the slave.
+
+ChangeSet
+  1.1729 04/03/06 10:43:35 monty@mysql.com +11 -0
+  Ensure that one can't from the command line set a variable too small. (Bug #2710)
+  Allow one to force lower_case_table_names to 0, even if the file system is case insensitive. This fixes some issues on Mac OS X (Bug #2994)
+  Added variables "lower_case_file_system", "version_compile_os" and "license"
+
+  mysql-test/t/lowercase_table3.test
+    1.1 04/03/06 10:43:33 monty@mysql.com +37 -0
+
+  mysql-test/r/true.require
+    1.1 04/03/06 10:43:33 monty@mysql.com +2 -0
+
+  mysql-test/r/lowercase_table3.result
+    1.1 04/03/06 10:43:33 monty@mysql.com +10 -0
+
+  mysql-test/r/lowercase0.require
+    1.1 04/03/06 10:43:33 monty@mysql.com +3 -0
+
+  sql/sql_select.cc
+    1.275 04/03/06 10:43:33 monty@mysql.com +3 -1
+    Make join optimizer killable
+
+  sql/set_var.h
+    1.10 04/03/06 10:43:33 monty@mysql.com +25 -0
+    Added support for read only strings
+
+  sql/set_var.cc
+    1.46.2.1 04/03/06 10:43:33 monty@mysql.com +14 -3
+    Added variable "lower_case_file_system"
+    Added variable "version_compile_os"
+    Added variable "license"
+
+  sql/mysqld.cc
+    1.485.2.1 04/03/06 10:43:33 monty@mysql.com +19 -3
+    Allow one to force lower_case_table_names to 0, even if the file system is case insensitive
+
+  sql/mysql_priv.h
+    1.213.1.1 04/03/06 10:43:33 monty@mysql.com +1 -1
+    Added lower_case_file_system
+
+  mysys/my_getopt.c
+    1.39 04/03/06 10:43:33 monty@mysql.com +6 -9
+    Ensure that one can't from the command line set a variable too small (could happen when sub_size was set)
+
+  mysql-test/t/lowercase_table3.test
+    1.0 04/03/06 10:43:33 monty@mysql.com +0 -0
+    BitKeeper file /home/my/mysql-4.0/mysql-test/t/lowercase_table3.test
+
+  mysql-test/r/true.require
+    1.0 04/03/06 10:43:33 monty@mysql.com +0 -0
+    BitKeeper file /home/my/mysql-4.0/mysql-test/r/true.require
+
+  mysql-test/r/lowercase_table3.result
+    1.0 04/03/06 10:43:33 monty@mysql.com +0 -0
+    BitKeeper file /home/my/mysql-4.0/mysql-test/r/lowercase_table3.result
+
+  mysql-test/r/lowercase0.require
+    1.0 04/03/06 10:43:33 monty@mysql.com +0 -0
+    BitKeeper file /home/my/mysql-4.0/mysql-test/r/lowercase0.require
+
+ChangeSet
+  1.1722.1.1 04/03/05 22:13:33 vva@eagle.mysql.r18.ru +5 -0
+  fixed Bug #2985 
+   "Table truncated when creating another table name with Spaces"
+  added to check_db_name, check_table_name and check_column_name
+  test for end space
+
+  sql/table.cc
+    1.70 04/03/05 22:13:26 vva@eagle.mysql.r18.ru +26 -2
+    added to check_db_name, check_table_name and check_column_name 
+    test for end space
+
+  sql/sql_parse.cc
+    1.360.1.1 04/03/05 22:13:26 vva@eagle.mysql.r18.ru +4 -8
+    cancel strip end spaces for database name
+
+  sql/sql_db.cc
+    1.66 04/03/05 22:13:26 vva@eagle.mysql.r18.ru +1 -1
+    cancel strip end spaces for database name
+
+  mysql-test/t/create.test
+    1.20 04/03/05 22:13:26 vva@eagle.mysql.r18.ru +12 -0
+    added test for Bug #2985 
+     "Table truncated when creating another table name with Spaces"
+
+  mysql-test/r/create.result
+    1.23 04/03/05 22:13:26 vva@eagle.mysql.r18.ru +6 -0
+    added test for Bug #2985 
+     "Table truncated when creating another table name with Spaces"
+
+ChangeSet
+  1.1727.2.1 04/03/05 18:09:32 serg@serg.mylan +1 -0
+  comment clarified
+
+  mysys/mf_soundex.c
+    1.5 04/03/05 18:09:29 serg@serg.mylan +4 -0
+    comment clarified
+
+  mysql-test/t/lowercase_table3-master.opt
+    1.2 04/03/05 13:16:47 monty@mysql.com +0 -0
+    Rename: mysql-test/t/lowercase_table2-master.opt -> mysql-test/t/lowercase_table3-master.opt
+
+ChangeSet
+  1.1727.1.2 04/03/04 18:30:28 jani@ua72d24.elisa.omakaista.fi +1 -0
+  Added option chroot to mysqlhotcopy.
+  Useful in case mysqld was started with chroot.
+
+  scripts/mysqlhotcopy.sh
+    1.41 04/03/04 18:30:25 jani@ua72d24.elisa.omakaista.fi +4 -1
+    Added option chroot to mysqlhotcopy.
+    Useful in case mysqld was started with chroot.
+
+ChangeSet
+  1.676.1.758 04/03/04 22:11:33 vva@eagle.mysql.r18.ru +3 -0
+  fixed Bug #3051 "FLOOR returns invalid"
+
+  sql/item_func.cc
+    1.36.1.21 04/03/04 22:11:20 vva@eagle.mysql.r18.ru +2 -1
+    fixed Bug #3051 "FLOOR returns invalid"
+
+  mysql-test/t/func_math.test
+    1.3.1.3 04/03/04 22:11:20 vva@eagle.mysql.r18.ru +8 -0
+    added test for Bug #3051 "FLOOR returns invalid"
+
+  mysql-test/r/func_math.result
+    1.3.1.3 04/03/04 22:11:20 vva@eagle.mysql.r18.ru +6 -0
+    added test for Bug #3051 "FLOOR returns invalid"
+
+ChangeSet
+  1.1725.1.1 04/03/04 17:58:36 jani@ua72d24.elisa.omakaista.fi +7 -0
+  Fixed Bug#2491, INSERT DELAYED causes binary log unusable by mysqlbinlog (replication is ok)
+  Setting insert delayed threads = 0 at mysql_init_command.
+
+  BitKeeper/etc/logging_ok
+    1.306 04/03/04 17:58:36 jani@ua72d24.elisa.omakaista.fi +1 -0
+    Logging to logging@openlogging.org accepted
+
+  sql/sql_insert.cc
+    1.111.1.1 04/03/04 17:58:33 jani@ua72d24.elisa.omakaista.fi +2 -2
+    New session variable, max_insert_delayed_threads
+
+  sql/sql_class.h
+    1.173.1.1 04/03/04 17:58:33 jani@ua72d24.elisa.omakaista.fi +1 -0
+    New session variable, max_insert_delayed_threads
+
+  sql/set_var.cc
+    1.46.1.1 04/03/04 17:58:33 jani@ua72d24.elisa.omakaista.fi +7 -3
+    New session variable, max_insert_delayed_threads
+
+  sql/mysqld.cc
+    1.485.1.1 04/03/04 17:58:33 jani@ua72d24.elisa.omakaista.fi +5 -3
+    New session variable, max_insert_delayed_threads
+
+  sql/mysql_priv.h
+    1.214 04/03/04 17:58:33 jani@ua72d24.elisa.omakaista.fi +1 -1
+    New session variable, max_insert_delayed_threads
+
+  client/mysqlbinlog.cc
+    1.96 04/03/04 17:58:33 jani@ua72d24.elisa.omakaista.fi +5 -2
+    Fixed Bug#2491, INSERT DELAYED causes binary log unusable by mysqlbinlog (replication is ok)
+    Setting insert delayed threads = 0 at mysql_init_command.
+
+ChangeSet
+  1.1726.1.1 04/03/04 18:32:55 bell@sanja.is.com.ua +8 -0
+  invalidation of locking for write tables (BUG#2693)
+  fixed linking query_prealloc_size to query cache presence
+
+  sql/sql_parse.cc
+    1.361 04/03/04 18:32:43 bell@sanja.is.com.ua +5 -1
+    layout fixed
+
+  sql/sql_class.h
+    1.174 04/03/04 18:32:43 bell@sanja.is.com.ua +1 -0
+    new variable query_cache_wlock_invalidate
+
+  sql/sql_cache.h
+    1.21 04/03/04 18:32:43 bell@sanja.is.com.ua +1 -0
+    new method for table invalidation
+
+  sql/sql_cache.cc
+    1.59 04/03/04 18:32:43 bell@sanja.is.com.ua +31 -0
+    new method for table invalidation
+
+  sql/set_var.cc
+    1.47 04/03/04 18:32:43 bell@sanja.is.com.ua +4 -0
+    new variable query_cache_wlock_invalidate
+
+  sql/mysqld.cc
+    1.486 04/03/04 18:32:42 bell@sanja.is.com.ua +7 -2
+    new variable query_cache_wlock_invalidate
+    fixed query_prealloc_size with QC absence
+
+  mysql-test/t/query_cache.test
+    1.29 04/03/04 18:32:42 bell@sanja.is.com.ua +16 -1
+    test of QC invalidation by LOCK command
+
+  mysql-test/r/query_cache.result
+    1.28 04/03/04 18:32:42 bell@sanja.is.com.ua +17 -0
+    test of QC invalidation by LOCK command
+
+ChangeSet
+  1.1728 04/03/04 18:16:10 monty@mysql.com +5 -0
+  Rollback UPDATE/DELETE statements on kill
+  nsure that rows in a multi-row INSERT DELAYED are inserted atomicly
+
+  sql/sql_update.cc
+    1.99 04/03/04 18:16:10 monty@mysql.com +4 -0
+    Rollback statement on kill
+
+  sql/sql_list.h
+    1.15 04/03/04 18:16:10 monty@mysql.com +5 -0
+    Ensure that rows in a multi-row INSERT DELAYED is inserted atomicly (without releasing logs).
+    This is needed to ensure that the mysqlbinlog is consistent.
+    Bug #2491
+
+  sql/sql_insert.cc
+    1.112 04/03/04 18:16:10 monty@mysql.com +9 -2
+    Ensure that rows in a multi-row INSERT DELAYED are inserted atomicly (without releasing logs).
+    This is needed to ensure that the mysqlbinlog is consistent.
+    Bug #2491
+
+  sql/sql_delete.cc
+    1.106 04/03/04 18:16:10 monty@mysql.com +5 -4
+    Rollback statement on kill
+
+  mysql-test/mysql-test-run.sh
+    1.187 04/03/04 18:16:10 monty@mysql.com +8 -1
+    Make test case safe for openserver/unixware (Bug #2700)
+
+ChangeSet
+  1.1723.1.1 04/03/04 15:44:24 guilhem@mysql.com +1 -0
+  Fix for BUG#3063 "Don't mark an auto DROP TEMP TABLE as 'killed' in the binlog";
+  even if the thread was killed, we write the DROP with error_code=0.
+  This will remove unneeded stops on slave, and will lose nothing:
+  if a real update was killed, this real update will be logged with the
+  nonzero error code and will cause the stop on slave.
+
+  sql/sql_base.cc
+    1.174 04/03/04 15:44:20 guilhem@mysql.com +10 -0
+    Fix for BUG#3063 "Don't mark an auto DROP TEMP TABLE as 'killed' in the binlog";
+    even if the thread was killed, we write the DROP with error_code=0.
+    This will remove unneeded stops on slave, and will lose nothing:
+    if a real update was killed, this real update will be logged with the
+    nonzero error code and will cause the stop on slave.
+
+ChangeSet
+  1.1719.2.1 04/03/04 14:47:33 serg@serg.mylan +2 -0
+  drop tables in windows-compatible order
+
+  mysql-test/t/merge.test
+    1.21 04/03/04 14:47:30 serg@serg.mylan +1 -1
+    drop tables in windows-compatible order
+
+  mysql-test/r/merge.result
+    1.23 04/03/04 14:47:30 serg@serg.mylan +1 -1
+    drop tables in windows-compatible order
+
+ChangeSet
+  1.1725 04/03/04 15:32:16 heikki@hundin.mysql.fi +1 -0
+  srv0srv.c:
+    Protect the reading of the latest foreign key error explantion buffer with a mutex; in theory, a race condition could cause SHOW INNODB STATUS print garbage characters after the error info; remove the sprintf of the latest UNIQUE KEY error, since the buffer really was always empty
+
+  innobase/srv/srv0srv.c
+    1.60 04/03/04 15:32:07 heikki@hundin.mysql.fi +8 -12
+    Protect the reading of the latest foreign key error explantion buffer with a mutex; in theory, a race condition could cause SHOW INNODB STATUS print garbage characters after the error info; remove the sprintf of the latest UNIQUE KEY error, since the buffer really was always empty
+
+ChangeSet
+  1.1724 04/03/04 10:57:30 monty@mashka.mysql.fi +1 -0
+  Indented comment properly
+
+  client/mysqladmin.c
+    1.72 04/03/04 10:57:28 monty@mashka.mysql.fi +9 -8
+    Indented comment properly
+
+ChangeSet
+  1.1723 04/03/02 16:01:50 konstantin@mysql.com +1 -0
+  WL#1510: "Implement support for "commercial" binaries on handshake":
+  - server-side variable 'license' added
+
+  sql/set_var.cc
+    1.46 04/03/02 16:01:48 konstantin@mysql.com +6 -0
+    WL#1510: "Implement support for "commercial" binaries on handshake":
+    - server-side variable 'license' added
+
+ChangeSet
+  1.1719.1.5 04/03/01 15:15:58 guilhem@mysql.com +3 -0
+  Fix for BUG#3015
+  "(binlog, position) stored by InnoDB for a replication slave can be wrong".
+  This code contains conditional #if to distinguish between versions;
+  it should be merged into 4.1 and 5.0.
+
+  sql/slave.h
+    1.70 04/03/01 15:15:54 guilhem@mysql.com +9 -5
+    Better code for storing the binlog position in InnoDB for a slave.
+
+  sql/log_event.cc
+    1.147 04/03/01 15:15:54 guilhem@mysql.com +27 -3
+    better code to store the binlog position in InnoDB for a slave.
+
+  sql/ha_innodb.cc
+    1.194 04/03/01 15:15:53 guilhem@mysql.com +6 -8
+    correcting the binlog position stored in InnoDB in a slave.
+
+ChangeSet
+  1.1719.1.4 04/03/01 00:46:31 guilhem@mysql.com +2 -0
+  Fix for BUG#3017
+  "wrong Relay_Log_Pos if Rotate is in the middle of a transaction in relay log"
+  increment 'pending' instead of 'relay_log_pos'.
+
+  sql/log_event.cc
+    1.146 04/03/01 00:46:28 guilhem@mysql.com +5 -3
+    - corrected error message
+    - in Rotate_log_event::exec_event(), if we're in a transaction (which
+    can happen if the I/O slave thread reconnected while reading a
+    transaction), don't increment relay_log_pos but pending instead.
+    Otherwise, relay_log_pos becomes garbage (and so if slave stops at that
+    moment, it will never restart).
+
+  mysql-test/r/rpl_trunc_binlog.result
+    1.6 04/03/01 00:46:28 guilhem@mysql.com +1 -1
+    result update
+
+ChangeSet
+  1.1719.1.3 04/02/28 15:11:16 Greg@greg-laptop. +1 -0
+  Fix problem with NT named pipes code (per e-mail thread).
+
+  sql/mysqld.cc
+    1.485 04/02/28 15:11:13 Greg@greg-laptop. +1 -1
+    Should be mysql_unix_port (cut and paste error).
+
+ChangeSet
+  1.1719.1.2 04/02/27 16:51:01 Greg@greg-laptop. +5 -0
+  Changes to fix errors encountered in test builds on Windows.
+
+  BitKeeper/etc/logging_ok
+    1.303.1.1 04/02/27 16:51:01 Greg@greg-laptop. +1 -0
+    Logging to logging@openlogging.org accepted
+
+  sql/opt_range.cc
+    1.97 04/02/27 16:50:03 Greg@greg-laptop. +2 -2
+    Cast to const char * required to resolve compile error on Windows.
+
+  sql/log_event.cc
+    1.145 04/02/27 16:50:02 Greg@greg-laptop. +1 -1
+    Cast required to resolve compile error on Windows - byte * is 
+    not equivalent to char *.
+
+  VC++Files/libmysql/libmysql.dsp
+    1.11 04/02/27 16:50:02 Greg@greg-laptop. +4 -0
+    strxnmov.c is needed in this module.
+
+  VC++Files/innobase/innobase.dsp
+    1.10 04/02/27 16:50:02 Greg@greg-laptop. +0 -4
+    odbc0odbc.c was removed from the tree.
+
+ChangeSet
+  1.1719.1.1 04/02/27 16:54:16 heikki@hundin.mysql.fi +1 -0
+  row0upd.c:
+    Fix bug: in a FOREIGN KEY, ON UPDATE CASCADE was not triggered if the update changed a string to another value identical in alphabetical ordering, e.g., abc -> aBc
+
+  innobase/row/row0upd.c
+    1.21 04/02/27 16:54:03 heikki@hundin.mysql.fi +9 -8
+    Fix bug: in a FOREIGN KEY, ON UPDATE CASCADE was not triggered if the update changed a string to another value identical in alphabetical ordering, e.g., abc -> aBc
+
+ChangeSet
+  1.1720 04/02/26 19:09:49 ulli@morbus.(none) +4 -0
+  fix for bug #2905 - 
+  "mysqladmin.c & co fail to use MYSQL_PORT as the default value of the TCP/IP port"
+
+  BitKeeper/etc/logging_ok
+    1.304 04/02/26 19:09:49 ulli@morbus.(none) +1 -0
+    Logging to logging@openlogging.org accepted
+
+  client/thread_test.c
+    1.13 04/02/26 19:09:06 ulli@morbus.(none) +1 -1
+    changed the value after REQUIRED_ARG from 0 to MYSQL_PORT
+
+  client/mysqltest.c
+    1.112 04/02/26 19:09:06 ulli@morbus.(none) +1 -1
+    changed the value after REQUIRED_ARG from 0 to MYSQL_PORT
+
+  client/mysqladmin.c
+    1.71 04/02/26 19:09:06 ulli@morbus.(none) +1 -1
+    changed the value after REQUIRED_ARG from 0 to MYSQL_PORT
+
+ChangeSet
+  1.1719 04/02/26 01:05:04 serg@serg.mylan +1 -0
+  do not look for string characters "'` inside comments - bug#539
+
+  client/mysql.cc
+    1.148 04/02/26 01:05:01 serg@serg.mylan +1 -1
+    do not look for string characters "'` inside comments - bug#539
+
+ChangeSet
+  1.1712.1.1 04/02/25 12:44:53 marko@hundin.mysql.fi +1 -0
+  trx0undo.c:
+    Removed bogus assertion
+
+  innobase/trx/trx0undo.c
+    1.9 04/02/25 12:44:18 marko@hundin.mysql.fi +0 -1
+    Removed bogus assertion
+
+ChangeSet
+  1.1717 04/02/25 09:46:43 arjen@bitbike.com +2 -0
+  Inserted comment about lost root pwd procedure in Docs relying on command order in mysqladmin.
+
+  BitKeeper/etc/logging_ok
+    1.303 04/02/25 09:46:43 arjen@bitbike.com +1 -0
+    Logging to logging@openlogging.org accepted
+
+  client/mysqladmin.c
+    1.70 04/02/25 09:46:33 arjen@bitbike.com +8 -0
+    Inserted comment about lost root pwd procedure in Docs relying on command order in mysqladmin.
+
+ChangeSet
+  1.1706.1.2 04/02/24 23:07:45 serg@serg.mylan +1 -0
+  --set-character-set and --character-sets-dir in myisamchk now work
+
+  myisam/myisamchk.c
+    1.111 04/02/24 23:07:41 serg@serg.mylan +2 -2
+    --set-character-set and --character-sets-dir in myisamchk now work
+
+ChangeSet
+  1.1715 04/02/24 17:38:47 heikki@hundin.mysql.fi +1 -0
+  ha_innodb.cc:
+    Add diagnostic code to analyze an assertion failure in ha_innodb.cc on line 2020 reported by a user (Bug #2903)
+
+  sql/ha_innodb.cc
+    1.193 04/02/24 17:38:35 heikki@hundin.mysql.fi +21 -2
+    Add diagnostic code to analyze an assertion failure in ha_innodb.cc on line 2020 reported by a user (Bug #2903)
+
+ChangeSet
+  1.1714 04/02/24 17:17:02 heikki@hundin.mysql.fi +1 -0
+  ut0dbg.h:
+    If there is an assertion failur refer the user to section 6.1 of the InnoDB online manual about forcing recovery
+
+  innobase/include/ut0dbg.h
+    1.11 04/02/24 17:16:40 heikki@hundin.mysql.fi +15 -3
+    If there is an assertion failur refer the user to section 6.1 of the InnoDB online manual about forcing recovery
+
+ChangeSet
+  1.1713 04/02/23 14:02:32 Sinisa@sinisa.nasamreza.org +1 -0
+  A fix for double free of memory in mysqlbinlog.
+
+  client/mysqlbinlog.cc
+    1.95 04/02/23 14:02:26 Sinisa@sinisa.nasamreza.org +1 -1
+    A fix for double free of memory in mysqlbinlog.
+
+ChangeSet
+  1.1703.2.4 04/02/23 12:33:43 marko@hundin.mysql.fi +1 -0
+  configure.in:
+    Removed the unused odbc directory
+
+  innobase/configure.in
+    1.23 04/02/23 12:33:08 marko@hundin.mysql.fi +1 -1
+    Removed the unused odbc directory
+
+ChangeSet
+  1.1695.25.1 04/02/22 11:22:51 guilhem@mysql.com +3 -0
+  Complement to
+  ChangeSet 1.1616.23.1
+  Fix for BUG#1858 "SQL-Thread stops working when using optimize table".
+  A test for this.
+
+  mysql-test/t/rpl_optimize.test
+    1.1 04/02/22 11:22:42 guilhem@mysql.com +43 -0
+
+  mysql-test/r/rpl_optimize.result
+    1.1 04/02/22 11:22:42 guilhem@mysql.com +27 -0
+
+  sql/sql_base.cc
+    1.173 04/02/22 11:22:42 guilhem@mysql.com +2 -1
+    In remove_table_from_cache(), kill only delayed threads.
+
+  mysql-test/t/rpl_optimize.test
+    1.0 04/02/22 11:22:42 guilhem@mysql.com +0 -0
+    BitKeeper file /home/mysql_src/mysql-4.0/mysql-test/t/rpl_optimize.test
+
+  mysql-test/r/rpl_optimize.result
+    1.0 04/02/22 11:22:42 guilhem@mysql.com +0 -0
+    BitKeeper file /home/mysql_src/mysql-4.0/mysql-test/r/rpl_optimize.result
+
+ChangeSet
+  1.1709 04/02/22 09:58:51 monty@mashka.mysql.fi +5 -0
+  Move tests that uses innodb to innodb.test
+
+  mysql-test/t/multi_update.test
+    1.30 04/02/22 09:58:48 monty@mashka.mysql.fi +0 -13
+    Move tests that uses innodb to innodb.test
+
+  mysql-test/t/lock_tables_lost_commit.test
+    1.2 04/02/22 09:58:48 monty@mashka.mysql.fi +2 -0
+    Ensure that innodb is compiled in
+
+  mysql-test/t/innodb.test
+    1.53 04/02/22 09:58:48 monty@mashka.mysql.fi +18 -0
+    Move tests that uses innodb to innodb.test
+
+  mysql-test/r/multi_update.result
+    1.28 04/02/22 09:58:48 monty@mashka.mysql.fi +0 -13
+    Move tests that uses innodb to innodb.test
+
+  mysql-test/r/innodb.result
+    1.76 04/02/22 09:58:48 monty@mashka.mysql.fi +13 -0
+    Move tests that uses innodb to innodb.test
+
+ChangeSet
+  1.1708 04/02/22 08:54:06 monty@mashka.mysql.fi +4 -0
+  Cleanups
+
+  sql/sql_yacc.yy
+    1.226 04/02/22 08:54:03 monty@mashka.mysql.fi +0 -1
+    Fixed wrong merge
+
+  sql/sql_delete.cc
+    1.105 04/02/22 08:54:03 monty@mashka.mysql.fi +1 -2
+    Indentation cleanup
+
+  innobase/Makefile.am
+    1.5 04/02/22 08:54:03 monty@mashka.mysql.fi +1 -1
+    Remove innobase/libodbc
+
+  acinclude.m4
+    1.96 04/02/22 08:54:03 monty@mashka.mysql.fi +0 -1
+    Remove innobase/libodbc
+
+ChangeSet
+  1.1703.1.8 04/02/22 00:19:36 serg@serg.mylan +3 -0
+  ftb +(+(many -parens)) bug fixed
+
+  mysql-test/t/fulltext.test
+    1.43 04/02/22 00:19:33 serg@serg.mylan +3 -1
+    ftb +(+(many -parens)) bug fixed
+
+  mysql-test/r/fulltext.result
+    1.44 04/02/22 00:19:33 serg@serg.mylan +4 -0
+    ftb +(+(many -parens)) bug fixed
+
+  myisam/ft_boolean_search.c
+    1.60 04/02/22 00:19:33 serg@serg.mylan +5 -3
+    ftb +(+(many -parens)) bug fixed
+
+ChangeSet
+  1.1703.3.2 04/02/22 00:38:05 monty@mashka.mysql.fi +1 -0
+  change that master_server_id is not a restricted word
+
+  sql/sql_yacc.yy
+    1.223.1.1 04/02/22 00:38:00 monty@mashka.mysql.fi +1 -0
+    change that master_server_id is not a restricted word
+
+ChangeSet
+  1.1705 04/02/21 20:10:59 Sinisa@sinisa.nasamreza.org +1 -0
+  making one symbol a keyword
+
+  sql/sql_yacc.yy
+    1.224 04/02/21 20:10:55 Sinisa@sinisa.nasamreza.org +1 -0
+    making one symbol a keyword
+
+ChangeSet
+  1.1703.1.7 04/02/21 14:25:43 serg@serg.mylan +1 -0
+  c++ comment fixed
+
+  sql/net_serv.cc
+    1.61 04/02/21 14:25:40 serg@serg.mylan +1 -1
+    c++ comment fixed
+
+ChangeSet
+  1.1703.1.6 04/02/21 14:00:54 serg@serg.mylan +1 -0
+  ignore:
+    added scripts/make_win_binary_distribution
+
+  BitKeeper/etc/ignore
+    1.156 04/02/21 14:00:39 serg@serg.mylan +1 -0
+    added scripts/make_win_binary_distribution
+
+ChangeSet
+  1.1703.4.1 04/02/21 11:18:29 serg@serg.mylan +1 -0
+  portability fixes
+  cleanup
+
+  myisam/myisam_ftdump.c
+    1.19 04/02/21 11:18:26 serg@serg.mylan +20 -16
+    portability fixes
+    cleanup
+
+ChangeSet
+  1.1703.3.1 04/02/20 17:58:34 monty@mashka.mysql.fi +1 -0
+  Added missing argument to strxnmov() (Applies for windows debug mode)
+
+  libmysql/libmysql.c
+    1.142 04/02/20 17:58:31 monty@mashka.mysql.fi +2 -1
+    Added missing argument to strxnmov()
+
+ChangeSet
+  1.1703.1.4 04/02/20 12:42:03 greg@mysql.com +3 -0
+  Fix name conflict with alternate capitalization
+
+ChangeSet
+  1.1703.2.3 04/02/20 17:42:41 marko@hundin.mysql.fi +4 -0
+  Remove unused files
+  
+  .del-odbc0odbc.c~6a372e94945263b5:
+    Delete: innobase/odbc/odbc0odbc.c
+  .del-odbc0dummy.c~761be78656f44ad2:
+    Delete: innobase/odbc/odbc0dummy.c
+  .del-makefilewin~15bf11ba8e0e4efe:
+    Delete: innobase/odbc/makefilewin
+  .del-Makefile.am~f40398b15a266f24:
+    Delete: innobase/odbc/Makefile.am
+
+  BitKeeper/deleted/.del-odbc0odbc.c~6a372e94945263b5
+    1.3 04/02/20 17:40:59 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/odbc/odbc0odbc.c
+
+  BitKeeper/deleted/.del-odbc0dummy.c~761be78656f44ad2
+    1.2 04/02/20 17:40:59 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/odbc/odbc0dummy.c
+
+  BitKeeper/deleted/.del-makefilewin~15bf11ba8e0e4efe
+    1.2 04/02/20 17:40:59 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/odbc/makefilewin
+
+  BitKeeper/deleted/.del-Makefile.am~f40398b15a266f24
+    1.3 04/02/20 17:40:59 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/odbc/Makefile.am
+
+ChangeSet
+  1.1695.24.1 04/02/20 16:34:09 marko@hundin.mysql.fi +45 -0
+  Many files:
+    Removed unused code
+  .del-os0trash.c~8cae5c1695501117:
+    Delete: innobase/os/os0trash.c
+  dict0crea.c:
+    Protect all sprintf(%s) with assertions
+
+  innobase/ut/ut0ut.c
+    1.15 04/02/20 16:21:39 marko@hundin.mysql.fi +1 -0
+    Removed unused code
+
+  innobase/ut/ut0mem.c
+    1.14 04/02/20 16:21:39 marko@hundin.mysql.fi +1 -1
+    Removed unused code
+
+  innobase/ut/ut0dbg.c
+    1.2 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -7
+    Removed unused code
+
+  innobase/trx/trx0trx.c
+    1.32 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -23
+    Removed unused code
+
+  innobase/trx/trx0rec.c
+    1.8 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -41
+    Removed unused code
+
+  innobase/sync/sync0sync.c
+    1.19 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -40
+    Removed unused code
+
+  innobase/srv/srv0start.c
+    1.52 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -74
+    Removed unused code
+
+  innobase/srv/srv0srv.c
+    1.59 04/02/20 16:21:39 marko@hundin.mysql.fi +3 -254
+    Removed unused code
+
+  innobase/row/row0row.c
+    1.5 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -55
+    Removed unused code
+
+  innobase/row/row0mysql.c
+    1.55 04/02/20 16:21:39 marko@hundin.mysql.fi +4 -2
+    Removed unused code
+
+  innobase/row/row0ins.c
+    1.29 04/02/20 16:21:39 marko@hundin.mysql.fi +1 -60
+    Removed unused code
+
+  innobase/rem/rem0cmp.c
+    1.14 04/02/20 16:21:39 marko@hundin.mysql.fi +1 -1
+    Removed unused code
+
+  innobase/que/que0que.c
+    1.9.1.1 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -147
+    Removed unused code
+
+  innobase/page/page0page.c
+    1.13 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -28
+    Removed unused code
+
+  innobase/os/os0proc.c
+    1.3 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -77
+    Removed unused code
+
+  innobase/mtr/mtr0mtr.c
+    1.4 04/02/20 16:21:39 marko@hundin.mysql.fi +1 -1
+    Removed unused code
+
+  innobase/mem/mem0dbg.c
+    1.7 04/02/20 16:21:39 marko@hundin.mysql.fi +1 -144
+    Removed unused code
+
+  innobase/log/log0recv.c
+    1.23 04/02/20 16:21:39 marko@hundin.mysql.fi +7 -3
+    Removed unused code
+
+  innobase/lock/lock0lock.c
+    1.27 04/02/20 16:21:39 marko@hundin.mysql.fi +5 -178
+    Removed unused code
+
+  innobase/include/sync0sync.h
+    1.10 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -9
+    Removed unused code
+
+  innobase/include/srv0srv.h
+    1.28 04/02/20 16:21:39 marko@hundin.mysql.fi +1 -24
+    Removed unused code
+
+  innobase/include/row0row.h
+    1.4 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -25
+    Removed unused code
+
+  innobase/include/rem0cmp.ic
+    1.2 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -18
+    Removed unused code
+
+  innobase/include/os0thread.h
+    1.14 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -7
+    Removed unused code
+
+  innobase/include/os0proc.h
+    1.3 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -31
+    Removed unused code
+
+  innobase/include/mtr0mtr.h
+    1.4 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -10
+    Removed unused code
+
+  innobase/include/mtr0log.h
+    1.2 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -9
+    Removed unused code
+
+  innobase/include/mem0mem.ic
+    1.6 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -20
+    Removed unused code
+
+  innobase/include/mem0dbg.h
+    1.3 04/02/20 16:21:39 marko@hundin.mysql.fi +4 -14
+    Removed unused code
+
+  innobase/include/lock0lock.h
+    1.8 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -8
+    Removed unused code
+
+  innobase/include/ibuf0ibuf.h
+    1.5 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -9
+    Removed unused code
+
+  innobase/include/dict0dict.h
+    1.20 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -7
+    Removed unused code
+
+  innobase/include/dict0crea.h
+    1.4 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -9
+    Removed unused code
+
+  innobase/include/data0data.h
+    1.8 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -78
+    Removed unused code
+
+  innobase/include/buf0buf.ic
+    1.8 04/02/20 16:21:39 marko@hundin.mysql.fi +3 -2
+    Removed unused code
+
+  innobase/include/btr0sea.h
+    1.5 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -35
+    Removed unused code
+
+  innobase/include/btr0cur.h
+    1.12 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -11
+    Removed unused code
+
+  innobase/ha/ha0ha.c
+    1.6 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -27
+    Removed unused code
+
+  innobase/fsp/fsp0fsp.c
+    1.16 04/02/20 16:21:39 marko@hundin.mysql.fi +4 -10
+    Removed unused code
+
+  innobase/dict/dict0crea.c
+    1.15 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -49
+    Removed unused code
+
+  innobase/data/data0data.c
+    1.11 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -413
+    Removed unused code
+
+  innobase/com/com0shm.c
+    1.4 04/02/20 16:21:39 marko@hundin.mysql.fi +4 -37
+    Removed unused code
+
+  innobase/buf/buf0buf.c
+    1.28 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -15
+    Removed unused code
+
+  innobase/btr/btr0sea.c
+    1.15 04/02/20 16:21:39 marko@hundin.mysql.fi +0 -69
+    Removed unused code
+
+  VC++Files/InstallShield/4.0.XX-pro/Script Files/Setup.rul.old
+    1.2 04/02/20 12:41:07 greg@mysql.com +0 -0
+    Rename: VC++Files/InstallShield/4.0.XX-pro/Script Files/Setup.rul -> VC++Files/InstallShield/4.0.XX-pro/Script Files/Setup.rul.old
+
+  VC++Files/InstallShield/4.0.XX-gpl/Script Files/Setup.rul.old
+    1.2 04/02/20 12:40:46 greg@mysql.com +0 -0
+    Rename: VC++Files/InstallShield/4.0.XX-gpl/Script Files/Setup.rul -> VC++Files/InstallShield/4.0.XX-gpl/Script Files/Setup.rul.old
+
+  VC++Files/InstallShield/4.0.XX-classic/Script Files/Setup.rul.old
+    1.2 04/02/20 12:40:18 greg@mysql.com +0 -0
+    Rename: VC++Files/InstallShield/4.0.XX-classic/Script Files/Setup.rul -> VC++Files/InstallShield/4.0.XX-classic/Script Files/Setup.rul.old
+
+  BitKeeper/deleted/.del-os0trash.c~8cae5c1695501117
+    1.2 04/02/20 13:42:47 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/os/os0trash.c
+
+ChangeSet
+  1.1695.23.1 04/02/20 12:02:34 serg@serg.mylan +1 -0
+  \| is sed is on-portable
+
+  scripts/mysql_config.sh
+    1.11 04/02/20 12:02:31 serg@serg.mylan +9 -4
+    \| is sed is on-portable
+
+ChangeSet
+  1.1703.1.2 04/02/19 17:52:55 greg@mysql.com +7 -0
+  Major work on Windows build automation-- add binary packaging, suffixes
+
+ChangeSet
+  1.1695.1.50 04/02/19 22:04:31 monty@mysql.com +6 -0
+  Fixed usage of strxnmov() in recent changesets
+
+  sql/mysqld.cc
+    1.484 04/02/19 22:04:29 monty@mysql.com +23 -21
+    szPipeName -> pipe_name
+    fixed usage of strxnmov()
+    Fixed indentation
+
+  sql/mini_client.cc
+    1.61 04/02/19 22:04:29 monty@mysql.com +6 -5
+    szPipeName -> pipe_name
+    fixed usage of strxnmov()
+
+  sql/log.cc
+    1.144 04/02/19 22:04:29 monty@mysql.com +12 -9
+    simple optimization
+
+  mysys/my_tempnam.c
+    1.15 04/02/19 22:04:29 monty@mysql.com +6 -5
+    Fixed usage of strnxmov()
+    Simple optimization
+
+  mysys/mf_tempfile.c
+    1.19 04/02/19 22:04:29 monty@mysql.com +5 -4
+    Fixed usage of strnxmov()
+    Simple optimization
+
+  libmysql/libmysql.c
+    1.138.1.2 04/02/19 22:04:29 monty@mysql.com +7 -5
+    szPipeName -> pipe_name
+    fixed usage of strxnmov()
+
+  scripts/make_win_binary_distribution.sh
+    1.1 04/02/19 17:52:53 greg@mysql.com +178 -0
+
+  scripts/make_win_binary_distribution.sh
+    1.0 04/02/19 17:52:53 greg@mysql.com +0 -0
+    BitKeeper file /bk/mysql-4.0/scripts/make_win_binary_distribution.sh
+
+  scripts/Makefile.am
+    1.32 04/02/19 17:52:53 greg@mysql.com +3 -1
+    Add make_win_binary_distribution to Makefile (for @VERSION@)
+
+  VC++Files/myisampack/myisampack.dsp
+    1.5 04/02/19 17:52:53 greg@mysql.com +9 -9
+    Update project file -- binary goes to ../client_release now
+
+  VC++Files/myisam_ftdump/myisam_ftdump.dsp
+    1.2 04/02/19 17:52:53 greg@mysql.com +2 -2
+    Update project file -- binary goes to ../client_release now
+
+  VC++Files/my_print_defaults/my_print_defaults.dsp
+    1.4 04/02/19 17:52:53 greg@mysql.com +13 -12
+    Update project file -- binary goes to ../client_release now
+
+  VC++Files/comp_err/comp_err.dsp
+    1.4 04/02/19 17:52:53 greg@mysql.com +9 -9
+    Update project file -- binary goes to ../client_release now
+
+  Build-tools/Do-win-build
+    1.3 04/02/19 17:52:53 greg@mysql.com +53 -14
+    Add suffix option, classic build, binary packaging
+
+ChangeSet
+  1.1695.22.1 04/02/19 19:43:46 Sinisa@sinisa.nasamreza.org +3 -0
+  Fix for a bug #2799.
+  
+  Multi-table delete's with tables having foreign key constraints
+  did not return the error.
+  
+  Also added tests for multi-table updates.
+   
+
+  sql/sql_delete.cc
+    1.104 04/02/19 19:43:43 Sinisa@sinisa.nasamreza.org +7 -2
+    Fix for a bug #2799.
+    
+    Multi-table delete's with tables having foreign key constraints
+    did not return the error.
+    
+    Also added tests for multi-table updates.
+     
+
+  mysql-test/t/multi_update.test
+    1.29 04/02/19 19:43:43 Sinisa@sinisa.nasamreza.org +13 -1
+    Fix for a bug #2799.
+    
+    Multi-table delete's with tables having foreign key constraints
+    did not return the error.
+    
+    Also added tests for multi-table updates.
+     
+
+  mysql-test/r/multi_update.result
+    1.27 04/02/19 19:43:43 Sinisa@sinisa.nasamreza.org +13 -0
+    Fix for a bug #2799.
+    
+    Multi-table delete's with tables having foreign key constraints
+    did not return the error.
+    
+    Also added tests for multi-table updates.
+     
+
+  innobase/dict/dict0crea.c
+    1.14 04/02/19 19:37:46 marko@hundin.mysql.fi +27 -9
+    Protect all sprintf(%s) with assertions
+
+ChangeSet
+  1.1695.19.2 04/02/19 19:36:53 monty@mysql.com +2 -0
+  crease number of open files to 2048 on windows
+  Don't do fsync on temporary .frm files
+
+  sql/unireg.cc
+    1.19 04/02/19 19:36:52 monty@mysql.com +3 -1
+    Don't do fsync on temporary files
+
+  include/config-win.h
+    1.35 04/02/19 19:36:52 monty@mysql.com +1 -1
+    Increase number of open files to 2048 on windows
+
+ChangeSet
+  1.1695.21.1 04/02/19 17:16:16 heikki@hundin.mysql.fi +1 -0
+  que0que.c:
+    Testing if bk push works
+
+  innobase/que/que0que.c
+    1.10 04/02/19 17:16:08 heikki@hundin.mysql.fi +1 -1
+    Testing if bk push works
+
+ChangeSet
+  1.1702 04/02/19 13:34:40 greg@mysql.com +16 -0
+  First round of changes to set up for Windows build automation.
+
+  VC++Files/myisam_ftdump/myisam_ftdump.dsp
+    1.1 04/02/19 13:34:38 greg@mysql.com +103 -0
+
+  VC++Files/InstallShield/4.0.XX-pro/Script Files/setup.rul
+    1.1 04/02/19 13:34:38 greg@mysql.com +641 -0
+
+  VC++Files/InstallShield/4.0.XX-gpl/Script Files/setup.rul
+    1.1 04/02/19 13:34:38 greg@mysql.com +641 -0
+
+  VC++Files/InstallShield/4.0.XX-classic/Script Files/setup.rul
+    1.1 04/02/19 13:34:38 greg@mysql.com +641 -0
+
+  VC++Files/sql/mysqld.dsp
+    1.10 04/02/19 13:34:38 greg@mysql.com +67 -67
+    Fix defines, etc
+
+  VC++Files/mysys/mysys.dsp
+    1.10 04/02/19 13:34:38 greg@mysql.com +16 -16
+    Fix defines
+
+  VC++Files/mysql.dsw
+    1.9 04/02/19 13:34:38 greg@mysql.com +25 -0
+    Add myisam_ftdump
+
+  VC++Files/myisam_ftdump/myisam_ftdump.dsp
+    1.0 04/02/19 13:34:38 greg@mysql.com +0 -0
+    BitKeeper file /bk/mysql-4.0/VC++Files/myisam_ftdump/myisam_ftdump.dsp
+
+  VC++Files/InstallShield/4.0.XX-pro/Script Files/setup.rul
+    1.0 04/02/19 13:34:38 greg@mysql.com +0 -0
+    BitKeeper file /bk/mysql-4.0/VC++Files/InstallShield/4.0.XX-pro/Script Files/setup.rul
+
+  VC++Files/InstallShield/4.0.XX-pro/File Groups/Servers.fgl
+    1.2 04/02/19 13:34:38 greg@mysql.com +1 -0
+    Add README.txt
+
+  VC++Files/InstallShield/4.0.XX-pro/File Groups/Development.fgl
+    1.2 04/02/19 13:34:38 greg@mysql.com +1 -0
+    Add mysql_fix_privilege_tables.sql
+
+  VC++Files/InstallShield/4.0.XX-pro/File Groups/Clients and Tools.fgl
+    1.2 04/02/19 13:34:38 greg@mysql.com +1 -0
+    Add myisam_ftdump to client files
+
+  VC++Files/InstallShield/4.0.XX-gpl/Script Files/setup.rul
+    1.0 04/02/19 13:34:38 greg@mysql.com +0 -0
+    BitKeeper file /bk/mysql-4.0/VC++Files/InstallShield/4.0.XX-gpl/Script Files/setup.rul
+
+  VC++Files/InstallShield/4.0.XX-gpl/File Groups/Servers.fgl
+    1.2 04/02/19 13:34:38 greg@mysql.com +6 -6
+    Add README.txt
+
+  VC++Files/InstallShield/4.0.XX-gpl/File Groups/Development.fgl
+    1.2 04/02/19 13:34:38 greg@mysql.com +1 -0
+    Add mysql_fix_privilege_tables.sql
+
+  VC++Files/InstallShield/4.0.XX-gpl/File Groups/Clients and Tools.fgl
+    1.2 04/02/19 13:34:38 greg@mysql.com +1 -0
+    Add myisam_ftdump to client files
+
+  VC++Files/InstallShield/4.0.XX-classic/Script Files/setup.rul
+    1.0 04/02/19 13:34:38 greg@mysql.com +0 -0
+    BitKeeper file /bk/mysql-4.0/VC++Files/InstallShield/4.0.XX-classic/Script Files/setup.rul
+
+  VC++Files/InstallShield/4.0.XX-classic/File Groups/Servers.fgl
+    1.2 04/02/19 13:34:38 greg@mysql.com +1 -0
+    Add README.txt
+
+  VC++Files/InstallShield/4.0.XX-classic/File Groups/Development.fgl
+    1.2 04/02/19 13:34:38 greg@mysql.com +1 -0
+    Add mysql_fix_privilege_tables.sql
+
+  VC++Files/InstallShield/4.0.XX-classic/File Groups/Clients and Tools.fgl
+    1.2 04/02/19 13:34:38 greg@mysql.com +1 -0
+    Add myisam_ftdump to client files
+
+ChangeSet
+  1.1695.1.47 04/02/19 14:56:19 marko@hundin.mysql.fi +2 -0
+  srv_add_path_separator_if_needed: be static; use memcpy, not sprintf
+
+  innobase/srv/srv0start.c
+    1.51 04/02/19 14:56:16 marko@hundin.mysql.fi +10 -15
+    srv_add_path_separator_if_needed: Replace sprintf with memcpy
+
+ChangeSet
+  1.1695.1.46 04/02/19 14:37:39 marko@hundin.mysql.fi +8 -0
+  Remove unnecessary files and functions
+
+  innobase/usr/usr0sess.c
+    1.2 04/02/19 14:37:36 marko@hundin.mysql.fi +8 -596
+    Remove unused functions
+
+  innobase/trx/trx0trx.c
+    1.31 04/02/19 14:37:36 marko@hundin.mysql.fi +0 -5
+    Remove commented-out or unreachable calls to deleted function sess_raise_error_low()
+
+  innobase/lock/lock0lock.c
+    1.26 04/02/19 14:37:36 marko@hundin.mysql.fi +0 -5
+    Remove commented-out call to deleted function sess_raise_error_low()
+
+  innobase/include/usr0sess.h
+    1.2 04/02/19 14:13:33 marko@hundin.mysql.fi +0 -43
+    Remove unused functions
+
+  innobase/include/srv0start.h
+    1.9 04/02/19 14:13:32 marko@hundin.mysql.fi +0 -10
+    Remove unused functions
+
+  BitKeeper/deleted/.del-os0fileold.c~7be518438162e2f
+    1.2 04/02/19 14:00:18 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/os/os0fileold.c
+
+  BitKeeper/deleted/.del-log0trsh.c~ebdd6ce463d8bf0
+    1.2 04/02/19 13:15:23 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/log/trash/log0trsh.c
+
+  BitKeeper/deleted/.del-FSP0FSP.C~f1c7e596cadd429
+    1.2 04/02/19 13:15:13 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/fsp/trash/FSP0FSP.C
+
+  innobase/srv/srv0srv.c
+    1.58 04/02/19 13:13:37 marko@hundin.mysql.fi +0 -677
+    Removed unused code
+
+ChangeSet
+  1.1695.1.45 04/02/19 11:40:36 marko@hundin.mysql.fi +10 -0
+  Many files:
+    Remove leading whitespace from lines containing preprocessor directives
+  Makefile.am:
+    Remove univold.i and univoldmysql.i
+
+  innobase/sync/sync0sync.c
+    1.18 04/02/19 11:40:12 marko@hundin.mysql.fi +9 -9
+    Remove leading whitespace from lines containing preprocessor directives
+
+  innobase/sync/sync0rw.c
+    1.8 04/02/19 11:40:12 marko@hundin.mysql.fi +8 -8
+    Remove leading whitespace from lines containing preprocessor directives
+
+  innobase/mem/mem0mem.c
+    1.6 04/02/19 11:40:12 marko@hundin.mysql.fi +2 -2
+    Remove leading whitespace from lines containing preprocessor directives
+
+  innobase/mem/mem0dbg.c
+    1.6 04/02/19 11:40:12 marko@hundin.mysql.fi +10 -10
+    Remove leading whitespace from lines containing preprocessor directives
+
+  innobase/include/ut0rnd.ic
+    1.2 04/02/19 11:40:12 marko@hundin.mysql.fi +4 -4
+    Remove leading whitespace from lines containing preprocessor directives
+
+  innobase/include/sync0sync.ic
+    1.12 04/02/19 11:40:12 marko@hundin.mysql.fi +2 -2
+    Remove leading whitespace from lines containing preprocessor directives
+
+  innobase/include/sync0rw.ic
+    1.6 04/02/19 11:40:12 marko@hundin.mysql.fi +18 -18
+    Remove leading whitespace from lines containing preprocessor directives
+
+  innobase/include/mem0mem.ic
+    1.5 04/02/19 11:40:12 marko@hundin.mysql.fi +16 -16
+    Remove leading whitespace from lines containing preprocessor directives
+
+  innobase/buf/buf0buf.c
+    1.27 04/02/19 11:40:12 marko@hundin.mysql.fi +0 -0
+    Remove leading whitespace from lines containing preprocessor directives
+
+  innobase/buf/buf0buf.c
+    1.26 04/02/19 11:38:55 marko@hundin.mysql.fi +2 -2
+    Remove leading whitespace from lines containing preprocessor directives
+
+  innobase/include/Makefile.am
+    1.4 04/02/19 11:38:08 marko@hundin.mysql.fi +1 -1
+    Remove univold.i and univoldmysql.i
+
+ChangeSet
+  1.1695.1.44 04/02/19 11:32:07 marko@hundin.mysql.fi +61 -0
+  Remove unnecessary files
+  
+  .del-univoldmysql.i~9253a6f92058c565:
+    Delete: innobase/include/univoldmysql.i
+  .del-univold.i~4b5ed652407f63f1:
+    Delete: innobase/include/univold.i
+  .del-tsut.c~4a154913fc9cd5c0:
+    Delete: innobase/ut/ts/tsut.c
+  .del-makefile~9b8356bbdb8bd94e:
+    Delete: innobase/ut/ts/makefile
+  .del-tsttrxold.c~eb6fd6091405d54e:
+    Delete: innobase/trx/ts/tsttrxold.c
+  .del-tstrx.c~5425c98548ec1e0d:
+    Delete: innobase/trx/ts/tstrx.c
+  .del-makefile~16d63c17c8edf62a:
+    Delete: innobase/trx/ts/makefile
+  .del-tsthr.c~b095667070d626a9:
+    Delete: innobase/thr/ts/tsthr.c
+  .del-makefile~d5e4661188c1939d:
+    Delete: innobase/thr/ts/makefile
+  .del-tssync.c~fed4676cd4eb8457:
+    Delete: innobase/sync/ts/tssync.c
+  .del-makefile~f23368879649c806:
+    Delete: innobase/sync/ts/makefile
+  .del-tssrv.c~b8a6f5ad9ae639c8:
+    Delete: innobase/srv/ts/tssrv.c
+  .del-tsdbc.c~d36206bdccf338f:
+    Delete: innobase/srv/ts/tsdbc.c
+  .del-makefile~da6e87ef29c12dca:
+    Delete: innobase/srv/ts/makefile
+  .del-tstcur.c~a9d5cf73b020ec41:
+    Delete: innobase/row/ts/tstcur.c
+  .del-makefile~2cdfe39689004e6:
+    Delete: innobase/row/ts/makefile
+  .del-tsrem.c~bb4e1e2e8c2ee179:
+    Delete: innobase/rem/ts/tsrem.c
+  .del-makefile~3e48a33b4970faef:
+    Delete: innobase/rem/ts/makefile
+  .del-tspage.c~f5baf63f9924e43b:
+    Delete: innobase/page/ts/tspage.c
+  .del-makefile~66de73bc499566f9:
+    Delete: innobase/page/ts/makefile
+  .del-tsosaux.c~9ec97a83392a984c:
+    Delete: innobase/os/ts/tsosaux.c
+  .del-tsos.c~f6057d3c171f5915:
+    Delete: innobase/os/ts/tsos.c
+  .del-makefile~9a1d210afa6d666e:
+    Delete: innobase/os/ts/makefile
+  .del-tsmtr.c~293250c7ebfe0d3:
+    Delete: innobase/mtr/ts/tsmtr.c
+  .del-tsbuf.c~e8d15ee095194d2c:
+    Delete: innobase/mtr/ts/tsbuf.c
+  .del-makefile~fdf4c2a4ddb23230:
+    Delete: innobase/mtr/ts/makefile
+  .del-tsmem.c~cc483e2ab96e625c:
+    Delete: innobase/mem/ts/tsmem.c
+  .del-makefile~6d58ab1de0ac572:
+    Delete: innobase/mem/ts/makefile
+  .del-tsmach.c~af65166bb53ddfe9:
+    Delete: innobase/mach/ts/tsmach.c
+  .del-makefile~b8cbd25992ee51b:
+    Delete: innobase/mach/ts/makefile
+  .del-tsha.c~13dd5ea03fda370c:
+    Delete: innobase/ha/ts/tsha.c
+  .del-makefile~1bf12ce7b2dadfd5:
+    Delete: innobase/ha/ts/makefile
+  .del-tsfsp.c~890ead1636f0eaba:
+    Delete: innobase/fsp/ts/tsfsp.c
+  .del-makefile~a466e9eb27493a80:
+    Delete: innobase/fsp/ts/makefile
+  .del-del.c~35c6283be580200:
+    Delete: innobase/fsp/ts/del.c
+  .del-tsfil.c~e554b6f3c189c081:
+    Delete: innobase/fil/ts/tsfil.c
+  .del-makefile~1df6f952a960fef4:
+    Delete: innobase/fil/ts/makefile
+  .del-tsdyn.c~6f976764b53f3191:
+    Delete: innobase/dyn/ts/tsdyn.c
+  .del-makefile~f64427335fafdc65:
+    Delete: innobase/dyn/ts/makefile
+  .del-tsdict.c~5e82f7b8ac2b2e15:
+    Delete: innobase/dict/ts/tsdict.c
+  .del-makefile~6356c424e9747647:
+    Delete: innobase/dict/ts/makefile
+  .del-tscom.c~26aae2c5c4ca1dce:
+    Delete: innobase/com/ts/tscom.c
+  .del-tscli.c~2f3e4b281141eac2:
+    Delete: innobase/com/ts/tscli.c
+  .del-makefile~608fd39568db7238:
+    Delete: innobase/com/ts/makefile
+  .del-tsos.c~1dadfc1ef69f2ba3:
+    Delete: innobase/buf/ts/tsos.c
+  .del-tsbuf.c~b4c3feee158ef154:
+    Delete: innobase/buf/ts/tsbuf.c
+  .del-makefile~598acb06bf1e466:
+    Delete: innobase/buf/ts/makefile
+  .del-tscli.c~8d35740cc1f6f864:
+    Delete: innobase/btr/ts/trash/tscli.c
+  .del-tssrv.c~ee30b746c485aec:
+    Delete: innobase/btr/ts/tssrv.c
+  .del-tss.c~21ae628550141a68:
+    Delete: innobase/btr/ts/tss.c
+  .del-tsrecv97.c~dbeb3bc494b241c1:
+    Delete: innobase/btr/ts/tsrecv97.c
+  .del-tsrecv.c~3415f8a936a8d9fd:
+    Delete: innobase/btr/ts/tsrecv.c
+  .del-tscli.c~77fc1962db99aa2e:
+    Delete: innobase/btr/ts/tscli.c
+  .del-tsbtrold5.c~72a60e768c944904:
+    Delete: innobase/btr/ts/trash/tsbtrold5.c
+  .del-tsbtrins.c~3e3bb3f95f058b46:
+    Delete: innobase/btr/ts/tsbtrins.c
+  .del-TSIT.C~f53cce6fab8d325:
+    Delete: innobase/btr/ts/trash/TSIT.C
+  .del-tsbtrfull.c~fbcbe41b64cc71b6:
+    Delete: innobase/btr/ts/tsbtrfull.c
+  .del-tsbtr97.c~84dbb84ea9fa267c:
+    Delete: innobase/btr/ts/tsbtr97.c
+  .del-makefile~491918b4162b927c:
+    Delete: innobase/btr/ts/makefile
+  .del-isql.c~bc0b8cc213905175:
+    Delete: innobase/btr/ts/isql.c
+
+  BitKeeper/etc/logging_ok
+    1.302 04/02/19 11:31:47 marko@hundin.mysql.fi +1 -0
+    Logging to logging@openlogging.org accepted
+
+  BitKeeper/deleted/.del-univoldmysql.i~9253a6f92058c565
+    1.2 04/02/19 11:20:21 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/include/univoldmysql.i
+
+  BitKeeper/deleted/.del-univold.i~4b5ed652407f63f1
+    1.2 04/02/19 11:20:21 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/include/univold.i
+
+  BitKeeper/deleted/.del-tsut.c~4a154913fc9cd5c0
+    1.2 04/02/19 11:20:04 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/ut/ts/tsut.c
+
+  BitKeeper/deleted/.del-makefile~9b8356bbdb8bd94e
+    1.2 04/02/19 11:20:04 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/ut/ts/makefile
+
+  BitKeeper/deleted/.del-tsttrxold.c~eb6fd6091405d54e
+    1.2 04/02/19 11:19:57 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/trx/ts/tsttrxold.c
+
+  BitKeeper/deleted/.del-tstrx.c~5425c98548ec1e0d
+    1.2 04/02/19 11:19:56 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/trx/ts/tstrx.c
+
+  BitKeeper/deleted/.del-makefile~16d63c17c8edf62a
+    1.2 04/02/19 11:19:56 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/trx/ts/makefile
+
+  BitKeeper/deleted/.del-tsthr.c~b095667070d626a9
+    1.2 04/02/19 11:19:49 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/thr/ts/tsthr.c
+
+  BitKeeper/deleted/.del-makefile~d5e4661188c1939d
+    1.2 04/02/19 11:19:49 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/thr/ts/makefile
+
+  BitKeeper/deleted/.del-tssync.c~fed4676cd4eb8457
+    1.2 04/02/19 11:19:41 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/sync/ts/tssync.c
+
+  BitKeeper/deleted/.del-makefile~f23368879649c806
+    1.2 04/02/19 11:19:41 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/sync/ts/makefile
+
+  BitKeeper/deleted/.del-tssrv.c~b8a6f5ad9ae639c8
+    1.2 04/02/19 11:19:33 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/srv/ts/tssrv.c
+
+  BitKeeper/deleted/.del-tsdbc.c~d36206bdccf338f
+    1.2 04/02/19 11:19:33 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/srv/ts/tsdbc.c
+
+  BitKeeper/deleted/.del-makefile~da6e87ef29c12dca
+    1.2 04/02/19 11:19:33 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/srv/ts/makefile
+
+  BitKeeper/deleted/.del-tstcur.c~a9d5cf73b020ec41
+    1.2 04/02/19 11:19:26 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/row/ts/tstcur.c
+
+  BitKeeper/deleted/.del-makefile~2cdfe39689004e6
+    1.2 04/02/19 11:19:26 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/row/ts/makefile
+
+  BitKeeper/deleted/.del-tsrem.c~bb4e1e2e8c2ee179
+    1.2 04/02/19 11:19:18 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/rem/ts/tsrem.c
+
+  BitKeeper/deleted/.del-makefile~3e48a33b4970faef
+    1.2 04/02/19 11:19:18 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/rem/ts/makefile
+
+  BitKeeper/deleted/.del-tspage.c~f5baf63f9924e43b
+    1.2 04/02/19 11:19:11 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/page/ts/tspage.c
+
+  BitKeeper/deleted/.del-makefile~66de73bc499566f9
+    1.2 04/02/19 11:19:11 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/page/ts/makefile
+
+  BitKeeper/deleted/.del-tsosaux.c~9ec97a83392a984c
+    1.2 04/02/19 11:19:03 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/os/ts/tsosaux.c
+
+  BitKeeper/deleted/.del-tsos.c~f6057d3c171f5915
+    1.2 04/02/19 11:19:03 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/os/ts/tsos.c
+
+  BitKeeper/deleted/.del-makefile~9a1d210afa6d666e
+    1.2 04/02/19 11:19:03 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/os/ts/makefile
+
+  BitKeeper/deleted/.del-tsmtr.c~293250c7ebfe0d3
+    1.2 04/02/19 11:18:56 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/mtr/ts/tsmtr.c
+
+  BitKeeper/deleted/.del-tsbuf.c~e8d15ee095194d2c
+    1.2 04/02/19 11:18:55 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/mtr/ts/tsbuf.c
+
+  BitKeeper/deleted/.del-makefile~fdf4c2a4ddb23230
+    1.2 04/02/19 11:18:55 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/mtr/ts/makefile
+
+  BitKeeper/deleted/.del-tsmem.c~cc483e2ab96e625c
+    1.2 04/02/19 11:18:48 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/mem/ts/tsmem.c
+
+  BitKeeper/deleted/.del-makefile~6d58ab1de0ac572
+    1.2 04/02/19 11:18:48 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/mem/ts/makefile
+
+  BitKeeper/deleted/.del-tsmach.c~af65166bb53ddfe9
+    1.2 04/02/19 11:18:40 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/mach/ts/tsmach.c
+
+  BitKeeper/deleted/.del-makefile~b8cbd25992ee51b
+    1.2 04/02/19 11:18:40 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/mach/ts/makefile
+
+  BitKeeper/deleted/.del-tsha.c~13dd5ea03fda370c
+    1.2 04/02/19 11:18:32 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/ha/ts/tsha.c
+
+  BitKeeper/deleted/.del-makefile~1bf12ce7b2dadfd5
+    1.2 04/02/19 11:18:32 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/ha/ts/makefile
+
+  BitKeeper/deleted/.del-tsfsp.c~890ead1636f0eaba
+    1.2 04/02/19 11:18:24 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/fsp/ts/tsfsp.c
+
+  BitKeeper/deleted/.del-makefile~a466e9eb27493a80
+    1.2 04/02/19 11:18:24 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/fsp/ts/makefile
+
+  BitKeeper/deleted/.del-del.c~35c6283be580200
+    1.2 04/02/19 11:18:23 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/fsp/ts/del.c
+
+  BitKeeper/deleted/.del-tsfil.c~e554b6f3c189c081
+    1.2 04/02/19 11:18:16 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/fil/ts/tsfil.c
+
+  BitKeeper/deleted/.del-makefile~1df6f952a960fef4
+    1.2 04/02/19 11:18:16 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/fil/ts/makefile
+
+  BitKeeper/deleted/.del-tsdyn.c~6f976764b53f3191
+    1.2 04/02/19 11:18:08 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/dyn/ts/tsdyn.c
+
+  BitKeeper/deleted/.del-makefile~f64427335fafdc65
+    1.2 04/02/19 11:18:08 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/dyn/ts/makefile
+
+  BitKeeper/deleted/.del-tsdict.c~5e82f7b8ac2b2e15
+    1.2 04/02/19 11:18:01 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/dict/ts/tsdict.c
+
+  BitKeeper/deleted/.del-makefile~6356c424e9747647
+    1.2 04/02/19 11:18:01 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/dict/ts/makefile
+
+  BitKeeper/deleted/.del-tscom.c~26aae2c5c4ca1dce
+    1.2 04/02/19 11:17:53 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/com/ts/tscom.c
+
+  BitKeeper/deleted/.del-tscli.c~2f3e4b281141eac2
+    1.2 04/02/19 11:17:53 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/com/ts/tscli.c
+
+  BitKeeper/deleted/.del-makefile~608fd39568db7238
+    1.2 04/02/19 11:17:53 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/com/ts/makefile
+
+  BitKeeper/deleted/.del-tsos.c~1dadfc1ef69f2ba3
+    1.2 04/02/19 11:17:45 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/buf/ts/tsos.c
+
+  BitKeeper/deleted/.del-tsbuf.c~b4c3feee158ef154
+    1.2 04/02/19 11:17:45 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/buf/ts/tsbuf.c
+
+  BitKeeper/deleted/.del-makefile~598acb06bf1e466
+    1.2 04/02/19 11:17:45 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/buf/ts/makefile
+
+  BitKeeper/deleted/.del-tscli.c~8d35740cc1f6f864
+    1.2 04/02/19 11:17:38 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/trash/tscli.c
+
+  BitKeeper/deleted/.del-tssrv.c~ee30b746c485aec
+    1.2 04/02/19 11:17:37 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/tssrv.c
+
+  BitKeeper/deleted/.del-tss.c~21ae628550141a68
+    1.2 04/02/19 11:17:37 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/tss.c
+
+  BitKeeper/deleted/.del-tsrecv97.c~dbeb3bc494b241c1
+    1.2 04/02/19 11:17:37 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/tsrecv97.c
+
+  BitKeeper/deleted/.del-tsrecv.c~3415f8a936a8d9fd
+    1.2 04/02/19 11:17:37 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/tsrecv.c
+
+  BitKeeper/deleted/.del-tscli.c~77fc1962db99aa2e
+    1.2 04/02/19 11:17:37 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/tscli.c
+
+  BitKeeper/deleted/.del-tsbtrold5.c~72a60e768c944904
+    1.2 04/02/19 11:17:37 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/trash/tsbtrold5.c
+
+  BitKeeper/deleted/.del-tsbtrins.c~3e3bb3f95f058b46
+    1.2 04/02/19 11:17:37 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/tsbtrins.c
+
+  BitKeeper/deleted/.del-TSIT.C~f53cce6fab8d325
+    1.2 04/02/19 11:17:37 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/trash/TSIT.C
+
+  BitKeeper/deleted/.del-tsbtrfull.c~fbcbe41b64cc71b6
+    1.2 04/02/19 11:17:36 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/tsbtrfull.c
+
+  BitKeeper/deleted/.del-tsbtr97.c~84dbb84ea9fa267c
+    1.2 04/02/19 11:17:36 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/tsbtr97.c
+
+  BitKeeper/deleted/.del-makefile~491918b4162b927c
+    1.2 04/02/19 11:17:36 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/makefile
+
+  BitKeeper/deleted/.del-isql.c~bc0b8cc213905175
+    1.2 04/02/19 11:17:36 marko@hundin.mysql.fi +0 -0
+    Delete: innobase/btr/ts/isql.c
+
+ChangeSet
+  1.1695.20.1 04/02/19 09:11:46 serg@serg.mylan +7 -0
+  potential problem fixed afer some reasoning
+
+  sql/mysqld.cc
+    1.483 04/02/19 09:11:43 serg@serg.mylan +3 -2
+    potential problem fixed afer some reasoning
+
+  sql/mini_client.cc
+    1.60 04/02/19 09:11:43 serg@serg.mylan +3 -2
+    potential problem fixed afer some reasoning
+
+  sql/log.cc
+    1.143 04/02/19 09:11:43 serg@serg.mylan +9 -6
+    potential problem fixed afer some reasoning
+
+  mysys/my_tempnam.c
+    1.14 04/02/19 09:11:43 serg@serg.mylan +1 -1
+    potential problem fixed afer some reasoning
+
+  mysys/mf_tempfile.c
+    1.18 04/02/19 09:11:43 serg@serg.mylan +3 -3
+    potential problem fixed afer some reasoning
+
+  libmysql/manager.c
+    1.12 04/02/19 09:11:43 serg@serg.mylan +1 -1
+    potential problem fixed afer some reasoning
+
+  libmysql/libmysql.c
+    1.138.1.1 04/02/19 09:11:43 serg@serg.mylan +10 -10
+    potential problem fixed afer some reasoning
+
+ChangeSet
+  1.1695.1.42 04/02/19 00:00:20 lenz@mysql.com +1 -0
+   - Make sure to set the correct compile flags for Mac OS X 10.3 "Panther"
+     (which is "darwin7" now) - "-DHAVE_BROKEN_REALPATH" is not required
+     anymore, too, as realpath() is thread-safe on Panther now.
+     (Thanks to Al Begley from Apple for the info)
+
+  configure.in
+    1.298 04/02/19 00:00:17 lenz@mysql.com +9 -0
+     - Make sure to set the correct compile flags for Mac OS X 10.3 "Panther"
+       (which is "darwin7" now) - "-DHAVE_BROKEN_REALPATH" is not required
+       anymore, too, as realpath() is thread-safe on Panther now.
+       (Thanks to Al Begley from Apple for the info)
+
+ChangeSet
+  1.1695.19.1 04/02/16 18:58:21 monty@mysql.com +1 -0
+  Added comment
+
+  sql/sql_load.cc
+    1.58 04/02/16 18:58:19 monty@mysql.com +5 -1
+    Added comment
+
+ChangeSet
+  1.1695.1.41 04/02/16 19:43:43 ram@gw.mysql.r18.ru +3 -0
+  fix for the bug #2786 incorrect precedence for XOR operator
+
+  sql/sql_yacc.yy
+    1.223 04/02/16 19:43:30 ram@gw.mysql.r18.ru +1 -2
+    fix for the bug #2786 incorrect precedence for XOR operator
+
+  mysql-test/t/func_test.test
+    1.13 04/02/16 19:43:30 ram@gw.mysql.r18.ru +1 -0
+    fix for the bug #2786 incorrect precedence for XOR operator
+
+  mysql-test/r/func_test.result
+    1.15 04/02/16 19:43:30 ram@gw.mysql.r18.ru +3 -0
+    fix for the bug #2786 incorrect precedence for XOR operator
+
+ChangeSet
+  1.676.318.1 04/02/16 18:58:15 vva@eagle.mysql.r18.ru +1 -0
+  fixed bug #2762 "grammar error in myisam/mi_check.c"
+
+  myisam/mi_check.c
+    1.60.1.12 04/02/16 18:58:01 vva@eagle.mysql.r18.ru +3 -1
+    fixed bug #2762 "grammar error in myisam/mi_check.c"
+
+ChangeSet
+  1.1695.18.1 04/02/16 09:58:47 heikki@hundin.mysql.fi +1 -0
+  ha_innodb.cc:
+    Make the drop InnoDB database operation aware of the setting FOREIGN_KEY_CHECKS=0; DROP DATABASE seems to work ok anyway, but that is because MySQL first calls DROP TABLE for each table which has an .frm file
+
+  sql/ha_innodb.cc
+    1.192 04/02/16 09:58:19 heikki@hundin.mysql.fi +4 -0
+    Make the drop InnoDB database operation aware of the setting FOREIGN_KEY_CHECKS=0; DROP DATABASE seems to work ok anyway, but that is because MySQL first calls DROP TABLE for each table which has an .frm file
+
+ChangeSet
+  1.1695.1.39 04/02/16 09:41:13 monty@mysql.com +2 -0
+  Cleanup + safety comment
+
+  sql/sql_load.cc
+    1.57 04/02/16 09:41:12 monty@mysql.com +1 -6
+    Removed wrong comment.
+
+  sql/share/english/errmsg.txt
+    1.70 04/02/16 09:41:12 monty@mysql.com +3 -1
+    Added note to ensure that no one adds new error message to 4.0.
+    This is important as it causes too many problems with test suite in 4.1
+
+ChangeSet
+  1.1695.17.2 04/02/13 16:05:09 monty@mysql.com +7 -0
+  Always use libtool with "--preserve-dup-deps" 
+  Always use all LOAD DATA options in replication.
+  Fixed problem in mysqlbinlog where LOAD DATA options could be overwritten.
+
+  sql/log_event.h
+    1.87 04/02/13 16:05:06 monty@mysql.com +5 -1
+    Free buffer
+
+  sql/log_event.cc
+    1.144 04/02/13 16:05:06 monty@mysql.com +37 -64
+    Always use all LOAD DATA options. This is needed to handle commands of type "FIELDS TERMINATED BY ''"
+    Allocate memory for Create_file_log_event options as these may be overwritten in mysqlbinlog
+
+  mysql-test/t/range.test
+    1.15 04/02/13 16:05:06 monty@mysql.com +1 -0
+    add missing DROP TABLE
+
+  mysql-test/r/range.result
+    1.18 04/02/13 16:05:06 monty@mysql.com +1 -0
+    new results
+
+  mysql-test/r/mysqlbinlog.result
+    1.4 04/02/13 16:05:06 monty@mysql.com +11 -11
+    new results
+
+  configure.in
+    1.295.1.1 04/02/13 16:05:06 monty@mysql.com +5 -0
+    Always use libtool with "--preserve-dup-deps" to prevent link problems with g++
+
+  client/mysqlbinlog.cc
+    1.94 04/02/13 16:05:05 monty@mysql.com +21 -13
+    Ensure that we don't call init_dynamic_array() before my_init() has been done
+
+ChangeSet
+  1.1695.15.1 04/02/12 23:45:39 vva@eagle.mysql.r18.ru +3 -0
+  fixed copying of color in SEL_ARG::clone (fixed bug #2968)
+
+  sql/opt_range.cc
+    1.96 04/02/12 23:45:18 vva@eagle.mysql.r18.ru +1 -0
+    fixed copying of color in SEL_ARG::clone (fixed bug #2968)
+
+  mysql-test/t/select_found.test
+    1.9 04/02/12 23:45:18 vva@eagle.mysql.r18.ru +28 -0
+    added new tests for bugs with range optimization (bugs #2448 and #2698)
+
+  mysql-test/r/select_found.result
+    1.11 04/02/12 23:45:18 vva@eagle.mysql.r18.ru +18 -0
+    added new tests for bugs with range optimization (bugs #2448 and #2698)
+
+ChangeSet
+  1.1695.14.4 04/02/12 19:33:06 lenz@mysql.com +1 -0
+   - bumped up version number in configure.in from 4.0.18 -> 4.0.19
+   - Tagged ChangeSet@1.1733 as mysql-4.0.18
+
+  configure.in
+    1.296 04/02/12 19:33:02 lenz@mysql.com +1 -1
+     - bumped up version number from 4.0.18 -> 4.0.19
+
+ChangeSet
+  1.1695.14.3 04/02/12 17:12:08 lenz@mysql.com +1 -0
+   - Replaced obsolete "Copyright" field with "License" in the RPM spec file
+
+  support-files/mysql.spec.sh
+    1.80 04/02/12 17:12:05 lenz@mysql.com +2 -1
+     - Replaced obsolete "Copyright" field with "License"
+

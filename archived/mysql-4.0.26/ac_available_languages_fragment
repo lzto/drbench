@@ -1,0 +1,44 @@
+czech/errmsg.sys: czech/errmsg.txt
+	$(top_builddir)/extra/comp_err czech/errmsg.txt czech/errmsg.sys
+danish/errmsg.sys: danish/errmsg.txt
+	$(top_builddir)/extra/comp_err danish/errmsg.txt danish/errmsg.sys
+dutch/errmsg.sys: dutch/errmsg.txt
+	$(top_builddir)/extra/comp_err dutch/errmsg.txt dutch/errmsg.sys
+english/errmsg.sys: english/errmsg.txt
+	$(top_builddir)/extra/comp_err english/errmsg.txt english/errmsg.sys
+estonian/errmsg.sys: estonian/errmsg.txt
+	$(top_builddir)/extra/comp_err estonian/errmsg.txt estonian/errmsg.sys
+french/errmsg.sys: french/errmsg.txt
+	$(top_builddir)/extra/comp_err french/errmsg.txt french/errmsg.sys
+german/errmsg.sys: german/errmsg.txt
+	$(top_builddir)/extra/comp_err german/errmsg.txt german/errmsg.sys
+greek/errmsg.sys: greek/errmsg.txt
+	$(top_builddir)/extra/comp_err greek/errmsg.txt greek/errmsg.sys
+hungarian/errmsg.sys: hungarian/errmsg.txt
+	$(top_builddir)/extra/comp_err hungarian/errmsg.txt hungarian/errmsg.sys
+italian/errmsg.sys: italian/errmsg.txt
+	$(top_builddir)/extra/comp_err italian/errmsg.txt italian/errmsg.sys
+japanese/errmsg.sys: japanese/errmsg.txt
+	$(top_builddir)/extra/comp_err japanese/errmsg.txt japanese/errmsg.sys
+korean/errmsg.sys: korean/errmsg.txt
+	$(top_builddir)/extra/comp_err korean/errmsg.txt korean/errmsg.sys
+norwegian/errmsg.sys: norwegian/errmsg.txt
+	$(top_builddir)/extra/comp_err norwegian/errmsg.txt norwegian/errmsg.sys
+norwegian-ny/errmsg.sys: norwegian-ny/errmsg.txt
+	$(top_builddir)/extra/comp_err norwegian-ny/errmsg.txt norwegian-ny/errmsg.sys
+polish/errmsg.sys: polish/errmsg.txt
+	$(top_builddir)/extra/comp_err polish/errmsg.txt polish/errmsg.sys
+portuguese/errmsg.sys: portuguese/errmsg.txt
+	$(top_builddir)/extra/comp_err portuguese/errmsg.txt portuguese/errmsg.sys
+romanian/errmsg.sys: romanian/errmsg.txt
+	$(top_builddir)/extra/comp_err romanian/errmsg.txt romanian/errmsg.sys
+russian/errmsg.sys: russian/errmsg.txt
+	$(top_builddir)/extra/comp_err russian/errmsg.txt russian/errmsg.sys
+slovak/errmsg.sys: slovak/errmsg.txt
+	$(top_builddir)/extra/comp_err slovak/errmsg.txt slovak/errmsg.sys
+spanish/errmsg.sys: spanish/errmsg.txt
+	$(top_builddir)/extra/comp_err spanish/errmsg.txt spanish/errmsg.sys
+swedish/errmsg.sys: swedish/errmsg.txt
+	$(top_builddir)/extra/comp_err swedish/errmsg.txt swedish/errmsg.sys
+ukrainian/errmsg.sys: ukrainian/errmsg.txt
+	$(top_builddir)/extra/comp_err ukrainian/errmsg.txt ukrainian/errmsg.sys

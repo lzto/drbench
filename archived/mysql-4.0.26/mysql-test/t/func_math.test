@@ -1,0 +1,39 @@
+#
+# Test of math functions
+#
+
+select floor(5.5),floor(-5.5);
+select ceiling(5.5),ceiling(-5.5);
+select truncate(52.64,1),truncate(52.64,2),truncate(52.64,-1),truncate(52.64,-2), truncate(-52.64,1),truncate(-52.64,-1);
+select round(5.5),round(-5.5);
+select round(5.64,1),round(5.64,2),round(5.64,-1),round(5.64,-2);
+select abs(-10), sign(-5), sign(5), sign(0);
+select log(exp(10)),exp(log(sqrt(10))*2),log(-1),log(NULL),log(1,1),log(3,9),log(-1,2),log(NULL,2);
+select ln(exp(10)),exp(ln(sqrt(10))*2),ln(-1),ln(0),ln(NULL);
+select log2(8),log2(15),log2(-2),log2(0),log2(NULL);
+select log10(100),log10(18),log10(-4),log10(0),log10(NULL);
+select pow(10,log10(10)),power(2,4);
+set @@rand_seed1=10000000,@@rand_seed2=1000000;
+select rand(999999),rand();
+select pi(),format(sin(pi()/2),6),format(cos(pi()/2),6),format(abs(tan(pi())),6),format(cot(1),6),format(asin(1),6),format(acos(0),6),format(atan(1),6);
+select degrees(pi()),radians(360);
+
+#
+# Bug #2338 Trignometric arithmatic problems 
+#
+
+SELECT ACOS(1.0);
+SELECT ASIN(1.0);
+SELECT ACOS(0.2*5.0);
+SELECT ACOS(0.5*2.0);
+SELECT ASIN(0.8+0.2);
+SELECT ASIN(1.2-0.2);
+
+#
+# Bug #3051 FLOOR returns invalid 
+#
+
+# This can't be tested as it's not portable
+#select floor(log(4)/log(2));
+#select floor(log(8)/log(2));
+#select floor(log(16)/log(2));

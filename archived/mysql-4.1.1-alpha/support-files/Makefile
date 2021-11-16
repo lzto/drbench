@@ -1,0 +1,587 @@
+# Makefile.in generated automatically by automake 1.5 from Makefile.am.
+
+# Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
+# Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+
+
+# Copyright (C) 2000 MySQL AB & MySQL Finland AB & TCX DataKonsult AB
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Library General Public
+# License as published by the Free Software Foundation; either
+# version 2 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Library General Public License for more details.
+#
+# You should have received a copy of the GNU Library General Public
+# License along with this library; if not, write to the Free
+# Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+# MA 02111-1307, USA
+
+SHELL = /bin/sh
+
+srcdir = .
+top_srcdir = ..
+
+prefix = /tmp/ram/mysql
+exec_prefix = ${prefix}
+
+bindir = ${exec_prefix}/bin
+sbindir = ${exec_prefix}/sbin
+libexecdir = ${exec_prefix}/libexec
+datadir = ${prefix}/share
+sysconfdir = ${prefix}/etc
+sharedstatedir = ${prefix}/com
+localstatedir = ${prefix}/var
+libdir = ${exec_prefix}/lib
+infodir = ${prefix}/info
+mandir = ${prefix}/man
+includedir = ${prefix}/include
+oldincludedir = /usr/include
+pkgdatadir = $(datadir)/mysql
+pkglibdir = $(libdir)/mysql
+pkgincludedir = $(includedir)/mysql
+top_builddir = ..
+
+ACLOCAL = ${SHELL} /home/jflinn/mysql-4.1.1-alpha/missing --run aclocal
+AUTOCONF = ${SHELL} /home/jflinn/mysql-4.1.1-alpha/missing --run autoconf
+AUTOMAKE = ${SHELL} /home/jflinn/mysql-4.1.1-alpha/missing --run automake
+AUTOHEADER = ${SHELL} /home/jflinn/mysql-4.1.1-alpha/missing --run autoheader
+
+INSTALL = /usr/bin/install -c
+INSTALL_PROGRAM = ${INSTALL}
+INSTALL_DATA = ${INSTALL} -m 644
+INSTALL_SCRIPT = ${INSTALL}
+INSTALL_HEADER = $(INSTALL_DATA)
+transform = s,x,x,
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+build_alias = i686-pc-linux
+build_triplet = i686-pc-linux
+host_alias = i686-pc-linux
+host_triplet = i686-pc-linux
+target_alias = i686-pc-linux
+target_triplet = i686-pc-linux
+ALLOCA = 
+AMTAR = ${SHELL} /home/jflinn/mysql-4.1.1-alpha/missing --run tar
+AS = gcc -c
+ASFLAGS = $(CFLAGS)
+AVAILABLE_LANGUAGES = czech danish dutch english estonian french german greek hungarian italian japanese korean norwegian norwegian-ny polish portuguese romanian russian slovak spanish swedish ukrainian
+AVAILABLE_LANGUAGES_ERRORS =  czech/errmsg.sys danish/errmsg.sys dutch/errmsg.sys english/errmsg.sys estonian/errmsg.sys french/errmsg.sys german/errmsg.sys greek/errmsg.sys hungarian/errmsg.sys italian/errmsg.sys japanese/errmsg.sys korean/errmsg.sys norwegian/errmsg.sys norwegian-ny/errmsg.sys polish/errmsg.sys portuguese/errmsg.sys romanian/errmsg.sys russian/errmsg.sys slovak/errmsg.sys spanish/errmsg.sys swedish/errmsg.sys ukrainian/errmsg.sys
+AWK = gawk
+CC = gcc
+CC_VERSION = gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-48)
+CFLAGS = -O3 -DDBUG_OFF  
+CHECK_PID = /bin/kill -0 $$PID > /dev/null 2> /dev/null
+CHMOD = /bin/chmod
+CLIENT_EXTRA_LDFLAGS = -all-static
+CLIENT_LIBS = -lz -lcrypt -lnsl -lm /home/jflinn/spec2.6/test/libutil.a 
+CMP = /usr/bin/cmp
+COMPILATION_COMMENT = Source distribution
+CONF_COMMAND = ./configure '--prefix=/tmp/ram/mysql' '--with-client-ldflags=-all-static' '--with-mysqld-ldflags=-all-static' 'CPPFLAGS=-I/home/jflinn/prefix/include -I/home/jflinn/spec2.6/test -DSPEC_ENABLE -DMYSQL_BUG_1' 'LDFLAGS=-L/home/jflinn/prefix/lib'
+CP = /bin/cp
+CPP = gcc -E
+CXX = g++
+CXXFLAGS = -O3 -DDBUG_OFF   -fno-implicit-templates -fno-exceptions -fno-rtti
+CXXLDFLAGS = 
+CXX_VERSION = g++ (GCC) 4.1.2 20080704 (Red Hat 4.1.2-48)
+DEPDIR = .deps
+DLLTOOL = @DLLTOOL@
+DOT_FRM_VERSION = 6
+DVIS = 
+ECHO = echo
+EXEEXT = 
+FIND_PROC = /bin/ps p $$PID | grep mysqld > /dev/null
+GETCONF = getconf
+GXX = yes
+HOSTNAME = /bin/hostname
+INSTALL_STRIP_PROGRAM = ${SHELL} $(install_sh) -c -s
+IS_LINUX = true
+KILL = /bin/kill
+LD = /usr/bin/ld
+LIBDL = -ldl 
+LIBTOOL = $(SHELL) $(top_builddir)/libtool
+LIB_EXTRA_CCFLAGS = 
+LM_CFLAGS = 
+LN = /bin/ln
+LN_CP_F = /bin/ln -s
+LN_S = ln -s
+MACHINE_TYPE = i686
+MAINT = #
+MAKE_BINARY_DISTRIBUTION_OPTIONS = 
+MAKE_SHELL = /bin/sh
+MT_INCLUDES = 
+MT_LD_ADD = 
+MV = /bin/mv
+MYSQLD_DEFAULT_SWITCHES = --skip-locking
+MYSQLD_EXTRA_LDFLAGS = -all-static
+MYSQLD_USER = mysql
+MYSQL_BASE_VERSION = 4.1
+MYSQL_NO_DASH_VERSION = 4.1.1
+MYSQL_SERVER_SUFFIX = 
+MYSQL_TCP_PORT = 3306
+MYSQL_TCP_PORT_DEFAULT = 3306
+MYSQL_UNIX_ADDR = /tmp/mysql.sock
+MYSQL_VERSION_ID = 40101
+NOINST_LDFLAGS = 
+OBJDUMP = @OBJDUMP@
+OBJEXT = o
+PACKAGE = mysql
+PDFMANUAL = 
+PERL = /usr/bin/perl
+PERL5 = /usr/bin/perl
+PROTOCOL_VERSION = 10
+PS = /bin/ps
+RANLIB = ranlib
+RM = /bin/rm
+SAVE_ASFLAGS = 
+SAVE_CFLAGS = 
+SAVE_CXXFLAGS = 
+SAVE_CXXLDFLAGS = 
+SAVE_LDFLAGS = -L/home/jflinn/prefix/lib
+SED = /bin/sed
+SHARED_LIB_VERSION = 14:0:0
+STRIP = strip
+SYSTEM_TYPE = pc-linux
+TAR = gtar
+TERMCAP_LIB = -lncurses
+THREAD_LOBJECTS = thr_alarm.o thr_lock.o thr_mutex.o thr_rwlock.o my_pthread.o my_thr_init.o
+THREAD_LPROGRAMS = test_thr_alarm$(EXEEXT) test_thr_lock$(EXEEXT)
+VERSION = 4.1.1-alpha
+WRAPLIBS = 
+YACC = yacc
+am__include = include
+am__quote = 
+bdb_includes = 
+bdb_libs = 
+bdb_libs_with_path = 
+bench_dirs = sql-bench mysql-test
+docs_dirs = Docs
+fs_dirs = 
+innodb_includes = -I../innobase/include
+innodb_libs =  $(top_builddir)/innobase/usr/libusr.a $(top_builddir)/innobase/odbc/libodbc.a $(top_builddir)/innobase/srv/libsrv.a $(top_builddir)/innobase/dict/libdict.a $(top_builddir)/innobase/que/libque.a $(top_builddir)/innobase/srv/libsrv.a $(top_builddir)/innobase/ibuf/libibuf.a $(top_builddir)/innobase/row/librow.a $(top_builddir)/innobase/pars/libpars.a $(top_builddir)/innobase/btr/libbtr.a $(top_builddir)/innobase/trx/libtrx.a $(top_builddir)/innobase/read/libread.a $(top_builddir)/innobase/usr/libusr.a $(top_builddir)/innobase/buf/libbuf.a $(top_builddir)/innobase/ibuf/libibuf.a $(top_builddir)/innobase/eval/libeval.a $(top_builddir)/innobase/log/liblog.a $(top_builddir)/innobase/fsp/libfsp.a $(top_builddir)/innobase/fut/libfut.a $(top_builddir)/innobase/fil/libfil.a $(top_builddir)/innobase/lock/liblock.a $(top_builddir)/innobase/mtr/libmtr.a $(top_builddir)/innobase/page/libpage.a $(top_builddir)/innobase/rem/librem.a $(top_builddir)/innobase/thr/libthr.a $(top_builddir)/innobase/com/libcom.a $(top_builddir)/innobase/sync/libsync.a $(top_builddir)/innobase/data/libdata.a $(top_builddir)/innobase/mach/libmach.a $(top_builddir)/innobase/ha/libha.a $(top_builddir)/innobase/dyn/libdyn.a $(top_builddir)/innobase/mem/libmem.a $(top_builddir)/innobase/sync/libsync.a $(top_builddir)/innobase/ut/libut.a $(top_builddir)/innobase/os/libos.a $(top_builddir)/innobase/ut/libut.a
+innodb_system_libs = -lrt
+install_sh = /home/jflinn/mysql-4.1.1-alpha/install-sh
+isam_libs = 
+libmysqld_dirs = 
+linked_client_targets = linked_libmysql_sources
+linked_netware_sources = 
+netware_dir = 
+openssl_includes = 
+openssl_libs = 
+orbit_idl = 
+orbit_includes = 
+orbit_libs = 
+pstack_dirs = 
+pstack_libs = 
+readline_basedir = libedit
+readline_dir = cmd-line-utils/libedit
+readline_h_ln_cmd = $(LN) $(top_builddir)/cmd-line-utils/libedit/readline/*.h readline/
+readline_link = $(top_builddir)/cmd-line-utils/libedit/liblibedit.a
+readline_topdir = cmd-line-utils
+server_scripts = mysqld_safe mysql_install_db
+sql_client_dirs = libmysql client
+sql_server_dirs = strings dbug mysys extra regex isam merge innobase myisam myisammrg heap vio sql
+thread_dirs = 
+tools_dirs = 
+uname_prog = /bin/uname
+vio_dir = 
+vio_libs = 
+
+EXTRA_DIST = mysql.spec.sh \
+			my-small.cnf.sh \
+			my-medium.cnf.sh \
+			my-large.cnf.sh \
+			my-huge.cnf.sh \
+			mysql-log-rotate.sh \
+			mysql.server.sh \
+			binary-configure.sh \
+			magic \
+			MySQL-shared-compat.spec.sh
+
+
+SUBDIRS = MacOSX
+
+pkgdata_DATA = my-small.cnf \
+			my-medium.cnf \
+			my-large.cnf \
+			my-huge.cnf \
+			mysql-log-rotate \
+			MySQL-shared-compat.spec
+
+
+pkgdata_SCRIPTS = mysql.server
+
+CLEANFILES = my-small.cnf \
+			my-medium.cnf \
+			my-large.cnf \
+			my-huge.cnf \
+			mysql.spec \
+			mysql-4.1.1-alpha.spec \
+			mysql-log-rotate \
+			mysql.server \
+			binary-configure \
+			MySQL-shared-compat.spec
+
+
+SUFFIXES = .sh
+subdir = support-files
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+CONFIG_HEADER = $(top_builddir)/config.h
+CONFIG_CLEAN_FILES =
+SCRIPTS = $(pkgdata_SCRIPTS)
+
+DIST_SOURCES =
+DATA = $(pkgdata_DATA)
+
+
+RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
+	uninstall-info-recursive all-recursive install-data-recursive \
+	install-exec-recursive installdirs-recursive install-recursive \
+	uninstall-recursive check-recursive installcheck-recursive
+DIST_COMMON = Makefile.am Makefile.in
+DIST_SUBDIRS = $(SUBDIRS)
+all: all-recursive
+
+.SUFFIXES:
+.SUFFIXES: .sh
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+	-rm -f libtool
+$(srcdir)/Makefile.in: # Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+	cd $(top_srcdir) && \
+	  $(AUTOMAKE) --gnu  support-files/Makefile
+Makefile: # $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) && \
+	  CONFIG_HEADERS= CONFIG_LINKS= \
+	  CONFIG_FILES=$(subdir)/$@ $(SHELL) ./config.status
+install-pkgdataSCRIPTS: $(pkgdata_SCRIPTS)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
+	@list='$(pkgdata_SCRIPTS)'; for p in $$list; do \
+	  f="`echo $$p|sed '$(transform)'`"; \
+	  if test -f $$p; then \
+	    echo " $(INSTALL_SCRIPT) $$p $(DESTDIR)$(pkgdatadir)/$$f"; \
+	    $(INSTALL_SCRIPT) $$p $(DESTDIR)$(pkgdatadir)/$$f; \
+	  elif test -f $(srcdir)/$$p; then \
+	    echo " $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(pkgdatadir)/$$f"; \
+	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(pkgdatadir)/$$f; \
+	  else :; fi; \
+	done
+
+uninstall-pkgdataSCRIPTS:
+	@$(NORMAL_UNINSTALL)
+	@list='$(pkgdata_SCRIPTS)'; for p in $$list; do \
+	  f="`echo $$p|sed '$(transform)'`"; \
+	  echo " rm -f $(DESTDIR)$(pkgdatadir)/$$f"; \
+	  rm -f $(DESTDIR)$(pkgdatadir)/$$f; \
+	done
+uninstall-info-am:
+install-pkgdataDATA: $(pkgdata_DATA)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
+	@list='$(pkgdata_DATA)'; for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(pkgdatadir)/$$f"; \
+	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(pkgdatadir)/$$f; \
+	done
+
+uninstall-pkgdataDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(pkgdata_DATA)'; for p in $$list; do \
+	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+	  echo " rm -f $(DESTDIR)$(pkgdatadir)/$$f"; \
+	  rm -f $(DESTDIR)$(pkgdatadir)/$$f; \
+	done
+
+# This directory's subdirectories are mostly independent; you can cd
+# into them and run `make' without going through this Makefile.
+# To change the values of `make' variables: instead of editing Makefiles,
+# (1) if the variable is set in `config.status', edit `config.status'
+#     (which will cause the Makefiles to be regenerated when you run `make');
+# (2) otherwise, pass the desired values on the `make' command line.
+$(RECURSIVE_TARGETS):
+	@set fnord $(MAKEFLAGS); amf=$$2; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	   || case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+mostlyclean-recursive clean-recursive distclean-recursive \
+maintainer-clean-recursive:
+	@set fnord $(MAKEFLAGS); amf=$$2; \
+	dot_seen=no; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	rev=''; for subdir in $$list; do \
+	  if test "$$subdir" = "."; then :; else \
+	    rev="$$subdir $$rev"; \
+	  fi; \
+	done; \
+	rev="$$rev ."; \
+	target=`echo $@ | sed s/-recursive//`; \
+	for subdir in $$rev; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	   || case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
+	done && test -z "$$fail"
+tags-recursive:
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  test "$$subdir" = . || (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) tags); \
+	done
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	mkid -fID $$unique $(LISP)
+
+TAGS: tags-recursive $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+		$(TAGS_FILES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    test -f $$subdir/TAGS && tags="$$tags -i $$here/$$subdir/TAGS"; \
+	  fi; \
+	done; \
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
+	  || etags $(ETAGS_ARGS) $$tags  $$unique $(LISP)
+
+GTAGS:
+	here=`CDPATH=: && cd $(top_builddir) && pwd` \
+	  && cd $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) $$here
+
+distclean-tags:
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
+
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+
+top_distdir = ..
+distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
+
+distdir: $(DISTFILES)
+	@for file in $(DISTFILES); do \
+	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+	  dir=`echo "$$file" | sed -e 's,/[^/]*$$,,'`; \
+	  if test "$$dir" != "$$file" && test "$$dir" != "."; then \
+	    $(mkinstalldirs) "$(distdir)/$$dir"; \
+	  fi; \
+	  if test -d $$d/$$file; then \
+	    cp -pR $$d/$$file $(distdir) \
+	    || exit 1; \
+	  else \
+	    test -f $(distdir)/$$file \
+	    || cp -p $$d/$$file $(distdir)/$$file \
+	    || exit 1; \
+	  fi; \
+	done
+	for subdir in $(SUBDIRS); do \
+	  if test "$$subdir" = .; then :; else \
+	    test -d $(distdir)/$$subdir \
+	    || mkdir $(distdir)/$$subdir \
+	    || exit 1; \
+	    (cd $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$(top_distdir)" \
+	        distdir=../$(distdir)/$$subdir \
+	        distdir) \
+	      || exit 1; \
+	  fi; \
+	done
+check-am: all-am
+check: check-recursive
+all-am: Makefile $(SCRIPTS) $(DATA)
+installdirs: installdirs-recursive
+installdirs-am:
+	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir) $(DESTDIR)$(pkgdatadir)
+
+install: install-recursive
+install-exec: install-exec-recursive
+install-data: install-data-recursive
+uninstall: uninstall-recursive
+
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+
+installcheck: installcheck-recursive
+install-strip:
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	  `test -z '$(STRIP)' || \
+	    echo "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'"` install
+mostlyclean-generic:
+
+clean-generic:
+	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
+
+distclean-generic:
+	-rm -f Makefile $(CONFIG_CLEAN_FILES) stamp-h stamp-h[0-9]*
+
+maintainer-clean-generic:
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
+clean: clean-recursive
+
+clean-am: clean-generic clean-libtool mostlyclean-am
+
+distclean: distclean-recursive
+
+distclean-am: clean-am distclean-generic distclean-libtool \
+	distclean-tags
+
+dvi: dvi-recursive
+
+dvi-am:
+
+info: info-recursive
+
+info-am:
+
+install-data-am: install-pkgdataDATA install-pkgdataSCRIPTS
+
+install-exec-am:
+
+install-info: install-info-recursive
+
+install-man:
+
+installcheck-am:
+
+maintainer-clean: maintainer-clean-recursive
+
+maintainer-clean-am: distclean-am maintainer-clean-generic
+
+mostlyclean: mostlyclean-recursive
+
+mostlyclean-am: mostlyclean-generic mostlyclean-libtool
+
+uninstall-am: uninstall-info-am uninstall-pkgdataDATA \
+	uninstall-pkgdataSCRIPTS
+
+uninstall-info: uninstall-info-recursive
+
+.PHONY: $(RECURSIVE_TARGETS) GTAGS all all-am check check-am clean \
+	clean-generic clean-libtool clean-recursive distclean \
+	distclean-generic distclean-libtool distclean-recursive \
+	distclean-tags distdir dvi dvi-am dvi-recursive info info-am \
+	info-recursive install install-am install-data install-data-am \
+	install-data-recursive install-exec install-exec-am \
+	install-exec-recursive install-info install-info-am \
+	install-info-recursive install-man install-pkgdataDATA \
+	install-pkgdataSCRIPTS install-recursive install-strip \
+	installcheck installcheck-am installdirs installdirs-am \
+	installdirs-recursive maintainer-clean maintainer-clean-generic \
+	maintainer-clean-recursive mostlyclean mostlyclean-generic \
+	mostlyclean-libtool mostlyclean-recursive tags tags-recursive \
+	uninstall uninstall-am uninstall-info-am \
+	uninstall-info-recursive uninstall-pkgdataDATA \
+	uninstall-pkgdataSCRIPTS uninstall-recursive
+
+
+mysql-4.1.1-alpha.spec:	mysql.spec
+			rm -f $@
+			cp mysql.spec $@
+
+.sh:
+	/bin/rm -f $@ $@-t
+	/bin/sed \
+	  -e 's!@''bindir''@!$(bindir)!g' \
+	  -e 's!@''sbindir''@!$(sbindir)!g' \
+	  -e 's!@''scriptdir''@!$(bindir)!g' \
+	  -e 's!@''prefix''@!$(prefix)!g' \
+	  -e 's!@''datadir''@!$(datadir)!g' \
+	  -e 's!@''localstatedir''@!$(localstatedir)!g' \
+	  -e 's!@''libexecdir''@!$(libexecdir)!g' \
+	  -e 's!@''CC''@!gcc!'\
+	  -e 's!@''CXX''@!g++!'\
+	  -e 's!@''GXX''@!yes!'\
+	  -e 's!@''PERL''@!/usr/bin/perl!' \
+	  -e 's!@''CFLAGS''@!!'\
+	  -e 's!@''CXXFLAGS''@!!'\
+	  -e 's!@''LDFLAGS''@!-L/home/jflinn/prefix/lib!'\
+	  -e 's!@''VERSION''@!4.1.1-alpha!' \
+	  -e 's!@''MYSQL_SERVER_SUFFIX''@!!' \
+	  -e 's!@''COMPILATION_COMMENT''@!Source distribution!' \
+	  -e 's!@''MACHINE_TYPE''@!i686!' \
+	  -e 's!@''HOSTNAME''@!/bin/hostname!' \
+	  -e 's!@''SYSTEM_TYPE''@!pc-linux!' \
+	  -e 's!@''CHECK_PID''@!/bin/kill -0 $$PID > /dev/null 2> /dev/null!' \
+	  -e 's!@''FIND_PROC''@!/bin/ps p $$PID | grep mysqld > /dev/null!' \
+	  -e 's!@''MYSQLD_DEFAULT_SWITCHES''@!--skip-locking!' \
+	  -e 's!@''MYSQL_UNIX_ADDR''@!/tmp/mysql.sock!' \
+	  -e 's!@''IS_LINUX''@!true!' \
+	  -e "s!@""CONF_COMMAND""@!./configure '--prefix=/tmp/ram/mysql' '--with-client-ldflags=-all-static' '--with-mysqld-ldflags=-all-static' 'CPPFLAGS=-I/home/jflinn/prefix/include -I/home/jflinn/spec2.6/test -DSPEC_ENABLE -DMYSQL_BUG_1' 'LDFLAGS=-L/home/jflinn/prefix/lib'!" \
+	  -e 's!@''MYSQLD_USER''@!mysql!' \
+	  -e 's!@''sysconfdir''@!${prefix}/etc!' \
+	  -e 's!@''SHORT_MYSQL_INTRO''@!@SHORT_MYSQL_INTRO@!' \
+	  -e 's!@''SHARED_LIB_VERSION''@!14:0:0!' \
+	  -e 's!@''MYSQL_BASE_VERSION''@!4.1!' \
+	  -e 's!@''MYSQL_NO_DASH_VERSION''@!4.1.1!' \
+	  -e 's!@''MYSQL_TCP_PORT''@!3306!' \
+	  -e 's!@''PERL_DBI_VERSION''@!@PERL_DBI_VERSION@!' \
+	  -e 's!@''PERL_DBD_VERSION''@!@PERL_DBD_VERSION@!' \
+	  -e 's!@''PERL_DATA_DUMPER''@!@PERL_DATA_DUMPER@!' \
+	$< > $@-t
+	/bin/mv $@-t $@
+
+all:	binary-configure
+
+# Don't update the files from bitkeeper
+%::SCCS/s.%
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

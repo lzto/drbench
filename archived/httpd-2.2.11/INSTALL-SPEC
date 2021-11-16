@@ -1,0 +1,37 @@
+#DYNAMIC
+env CFLAGS='-I/home/dongyoon/glibc-2.5.1/prefix/include -I/home/dongyoon/spec2.6/test -DSPEC_ENABLE' CPPFLAGS='-I/home/dongyoon/glibc-2.5.1/prefix/include -I/home/dongyoon/spec2.6/test -DSPEC_ENABLE' LDFLAGS='-L/home/dongyoon/glibc-2.5.1/prefix/lib -Wl,-rpath,/home/dongyoon/glibc-2.5.1/prefix/lib' LIBS='/home/dongyoon/spec2.6/test/libutil.a' ./configure --prefix=/tmp/ram --with-mpm=worker
+
+#STATIC
+env CFLAGS='-static -all-static -I/home/dongyoon/glibc-2.5.1/prefix/include -I/home/dongyoon/spec2.6/test -DSPEC_ENABLE' CPPFLAGS='-static -all-static -I/home/dongyoon/glibc-2.5.1/prefix/include -I/home/dongyoon/spec2.6/test -DSPEC_ENABLE' LDFLAGS='-static -all-static -L/home/dongyoon/glibc-2.5.1/prefix/lib' LIBS='/home/dongyoon/spec2.6/test/libutil.a' ./configure --prefix=/tmp/ram --with-mpm=worker
+
+##################################################################################
+# RESPEC TEST LOG	
+# - Dongyoon Lee 
+# 
+# 1. Build httpd with DYNAMIC libraraies (cannot get statically-linked binaray yet)
+#   #env (~~~) ./configure --prefix=/tmp/ram --with-mpm=worker
+#   #make && make install
+#
+# 2. Set number of worker threads 
+#   #vim /tmp/ram/conf/extra/httpd-mpm.conf
+#
+#   modifty <mpm_worker_module> 
+#   (ex. 1 prcoess 3 worker threads)
+#    StartServers          1
+#    MaxClients            3
+#    MinSpareThreads       3
+#    MaxSpareThreads       3
+#    ThreadsPerChild       3
+#    MaxRequestsPerChild   0
+#    ServerLimit           1
+#    ThreadLimit           3
+#
+# 3. Run httpd
+#   #cd /tmp/ram/bin
+#   #export LD_BIND_NOW=1
+#   #./httpd -D ONE_PROCESS -k start
+#
+# 4. Test httpd with clients ( at remote machine )
+#   #ab -n 100 -c 4 http://toybox.eecs.umich.edu/index.html
+#
+

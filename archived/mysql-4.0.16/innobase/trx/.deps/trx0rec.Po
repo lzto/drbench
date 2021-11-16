@@ -1,0 +1,646 @@
+trx0rec.o: trx0rec.c ../.././innobase/trx/../include/trx0rec.h \
+  ../.././innobase/trx/../include/univ.i \
+  ../.././innobase/trx/../../include/my_global.h \
+  ../.././innobase/trx/../../include/my_config.h \
+  /home/jflinn/prefix/include/pthread.h \
+  /home/jflinn/prefix/include/features.h \
+  /home/jflinn/prefix/include/sys/cdefs.h \
+  /home/jflinn/prefix/include/bits/wordsize.h \
+  /home/jflinn/prefix/include/gnu/stubs.h \
+  /home/jflinn/prefix/include/gnu/stubs-32.h \
+  /home/jflinn/prefix/include/sched.h \
+  /home/jflinn/prefix/include/bits/types.h \
+  /usr/lib/gcc/i386-redhat-linux/4.1.2/include/stddef.h \
+  /home/jflinn/prefix/include/bits/typesizes.h \
+  /home/jflinn/prefix/include/time.h \
+  /home/jflinn/prefix/include/bits/sched.h \
+  /home/jflinn/prefix/include/bits/time.h \
+  /home/jflinn/prefix/include/xlocale.h \
+  /home/jflinn/prefix/include/signal.h \
+  /home/jflinn/prefix/include/bits/sigset.h \
+  /home/jflinn/prefix/include/bits/pthreadtypes.h \
+  /home/jflinn/prefix/include/bits/setjmp.h \
+  /usr/lib/gcc/i386-redhat-linux/4.1.2/include/stdarg.h \
+  /home/jflinn/prefix/include/stdio.h /home/jflinn/prefix/include/libio.h \
+  /home/jflinn/prefix/include/_G_config.h \
+  /home/jflinn/prefix/include/wchar.h \
+  /home/jflinn/prefix/include/bits/wchar.h \
+  /home/jflinn/prefix/include/gconv.h \
+  /home/jflinn/prefix/include/bits/stdio_lim.h \
+  /home/jflinn/prefix/include/bits/sys_errlist.h \
+  /home/jflinn/prefix/include/bits/stdio.h \
+  /home/jflinn/prefix/include/stdlib.h \
+  /home/jflinn/prefix/include/bits/waitflags.h \
+  /home/jflinn/prefix/include/bits/waitstatus.h \
+  /home/jflinn/prefix/include/endian.h \
+  /home/jflinn/prefix/include/bits/endian.h \
+  /home/jflinn/prefix/include/sys/types.h \
+  /home/jflinn/prefix/include/sys/select.h \
+  /home/jflinn/prefix/include/bits/select.h \
+  /home/jflinn/prefix/include/sys/sysmacros.h \
+  /home/jflinn/prefix/include/alloca.h /home/jflinn/prefix/include/math.h \
+  /home/jflinn/prefix/include/bits/huge_val.h \
+  /home/jflinn/prefix/include/bits/huge_valf.h \
+  /home/jflinn/prefix/include/bits/huge_vall.h \
+  /home/jflinn/prefix/include/bits/inf.h \
+  /home/jflinn/prefix/include/bits/nan.h \
+  /home/jflinn/prefix/include/bits/mathdef.h \
+  /home/jflinn/prefix/include/bits/mathcalls.h \
+  /home/jflinn/prefix/include/bits/mathinline.h \
+  /home/jflinn/prefix/include/limits.h \
+  /usr/lib/gcc/i386-redhat-linux/4.1.2/include/limits.h \
+  /home/jflinn/prefix/include/bits/posix1_lim.h \
+  /home/jflinn/prefix/include/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /home/jflinn/prefix/include/bits/posix2_lim.h \
+  /home/jflinn/prefix/include/bits/xopen_lim.h \
+  /usr/lib/gcc/i386-redhat-linux/4.1.2/include/float.h \
+  /home/jflinn/prefix/include/fcntl.h \
+  /home/jflinn/prefix/include/bits/fcntl.h \
+  /home/jflinn/prefix/include/bits/uio.h \
+  /home/jflinn/prefix/include/sys/stat.h \
+  /home/jflinn/prefix/include/bits/stat.h \
+  /home/jflinn/prefix/include/sys/timeb.h \
+  /home/jflinn/prefix/include/sys/time.h \
+  /home/jflinn/prefix/include/unistd.h \
+  /home/jflinn/prefix/include/bits/posix_opt.h \
+  /home/jflinn/prefix/include/bits/environments.h \
+  /home/jflinn/prefix/include/bits/confname.h \
+  /home/jflinn/prefix/include/getopt.h \
+  /home/jflinn/prefix/include/errno.h \
+  /home/jflinn/prefix/include/bits/errno.h /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h \
+  /home/jflinn/prefix/include/crypt.h \
+  ../.././innobase/trx/../../include/my_dbug.h \
+  /home/jflinn/prefix/include/sys/socket.h \
+  /home/jflinn/prefix/include/sys/uio.h \
+  /home/jflinn/prefix/include/bits/socket.h \
+  /home/jflinn/prefix/include/bits/sockaddr.h /usr/include/asm/socket.h \
+  /usr/include/asm/sockios.h \
+  ../.././innobase/trx/../../include/my_pthread.h \
+  ../.././innobase/trx/../include/../ib_config.h \
+  ../.././innobase/trx/../include/ut0dbg.h \
+  /home/jflinn/prefix/include/assert.h \
+  ../.././innobase/trx/../include/os0thread.h \
+  ../.././innobase/trx/../include/os0thread.ic \
+  ../.././innobase/trx/../include/ut0ut.h \
+  /home/jflinn/prefix/include/ctype.h \
+  ../.././innobase/trx/../include/ut0ut.ic \
+  ../.././innobase/trx/../include/db0err.h \
+  ../.././innobase/trx/../include/trx0types.h \
+  ../.././innobase/trx/../include/lock0types.h \
+  ../.././innobase/trx/../include/ut0byte.h \
+  ../.././innobase/trx/../include/ut0byte.ic \
+  ../.././innobase/trx/../include/row0types.h \
+  ../.././innobase/trx/../include/mtr0mtr.h \
+  ../.././innobase/trx/../include/mem0mem.h \
+  ../.././innobase/trx/../include/ut0mem.h \
+  /home/jflinn/prefix/include/string.h \
+  /home/jflinn/prefix/include/bits/string.h \
+  /home/jflinn/prefix/include/bits/string2.h \
+  ../.././innobase/trx/../include/ut0mem.ic \
+  ../.././innobase/trx/../include/ut0rnd.h \
+  ../.././innobase/trx/../include/ut0rnd.ic \
+  ../.././innobase/trx/../include/sync0sync.h \
+  ../.././innobase/trx/../include/sync0types.h \
+  ../.././innobase/trx/../include/ut0lst.h \
+  ../.././innobase/trx/../include/os0sync.h \
+  ../.././innobase/trx/../include/os0sync.ic \
+  ../.././innobase/trx/../include/sync0arr.h \
+  ../.././innobase/trx/../include/sync0arr.ic \
+  ../.././innobase/trx/../include/sync0sync.ic \
+  ../.././innobase/trx/../include/mach0data.h \
+  ../.././innobase/trx/../include/mach0data.ic \
+  ../.././innobase/trx/../include/mem0dbg.h \
+  ../.././innobase/trx/../include/mem0mem.ic \
+  ../.././innobase/trx/../include/mem0dbg.ic \
+  ../.././innobase/trx/../include/mem0pool.h \
+  ../.././innobase/trx/../include/os0file.h \
+  ../.././innobase/trx/../include/mem0pool.ic \
+  ../.././innobase/trx/../include/dyn0dyn.h \
+  ../.././innobase/trx/../include/dyn0dyn.ic \
+  ../.././innobase/trx/../include/buf0types.h \
+  ../.././innobase/trx/../include/sync0rw.h \
+  ../.././innobase/trx/../include/sync0rw.ic \
+  ../.././innobase/trx/../include/mtr0types.h \
+  ../.././innobase/trx/../include/page0types.h \
+  ../.././innobase/trx/../include/mtr0mtr.ic \
+  ../.././innobase/trx/../include/trx0sys.h \
+  ../.././innobase/trx/../include/mtr0log.h \
+  ../.././innobase/trx/../include/mtr0log.ic \
+  ../.././innobase/trx/../include/buf0buf.h \
+  ../.././innobase/trx/../include/fil0fil.h \
+  ../.././innobase/trx/../include/dict0types.h \
+  ../.././innobase/trx/../include/ibuf0types.h \
+  ../.././innobase/trx/../include/hash0hash.h \
+  ../.././innobase/trx/../include/hash0hash.ic \
+  ../.././innobase/trx/../include/buf0buf.ic \
+  ../.././innobase/trx/../include/buf0flu.h \
+  ../.././innobase/trx/../include/buf0flu.ic \
+  ../.././innobase/trx/../include/buf0lru.h \
+  ../.././innobase/trx/../include/buf0lru.ic \
+  ../.././innobase/trx/../include/buf0rea.h \
+  ../.././innobase/trx/../include/fut0lst.h \
+  ../.././innobase/trx/../include/fut0lst.ic \
+  ../.././innobase/trx/../include/fut0fut.h \
+  ../.././innobase/trx/../include/fut0fut.ic \
+  ../.././innobase/trx/../include/fsp0fsp.h \
+  ../.././innobase/trx/../include/fsp0fsp.ic \
+  ../.././innobase/trx/../include/read0types.h \
+  ../.././innobase/trx/../include/trx0sys.ic \
+  ../.././innobase/trx/../include/srv0srv.h \
+  ../.././innobase/trx/../include/com0com.h \
+  ../.././innobase/trx/../include/com0com.ic \
+  ../.././innobase/trx/../include/que0types.h \
+  ../.././innobase/trx/../include/data0data.h \
+  ../.././innobase/trx/../include/data0types.h \
+  ../.././innobase/trx/../include/data0type.h \
+  ../.././innobase/trx/../include/data0type.ic \
+  ../.././innobase/trx/../include/data0data.ic \
+  ../.././innobase/trx/../include/trx0trx.h \
+  ../.././innobase/trx/../include/usr0types.h \
+  ../.././innobase/trx/../include/trx0trx.ic \
+  ../.././innobase/trx/../include/rem0types.h \
+  ../.././innobase/trx/../include/trx0rec.ic \
+  ../.././innobase/trx/../include/fsp0fsp.h \
+  ../.././innobase/trx/../include/mach0data.h \
+  ../.././innobase/trx/../include/trx0rseg.h \
+  ../.././innobase/trx/../include/trx0rseg.ic \
+  ../.././innobase/trx/../include/trx0trx.h \
+  ../.././innobase/trx/../include/trx0undo.h \
+  ../.././innobase/trx/../include/trx0undo.ic \
+  ../.././innobase/trx/../include/dict0dict.h \
+  ../.././innobase/trx/../include/dict0mem.h \
+  ../.././innobase/trx/../include/btr0types.h \
+  ../.././innobase/trx/../include/dict0mem.ic \
+  ../.././innobase/trx/../include/dict0dict.ic \
+  ../.././innobase/trx/../include/dict0load.h \
+  ../.././innobase/trx/../include/dict0load.ic \
+  ../.././innobase/trx/../include/trx0undo.h \
+  ../.././innobase/trx/../include/rem0rec.h \
+  ../.././innobase/trx/../include/rem0rec.ic \
+  ../.././innobase/trx/../include/ut0mem.h \
+  ../.././innobase/trx/../include/row0upd.h \
+  ../.././innobase/trx/../include/btr0pcur.h \
+  ../.././innobase/trx/../include/dict0dict.h \
+  ../.././innobase/trx/../include/page0cur.h \
+  ../.././innobase/trx/../include/page0page.h \
+  ../.././innobase/trx/../include/page0page.ic \
+  ../.././innobase/trx/../include/rem0cmp.h \
+  ../.././innobase/trx/../include/rem0cmp.ic \
+  ../.././innobase/trx/../include/page0cur.ic \
+  ../.././innobase/trx/../include/btr0cur.h \
+  ../.././innobase/trx/../include/ha0ha.h \
+  ../.././innobase/trx/../include/ha0ha.ic \
+  ../.././innobase/trx/../include/btr0cur.ic \
+  ../.././innobase/trx/../include/btr0btr.h \
+  ../.././innobase/trx/../include/btr0btr.ic \
+  ../.././innobase/trx/../include/btr0pcur.ic \
+  ../.././innobase/trx/../include/pars0types.h \
+  ../.././innobase/trx/../include/row0upd.ic \
+  ../.././innobase/trx/../include/row0row.h \
+  ../.././innobase/trx/../include/row0row.ic \
+  ../.././innobase/trx/../include/btr0sea.h \
+  ../.././innobase/trx/../include/btr0sea.ic \
+  ../.././innobase/trx/../include/que0que.h \
+  ../.././innobase/trx/../include/que0que.ic \
+  ../.././innobase/trx/../include/usr0sess.h \
+  ../.././innobase/trx/../include/usr0sess.ic \
+  ../.././innobase/trx/../include/trx0purge.h \
+  ../.././innobase/trx/../include/trx0purge.ic \
+  ../.././innobase/trx/../include/row0row.h
+
+../.././innobase/trx/../include/trx0rec.h:
+
+../.././innobase/trx/../include/univ.i:
+
+../.././innobase/trx/../../include/my_global.h:
+
+../.././innobase/trx/../../include/my_config.h:
+
+/home/jflinn/prefix/include/pthread.h:
+
+/home/jflinn/prefix/include/features.h:
+
+/home/jflinn/prefix/include/sys/cdefs.h:
+
+/home/jflinn/prefix/include/bits/wordsize.h:
+
+/home/jflinn/prefix/include/gnu/stubs.h:
+
+/home/jflinn/prefix/include/gnu/stubs-32.h:
+
+/home/jflinn/prefix/include/sched.h:
+
+/home/jflinn/prefix/include/bits/types.h:
+
+/usr/lib/gcc/i386-redhat-linux/4.1.2/include/stddef.h:
+
+/home/jflinn/prefix/include/bits/typesizes.h:
+
+/home/jflinn/prefix/include/time.h:
+
+/home/jflinn/prefix/include/bits/sched.h:
+
+/home/jflinn/prefix/include/bits/time.h:
+
+/home/jflinn/prefix/include/xlocale.h:
+
+/home/jflinn/prefix/include/signal.h:
+
+/home/jflinn/prefix/include/bits/sigset.h:
+
+/home/jflinn/prefix/include/bits/pthreadtypes.h:
+
+/home/jflinn/prefix/include/bits/setjmp.h:
+
+/usr/lib/gcc/i386-redhat-linux/4.1.2/include/stdarg.h:
+
+/home/jflinn/prefix/include/stdio.h:
+
+/home/jflinn/prefix/include/libio.h:
+
+/home/jflinn/prefix/include/_G_config.h:
+
+/home/jflinn/prefix/include/wchar.h:
+
+/home/jflinn/prefix/include/bits/wchar.h:
+
+/home/jflinn/prefix/include/gconv.h:
+
+/home/jflinn/prefix/include/bits/stdio_lim.h:
+
+/home/jflinn/prefix/include/bits/sys_errlist.h:
+
+/home/jflinn/prefix/include/bits/stdio.h:
+
+/home/jflinn/prefix/include/stdlib.h:
+
+/home/jflinn/prefix/include/bits/waitflags.h:
+
+/home/jflinn/prefix/include/bits/waitstatus.h:
+
+/home/jflinn/prefix/include/endian.h:
+
+/home/jflinn/prefix/include/bits/endian.h:
+
+/home/jflinn/prefix/include/sys/types.h:
+
+/home/jflinn/prefix/include/sys/select.h:
+
+/home/jflinn/prefix/include/bits/select.h:
+
+/home/jflinn/prefix/include/sys/sysmacros.h:
+
+/home/jflinn/prefix/include/alloca.h:
+
+/home/jflinn/prefix/include/math.h:
+
+/home/jflinn/prefix/include/bits/huge_val.h:
+
+/home/jflinn/prefix/include/bits/huge_valf.h:
+
+/home/jflinn/prefix/include/bits/huge_vall.h:
+
+/home/jflinn/prefix/include/bits/inf.h:
+
+/home/jflinn/prefix/include/bits/nan.h:
+
+/home/jflinn/prefix/include/bits/mathdef.h:
+
+/home/jflinn/prefix/include/bits/mathcalls.h:
+
+/home/jflinn/prefix/include/bits/mathinline.h:
+
+/home/jflinn/prefix/include/limits.h:
+
+/usr/lib/gcc/i386-redhat-linux/4.1.2/include/limits.h:
+
+/home/jflinn/prefix/include/bits/posix1_lim.h:
+
+/home/jflinn/prefix/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/home/jflinn/prefix/include/bits/posix2_lim.h:
+
+/home/jflinn/prefix/include/bits/xopen_lim.h:
+
+/usr/lib/gcc/i386-redhat-linux/4.1.2/include/float.h:
+
+/home/jflinn/prefix/include/fcntl.h:
+
+/home/jflinn/prefix/include/bits/fcntl.h:
+
+/home/jflinn/prefix/include/bits/uio.h:
+
+/home/jflinn/prefix/include/sys/stat.h:
+
+/home/jflinn/prefix/include/bits/stat.h:
+
+/home/jflinn/prefix/include/sys/timeb.h:
+
+/home/jflinn/prefix/include/sys/time.h:
+
+/home/jflinn/prefix/include/unistd.h:
+
+/home/jflinn/prefix/include/bits/posix_opt.h:
+
+/home/jflinn/prefix/include/bits/environments.h:
+
+/home/jflinn/prefix/include/bits/confname.h:
+
+/home/jflinn/prefix/include/getopt.h:
+
+/home/jflinn/prefix/include/errno.h:
+
+/home/jflinn/prefix/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/home/jflinn/prefix/include/crypt.h:
+
+../.././innobase/trx/../../include/my_dbug.h:
+
+/home/jflinn/prefix/include/sys/socket.h:
+
+/home/jflinn/prefix/include/sys/uio.h:
+
+/home/jflinn/prefix/include/bits/socket.h:
+
+/home/jflinn/prefix/include/bits/sockaddr.h:
+
+/usr/include/asm/socket.h:
+
+/usr/include/asm/sockios.h:
+
+../.././innobase/trx/../../include/my_pthread.h:
+
+../.././innobase/trx/../include/../ib_config.h:
+
+../.././innobase/trx/../include/ut0dbg.h:
+
+/home/jflinn/prefix/include/assert.h:
+
+../.././innobase/trx/../include/os0thread.h:
+
+../.././innobase/trx/../include/os0thread.ic:
+
+../.././innobase/trx/../include/ut0ut.h:
+
+/home/jflinn/prefix/include/ctype.h:
+
+../.././innobase/trx/../include/ut0ut.ic:
+
+../.././innobase/trx/../include/db0err.h:
+
+../.././innobase/trx/../include/trx0types.h:
+
+../.././innobase/trx/../include/lock0types.h:
+
+../.././innobase/trx/../include/ut0byte.h:
+
+../.././innobase/trx/../include/ut0byte.ic:
+
+../.././innobase/trx/../include/row0types.h:
+
+../.././innobase/trx/../include/mtr0mtr.h:
+
+../.././innobase/trx/../include/mem0mem.h:
+
+../.././innobase/trx/../include/ut0mem.h:
+
+/home/jflinn/prefix/include/string.h:
+
+/home/jflinn/prefix/include/bits/string.h:
+
+/home/jflinn/prefix/include/bits/string2.h:
+
+../.././innobase/trx/../include/ut0mem.ic:
+
+../.././innobase/trx/../include/ut0rnd.h:
+
+../.././innobase/trx/../include/ut0rnd.ic:
+
+../.././innobase/trx/../include/sync0sync.h:
+
+../.././innobase/trx/../include/sync0types.h:
+
+../.././innobase/trx/../include/ut0lst.h:
+
+../.././innobase/trx/../include/os0sync.h:
+
+../.././innobase/trx/../include/os0sync.ic:
+
+../.././innobase/trx/../include/sync0arr.h:
+
+../.././innobase/trx/../include/sync0arr.ic:
+
+../.././innobase/trx/../include/sync0sync.ic:
+
+../.././innobase/trx/../include/mach0data.h:
+
+../.././innobase/trx/../include/mach0data.ic:
+
+../.././innobase/trx/../include/mem0dbg.h:
+
+../.././innobase/trx/../include/mem0mem.ic:
+
+../.././innobase/trx/../include/mem0dbg.ic:
+
+../.././innobase/trx/../include/mem0pool.h:
+
+../.././innobase/trx/../include/os0file.h:
+
+../.././innobase/trx/../include/mem0pool.ic:
+
+../.././innobase/trx/../include/dyn0dyn.h:
+
+../.././innobase/trx/../include/dyn0dyn.ic:
+
+../.././innobase/trx/../include/buf0types.h:
+
+../.././innobase/trx/../include/sync0rw.h:
+
+../.././innobase/trx/../include/sync0rw.ic:
+
+../.././innobase/trx/../include/mtr0types.h:
+
+../.././innobase/trx/../include/page0types.h:
+
+../.././innobase/trx/../include/mtr0mtr.ic:
+
+../.././innobase/trx/../include/trx0sys.h:
+
+../.././innobase/trx/../include/mtr0log.h:
+
+../.././innobase/trx/../include/mtr0log.ic:
+
+../.././innobase/trx/../include/buf0buf.h:
+
+../.././innobase/trx/../include/fil0fil.h:
+
+../.././innobase/trx/../include/dict0types.h:
+
+../.././innobase/trx/../include/ibuf0types.h:
+
+../.././innobase/trx/../include/hash0hash.h:
+
+../.././innobase/trx/../include/hash0hash.ic:
+
+../.././innobase/trx/../include/buf0buf.ic:
+
+../.././innobase/trx/../include/buf0flu.h:
+
+../.././innobase/trx/../include/buf0flu.ic:
+
+../.././innobase/trx/../include/buf0lru.h:
+
+../.././innobase/trx/../include/buf0lru.ic:
+
+../.././innobase/trx/../include/buf0rea.h:
+
+../.././innobase/trx/../include/fut0lst.h:
+
+../.././innobase/trx/../include/fut0lst.ic:
+
+../.././innobase/trx/../include/fut0fut.h:
+
+../.././innobase/trx/../include/fut0fut.ic:
+
+../.././innobase/trx/../include/fsp0fsp.h:
+
+../.././innobase/trx/../include/fsp0fsp.ic:
+
+../.././innobase/trx/../include/read0types.h:
+
+../.././innobase/trx/../include/trx0sys.ic:
+
+../.././innobase/trx/../include/srv0srv.h:
+
+../.././innobase/trx/../include/com0com.h:
+
+../.././innobase/trx/../include/com0com.ic:
+
+../.././innobase/trx/../include/que0types.h:
+
+../.././innobase/trx/../include/data0data.h:
+
+../.././innobase/trx/../include/data0types.h:
+
+../.././innobase/trx/../include/data0type.h:
+
+../.././innobase/trx/../include/data0type.ic:
+
+../.././innobase/trx/../include/data0data.ic:
+
+../.././innobase/trx/../include/trx0trx.h:
+
+../.././innobase/trx/../include/usr0types.h:
+
+../.././innobase/trx/../include/trx0trx.ic:
+
+../.././innobase/trx/../include/rem0types.h:
+
+../.././innobase/trx/../include/trx0rec.ic:
+
+../.././innobase/trx/../include/fsp0fsp.h:
+
+../.././innobase/trx/../include/mach0data.h:
+
+../.././innobase/trx/../include/trx0rseg.h:
+
+../.././innobase/trx/../include/trx0rseg.ic:
+
+../.././innobase/trx/../include/trx0trx.h:
+
+../.././innobase/trx/../include/trx0undo.h:
+
+../.././innobase/trx/../include/trx0undo.ic:
+
+../.././innobase/trx/../include/dict0dict.h:
+
+../.././innobase/trx/../include/dict0mem.h:
+
+../.././innobase/trx/../include/btr0types.h:
+
+../.././innobase/trx/../include/dict0mem.ic:
+
+../.././innobase/trx/../include/dict0dict.ic:
+
+../.././innobase/trx/../include/dict0load.h:
+
+../.././innobase/trx/../include/dict0load.ic:
+
+../.././innobase/trx/../include/trx0undo.h:
+
+../.././innobase/trx/../include/rem0rec.h:
+
+../.././innobase/trx/../include/rem0rec.ic:
+
+../.././innobase/trx/../include/ut0mem.h:
+
+../.././innobase/trx/../include/row0upd.h:
+
+../.././innobase/trx/../include/btr0pcur.h:
+
+../.././innobase/trx/../include/dict0dict.h:
+
+../.././innobase/trx/../include/page0cur.h:
+
+../.././innobase/trx/../include/page0page.h:
+
+../.././innobase/trx/../include/page0page.ic:
+
+../.././innobase/trx/../include/rem0cmp.h:
+
+../.././innobase/trx/../include/rem0cmp.ic:
+
+../.././innobase/trx/../include/page0cur.ic:
+
+../.././innobase/trx/../include/btr0cur.h:
+
+../.././innobase/trx/../include/ha0ha.h:
+
+../.././innobase/trx/../include/ha0ha.ic:
+
+../.././innobase/trx/../include/btr0cur.ic:
+
+../.././innobase/trx/../include/btr0btr.h:
+
+../.././innobase/trx/../include/btr0btr.ic:
+
+../.././innobase/trx/../include/btr0pcur.ic:
+
+../.././innobase/trx/../include/pars0types.h:
+
+../.././innobase/trx/../include/row0upd.ic:
+
+../.././innobase/trx/../include/row0row.h:
+
+../.././innobase/trx/../include/row0row.ic:
+
+../.././innobase/trx/../include/btr0sea.h:
+
+../.././innobase/trx/../include/btr0sea.ic:
+
+../.././innobase/trx/../include/que0que.h:
+
+../.././innobase/trx/../include/que0que.ic:
+
+../.././innobase/trx/../include/usr0sess.h:
+
+../.././innobase/trx/../include/usr0sess.ic:
+
+../.././innobase/trx/../include/trx0purge.h:
+
+../.././innobase/trx/../include/trx0purge.ic:
+
+../.././innobase/trx/../include/row0row.h:
